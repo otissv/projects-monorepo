@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { Icon, IconInterface } from '@redesign-system/react'
+import { Icon, IconInterface } from '@redesign-system/react/libs'
 
 export const Logo: FC<IconInterface> = function Logo({ ...props }) {
   return (

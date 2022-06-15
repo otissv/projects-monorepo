@@ -2,19 +2,21 @@
   "name": "@redesign-system/theme",
   "version": "0.1.0",
   "license": "MIT",
-  "typings": "index.d.ts",
+  "main": "libs/index.d.ts",
+  "typings": "libs/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "npm run clean && mkdir build && ts-node node_modules/scripts/build-package",
+    "build": "npm run clean && mkdir build && ts-node node_modules/scripts/libs/build-package",
     "dev": "tsc --watch",
     "test": "jest",
     "test:coverage": "npm run build && jest --coverage",
     "test:watch": "jest --watch",
     "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
     "build-storybook": "build-storybook",
-    "clean": "rm -rf ./build",
+    "clean": "rimraf -rf ./build",
     "prepare": "npm run build"
   },
   "husky": {

@@ -6,7 +6,7 @@ scripts used across Projects Monorepo
 
 ```
   "scripts": {
-    "build": "npm run clean && mkdir build && ts-node node_modules/scripts/build-package",
+    "build": "npm run clean && mkdir build && ts-node node_modules/scripts/libs/build-package",
     "clean": "rimraf ./build",
   }
 ```

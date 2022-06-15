@@ -1,13 +1,14 @@
 {
-  "extends": "tsconfig/lib.json",
+  "extends": "tsconfig/react-library.json",
   "compilerOptions": {
     "baseUrl": "./",
-    "rootDir": "src",
-    "outDir": "build"
+    "rootDir": ".",
+    "outDir": "build",
+    "resolveJsonModule": true,
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": [
     "dist",
@@ -16,7 +17,6 @@
   ],
   "paths": {
     "*": [
-      "src",
       "node_modules/*",
     ]
   },
