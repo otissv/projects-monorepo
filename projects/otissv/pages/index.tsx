@@ -1,5 +1,5 @@
 import { Button } from 'ui';
-import { argNames } from 'c-ufunc';
+import { argNames } from 'c-ufunc/argNames';
 
 export default function Web() {
   return (

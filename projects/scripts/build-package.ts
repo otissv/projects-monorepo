@@ -5,7 +5,7 @@ const pkg = require(`${process.cwd()}/package.json`);
 
 const exec = util.promisify(childProcess.exec);
 
-const removeTestFile = () => exec(`rimraf  build/*.test.*`);
+const removeTestFile = () => exec(`rimraf  build/**/*.test.*`);
 const createPackageJSON = () => {
   const npmPkg = JSON.stringify({
     name: pkg.name,
