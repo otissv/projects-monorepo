@@ -4,7 +4,7 @@ import { Base, useTheme } from '@redesign-system/react/libs'
 import { mediaTheme, mediaFigureTheme } from './figure.theme'
 import { Either } from '../Either'
 import { FigureInterface } from './figure.type'
-import { isString } from 'c-ufunc/isString'
+import { isString } from 'c-ufunc/libs/isString'
 import { Caption, CaptionInterface } from '../Caption'
 import { Maybe } from '../Maybe'
 

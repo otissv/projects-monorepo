@@ -2,9 +2,9 @@
 import { ThemeProvider, useString } from '@redesign-system/react/libs'
 
 import React from 'react'
-import { HomeIcon } from '@redesign-system/react-material-icons/HomeIcon'
-import { ContentCopyIcon } from '@redesign-system/react-material-icons/ContentCopyIcon'
-import { DeleteAlertIcon } from '@redesign-system/react-material-icons/DeleteAlertIcon'
+import { HomeIcon } from '@redesign-system/react-material-icons/libs/HomeIcon'
+import { ContentCopyIcon } from '@redesign-system/react-material-icons/libs/ContentCopyIcon'
+import { DeleteAlertIcon } from '@redesign-system/react-material-icons/libs/DeleteAlertIcon'
 
 import { ButtonGroupButton } from './ButtonGroupButton'
 import { ButtonGroup } from './ButtonGroup'

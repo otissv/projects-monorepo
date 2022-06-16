@@ -10,7 +10,7 @@ import {
 
 import { Base, useTheme } from '@redesign-system/react/libs'
 import { Maybe } from '../Maybe'
-import { isString } from 'c-ufunc/isString'
+import { isString } from 'c-ufunc/libs/isString'
 import { Either } from '../Either'
 
 export const Heading: FC<HeadingInterface> = function Heading({

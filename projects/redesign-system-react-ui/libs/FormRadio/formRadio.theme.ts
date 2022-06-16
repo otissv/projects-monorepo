@@ -1,4 +1,4 @@
-import { isFunction } from 'c-ufunc/isFunction'
+import { isFunction } from 'c-ufunc/libs/isFunction'
 import { FormRadioInterface } from './formRadio.types'
 
 export function formRadioTheme(props: FormRadioInterface): Record<string, any> {

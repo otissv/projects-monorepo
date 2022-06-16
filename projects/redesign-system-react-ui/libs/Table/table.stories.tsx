@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react'
 import { ThemeProvider, useBoolean } from '@redesign-system/react/libs'
-import { useSelected } from '@redesign-system/react/useSelected'
-import { ChevronRightIcon } from '@redesign-system/react-material-icons/ChevronRightIcon'
-import { ChevronDownIcon } from '@redesign-system/react-material-icons/ChevronDownIcon'
+import { useSelected } from '@redesign-system/react/libs/hooks/useSelected'
+import { ChevronRightIcon } from '@redesign-system/react-material-icons/libs/ChevronRightIcon'
+import { ChevronDownIcon } from '@redesign-system/react-material-icons/libs/ChevronDownIcon'
 
 import { Table } from './Table'
 import { Checkbox } from '../Checkbox'

@@ -1,4 +1,4 @@
-import { isFunction } from 'c-ufunc/isFunction'
+import { isFunction } from 'c-ufunc/libs/isFunction'
 
 import { CheckboxInterface } from './checkbox.types'
 import { getBackgroundColor, getBorder } from '@redesign-system/react/libs'

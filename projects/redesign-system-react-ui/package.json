@@ -32,6 +32,9 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "scripts": "workspace:*",
     "@babel/core": "^7.18.5",
     "@storybook/addon-a11y": "^6.5.9",
     "@storybook/addon-actions": "^6.5.9",
@@ -63,7 +66,6 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "rimraf": "^3.0.2",
-    "scripts": "workspace:*",
     "ts-loader": "^9.3.0",
     "ts-node": "^10.8.1",
     "tslib": "^2.4.0",
@@ -72,7 +74,7 @@
   "dependencies": {
     "@redesign-system/react": "workspace:*",
     "@redesign-system/react-material-icons": "workspace:*",
-    "@redesign-system/theme": "^0.1.0",
+    "@redesign-system/theme": "workspace:*",
     "c-ufunc": "workspace:*",
     "cuid": "^2.1.8",
     "popmotion": "^11.0.3",

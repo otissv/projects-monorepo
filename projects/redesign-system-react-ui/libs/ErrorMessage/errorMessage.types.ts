@@ -5,7 +5,7 @@ type ErrorTypes = typeof PRIMARY | typeof SECONDARY | typeof TERTIARY
 
 export interface ErrorMessageInterface extends ThemeComponentInterface {
   readonly appearance?: ErrorTypes
-  readonly children?: React.ReactNode
+  readonly children?: Omit<React.ReactNode, 'React.ReactPortal'>
   readonly href?: string
   readonly required?: boolean
 }

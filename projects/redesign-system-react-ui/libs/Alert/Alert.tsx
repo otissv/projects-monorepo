@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
-import { Base } from '@redesign-system/react/Base'
-import { useTheme } from '@redesign-system/react/ThemeContext'
+import { Base } from '@redesign-system/react/libs/Base'
+import { useTheme } from '@redesign-system/react/libs/ThemeContext'
 
 import { AlertInterface } from './alert.types'
 import { alertTheme, alertAppearanceTheme } from './alert.theme'

@@ -1,3 +1,3 @@
 export * from './FormCheckbox'
 export * from './formCheckbox.types'
-export * from './formCheckbox'
+export * from './formCheckbox.theme'

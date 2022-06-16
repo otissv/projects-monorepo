@@ -2,10 +2,10 @@
 import React from 'react'
 
 import { ThemeProvider } from '@redesign-system/react/libs'
-import { Match } from '@redesign-system/react/Match'
-import { FacebookIcon } from '@redesign-system/react-material-icons/FacebookIcon'
-import { TwitterIcon } from '@redesign-system/react-material-icons/TwitterIcon'
-import { LinkedinIcon } from '@redesign-system/react-material-icons/LinkedinIcon'
+import { Match } from '@redesign-system/react/libs/Match'
+import { FacebookIcon } from '@redesign-system/react-material-icons/libs/FacebookIcon'
+import { TwitterIcon } from '@redesign-system/react-material-icons/libs/TwitterIcon'
+import { LinkedinIcon } from '@redesign-system/react-material-icons/libs/LinkedinIcon'
 
 import { Box } from '../Box'
 import { Footer } from './Footer'

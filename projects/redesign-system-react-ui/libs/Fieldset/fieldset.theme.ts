@@ -1,4 +1,4 @@
-import { isFunction } from 'c-ufunc/isFunction'
+import { isFunction } from 'c-ufunc/libs/isFunction'
 import { FieldsetInterface } from './fieldset.types'
 
 export function fieldsetTheme(props: FieldsetInterface): Record<string, any> {

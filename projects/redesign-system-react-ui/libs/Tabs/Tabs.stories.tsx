@@ -2,9 +2,9 @@
 import React from 'react'
 
 import { ThemeProvider, useString } from '@redesign-system/react/libs'
-import { HomeIcon } from '@redesign-system/react-material-icons/'
-import { ContentCopyIcon } from '@redesign-system/react-material-icons/'
-import { DeleteAlertIcon } from '@redesign-system/react-material-icons/'
+import { HomeIcon } from '@redesign-system/react-material-icons/libs/'
+import { ContentCopyIcon } from '@redesign-system/react-material-icons/libs/'
+import { DeleteAlertIcon } from '@redesign-system/react-material-icons/libs/'
 
 import { TabList } from './TabList'
 import { Tabs } from './Tabs'

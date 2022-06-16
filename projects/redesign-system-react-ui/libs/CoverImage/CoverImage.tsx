@@ -6,7 +6,7 @@ import { Base, useTheme } from '@redesign-system/react/libs'
 import { Maybe } from '../Maybe'
 import { Either } from '../Either'
 import { Caption, CaptionInterface } from '../Caption'
-import { isString } from 'c-ufunc/isString'
+import { isString } from 'c-ufunc/libs/isString'
 import { coverImageContentTheme, coverImageTheme } from './coverImage.theme'
 
 export const CoverImage: FC<CoverImageInterface> = function CoverImage({

@@ -1,4 +1,4 @@
-import { isFunction } from 'c-ufunc/isFunction'
+import { isFunction } from 'c-ufunc/libs/isFunction'
 import { ImageInterface } from './Image.types'
 
 export function imgTheme(props: ImageInterface): Record<string, any> {

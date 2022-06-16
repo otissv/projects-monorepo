@@ -35,7 +35,7 @@ import {
   SECONDARY_DISABLED,
   TERTIARY_DISABLED,
 } from '@redesign-system/theme/libs'
-import { isFunction } from 'c-ufunc/isFunction'
+import { isFunction } from 'c-ufunc/libs/isFunction'
 
 import { LinkInterface } from './link.types'
 

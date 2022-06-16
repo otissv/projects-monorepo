@@ -1,4 +1,4 @@
-import { isFunction } from 'c-ufunc/isFunction'
+import { isFunction } from 'c-ufunc/libs/isFunction'
 import { OverlayInterface } from './overlay.types'
 
 export function overlayTheme(props: OverlayInterface): Record<string, any> {

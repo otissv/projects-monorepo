@@ -14,7 +14,7 @@ out/
 dist
 build
 .cache
-
+projects/redesign-system-react-material-icons/libs
 # misc
 .DS_Store
 *.pem

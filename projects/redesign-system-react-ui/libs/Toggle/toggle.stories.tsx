@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react'
-import { MenuIcon } from '@redesign-system/react-material-icons/MenuIcon'
-import { MenuOpenIcon } from '@redesign-system/react-material-icons/MenuOpenIcon'
+import { MenuIcon } from '@redesign-system/react-material-icons/libs/MenuIcon'
+import { MenuOpenIcon } from '@redesign-system/react-material-icons/libs/MenuOpenIcon'
 import { ThemeProvider } from '@redesign-system/react/libs'
 
 import { Toggle } from './Toggle'

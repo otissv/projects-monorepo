@@ -1,4 +1,4 @@
-import { isFunction } from 'c-ufunc/isFunction'
+import { isFunction } from 'c-ufunc/libs/isFunction'
 import { ErrorMessageInterface } from './errorMessage.types'
 
 import { PRIMARY, SECONDARY, TERTIARY } from '@redesign-system/theme/libs'

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react'
 import { ThemeProvider } from '@redesign-system/react/libs'
-import { useBoolean } from '@redesign-system/react/useBoolean'
+import { useBoolean } from '@redesign-system/react/libs/hooks/useBoolean'
 
 import { Alert } from './Alert'
 import { Box } from '../Box'

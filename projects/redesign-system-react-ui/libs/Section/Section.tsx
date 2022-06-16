@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { isString } from 'c-ufunc/isString'
+import { isString } from 'c-ufunc/libs/isString'
 import { Base, useTheme } from '@redesign-system/react/libs'
 
 import { SectionInterface } from './section.types'

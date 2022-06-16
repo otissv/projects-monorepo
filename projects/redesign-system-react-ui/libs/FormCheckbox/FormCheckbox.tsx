@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { isString } from 'c-ufunc/isString'
+import { isString } from 'c-ufunc/libs/isString'
 import { SECONDARY_ERROR } from '@redesign-system/theme/libs'
 
 import { FormCheckboxInterface } from './formCheckbox.types'

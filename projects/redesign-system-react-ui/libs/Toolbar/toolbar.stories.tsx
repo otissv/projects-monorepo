@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react'
-import { ContentCopyIcon } from '@redesign-system/react-material-icons/ContentCopyIcon'
-import { DeleteIcon } from '@redesign-system/react-material-icons/DeleteIcon'
-import { DownloadIcon } from '@redesign-system/react-material-icons/DownloadIcon'
-import { FileDocumentEditIcon } from '@redesign-system/react-material-icons/FileDocumentEditIcon'
-import { PlusIcon } from '@redesign-system/react-material-icons/PlusIcon'
+import { ContentCopyIcon } from '@redesign-system/react-material-icons/libs/ContentCopyIcon'
+import { DeleteIcon } from '@redesign-system/react-material-icons/libs/DeleteIcon'
+import { DownloadIcon } from '@redesign-system/react-material-icons/libs/DownloadIcon'
+import { FileDocumentEditIcon } from '@redesign-system/react-material-icons/libs/FileDocumentEditIcon'
+import { PlusIcon } from '@redesign-system/react-material-icons/libs/PlusIcon'
 
-import { FormatAlignCenterIcon } from '@redesign-system/react-material-icons/FormatAlignCenterIcon'
-import { FormatAlignLeftIcon } from '@redesign-system/react-material-icons/FormatAlignLeftIcon'
-import { FormatAlignRightIcon } from '@redesign-system/react-material-icons/FormatAlignRightIcon'
+import { FormatAlignCenterIcon } from '@redesign-system/react-material-icons/libs/FormatAlignCenterIcon'
+import { FormatAlignLeftIcon } from '@redesign-system/react-material-icons/libs/FormatAlignLeftIcon'
+import { FormatAlignRightIcon } from '@redesign-system/react-material-icons/libs/FormatAlignRightIcon'
 
 import { ThemeProvider } from '@redesign-system/react/libs'
 import { Toolbar } from './Toolbar'

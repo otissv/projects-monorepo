@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react'
 import { ThemeProvider } from '@redesign-system/react/libs'
-import { HomeIcon } from '@redesign-system/react-material-icons/HomeIcon'
+import { HomeIcon } from '@redesign-system/react-material-icons/libs/HomeIcon'
 
 import { ButtonIcon } from './ButtonIcon'
 import { Box } from '../Box'

@@ -14,7 +14,7 @@ importers:
       lint-staged: 13.0.1
     devDependencies:
       eslint-config-custom: link:configs/eslint-config-custom
-      prettier: 2.7.0
+      prettier: 2.7.1
       turbo: 1.2.16
 
   configs/eslint-config-custom:
@@ -304,7 +304,7 @@ importers:
       '@babel/core': ^7.18.5
       '@redesign-system/react': workspace:*
       '@redesign-system/react-material-icons': workspace:*
-      '@redesign-system/theme': ^0.1.0
+      '@redesign-system/theme': workspace:*
       '@storybook/addon-a11y': ^6.5.9
       '@storybook/addon-actions': ^6.5.9
       '@storybook/addon-docs': ^6.5.9
@@ -324,6 +324,7 @@ importers:
       babel-loader: ^8.2.5
       c-ufunc: workspace:*
       cuid: ^2.1.8
+      eslint-config-custom: workspace:*
       eslint-config-prettier: ^8.5.0
       eslint-plugin-disable: ^2.0.3
       eslint-plugin-functional: ^4.2.1
@@ -342,6 +343,7 @@ importers:
       stylis: ^4.1.1
       ts-loader: ^9.3.0
       ts-node: ^10.8.1
+      tsconfig: workspace:*
       tslib: ^2.4.0
       typescript: ^4.7.3
     dependencies:
@@ -371,6 +373,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.28.0_7yumg2qjgbp7maccqlfhx2vudu
       '@typescript-eslint/parser': 5.28.0_ud6rd4xtew5bv4yhvkvu24pzm4
       babel-loader: 8.2.5_te6ollfzjcco6mbxjl755ucqke
+      eslint-config-custom: link:../../configs/eslint-config-custom
       eslint-config-prettier: 8.5.0_eslint@8.17.0
       eslint-plugin-disable: 2.0.3_eslint@8.17.0
       eslint-plugin-functional: 4.2.1_ud6rd4xtew5bv4yhvkvu24pzm4
@@ -387,6 +390,7 @@ importers:
       scripts: link:../scripts
       ts-loader: 9.3.0_jy5w4alwxi2du2dgjfsq7k3iza
       ts-node: 10.8.1_wpmar7q2se7jlmxe5wggegnl2m
+      tsconfig: link:../../configs/tsconfig
       tslib: 2.4.0
       typescript: 4.7.3
 
@@ -2720,7 +2724,7 @@ packages:
       react-refresh: 0.11.0
       schema-utils: 3.1.1
       source-map: 0.7.3
-      webpack: 5.73.0_@swc+core@1.2.203
+      webpack: 5.73.0
     dev: true
 
   /@rushstack/eslint-patch/1.1.3:
@@ -3496,7 +3500,7 @@ packages:
       typescript: 4.7.3
       unfetch: 4.2.0
       util-deprecate: 1.0.2
-      webpack: 5.73.0_@swc+core@1.2.203
+      webpack: 5.73.0
     dev: true
 
   /@storybook/core-client/6.5.9_n5ct3qlnb5jwthwkd4vcxxvgki:
@@ -4179,7 +4183,7 @@ packages:
       react-docgen-typescript: 2.2.2_typescript@4.7.3
       tslib: 2.4.0
       typescript: 4.7.3
-      webpack: 5.73.0_@swc+core@1.2.203
+      webpack: 5.73.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5878,7 +5882,7 @@ packages:
       loader-utils: 2.0.2
       make-dir: 3.1.0
       schema-utils: 2.7.1
-      webpack: 5.73.0_@swc+core@1.2.203
+      webpack: 5.73.0
     dev: true
 
   /babel-plugin-add-react-displayname/0.0.5:
@@ -12053,6 +12057,12 @@ packages:
     hasBin: true
     dev: true
 
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
   /pretty-error/2.1.2:
     resolution: {integrity: sha512-EY5oDzmsX5wvuynAByrmY0P0hcp+QpnAKbJng2A2MPjVKXCxrDSUkzghVJ4ZGPIv+JC4gX8fPUWscC0RtjsWGw==}
     dependencies:
@@ -14005,7 +14015,7 @@ packages:
       micromatch: 4.0.5
       semver: 7.3.7
       typescript: 4.7.3
-      webpack: 5.73.0_@swc+core@1.2.203
+      webpack: 5.73.0
     dev: true
 
   /ts-node/10.8.1_4b76yrgyjjqnshxcxxiuv7rt4e:
