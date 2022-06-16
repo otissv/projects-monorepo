@@ -1,4 +1,4 @@
-import { isFunction } from 'c-c-ufunc/libs/isFunction'
+import { isFunction } from 'c-ufunc/libs/isFunction'
 
 import { IconInterface } from './icon.types'
 import {

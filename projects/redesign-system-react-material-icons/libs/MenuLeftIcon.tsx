@@ -1,16 +1,17 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign-system/react";
-    export const MenuLeftIcon: FC<IconInterface> = function MenuLeftIcon({
-      className,
-      ...propsRest
-    }) {
-      const classNames =  `MenuLeftIcon ${className}`;
-      return (
-        <Icon alt="MenuLeft" className={classNames} {...propsRest}>
-          <path d="M14,7L9,12L14,17V7Z" />
+import { Icon, IconInterface } from "@redesign-system/react/libs";
 
-        </Icon>
-      );
-    };
-    MenuLeftIcon.displayName = 'MenuLeftIcon';
-      
+export const MenuLeftIcon: FC<IconInterface> = ({
+  className,
+  ...propsRest
+}) => {
+  const classNames =  `MenuLeftIcon ${className}`;
+  return (
+    <Icon alt="MenuLeft" className={classNames} {...propsRest}>
+      <path d="M14,7L9,12L14,17V7Z" />
+
+    </Icon>
+  );
+};
+MenuLeftIcon.displayName = 'MenuLeftIcon';
+  

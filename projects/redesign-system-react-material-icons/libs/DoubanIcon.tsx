@@ -1,16 +1,17 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign-system/react";
-    export const DoubanIcon: FC<IconInterface> = function DoubanIcon({
-      className,
-      ...propsRest
-    }) {
-      const classNames =  `DoubanIcon ${className}`;
-      return (
-        <Icon alt="Douban" className={classNames} {...propsRest}>
-          <path d="M20,6H4V4H20V6M20,18V20H4V18H7.33L6.26,14H5V8H19V14H17.74L16.67,18H20M7,12H17V10H7V12M9.4,18H14.6L15.67,14H8.33L9.4,18Z" />
+import { Icon, IconInterface } from "@redesign-system/react/libs";
 
-        </Icon>
-      );
-    };
-    DoubanIcon.displayName = 'DoubanIcon';
-      
+export const DoubanIcon: FC<IconInterface> = ({
+  className,
+  ...propsRest
+}) => {
+  const classNames =  `DoubanIcon ${className}`;
+  return (
+    <Icon alt="Douban" className={classNames} {...propsRest}>
+      <path d="M20,6H4V4H20V6M20,18V20H4V18H7.33L6.26,14H5V8H19V14H17.74L16.67,18H20M7,12H17V10H7V12M9.4,18H14.6L15.67,14H8.33L9.4,18Z" />
+
+    </Icon>
+  );
+};
+DoubanIcon.displayName = 'DoubanIcon';
+  

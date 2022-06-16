@@ -6,6 +6,7 @@
     "target": "es5",
     "module": "commonjs",
     "lib": ["dom", "esnext"],
+    "allowJs": true,
     "composite": false,
     "forceConsistentCasingInFileNames": true,
     "inlineSources": false,

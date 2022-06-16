@@ -37,20 +37,21 @@ const makeReactIcon = async ({
   try {
     const componentName = `${fileName}Icon`
     const componentString = `import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign-system/react";
-    export const ${componentName}: FC<IconInterface> = n ${componentName}({
-      className,
-      ...propsRest
-    }) {
-      const classNames =  \`${componentName} \${className}\`;
-      return (
-        <Icon alt="${fileName}" className={classNames} {...propsRest}>
-          ${data}
-        </Icon>
-      );
-    };
-    ${componentName}.displayName = '${componentName}';
-      `
+import { Icon, IconInterface } from "@redesign-system/react/libs";
+
+export const ${componentName}: FC<IconInterface> = ({
+  className,
+  ...propsRest
+}) => {
+  const classNames =  \`${componentName} \${className}\`;
+  return (
+    <Icon alt="${fileName}" className={classNames} {...propsRest}>
+      ${data}
+    </Icon>
+  );
+};
+${componentName}.displayName = '${componentName}';
+  `
     return {
       ...props,
       fileName: `${fileName}Icon`,

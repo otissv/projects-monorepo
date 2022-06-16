@@ -24,7 +24,7 @@ const writeDefinitions = async (path: string) => {
   const { fileName } = getPathsInfo(path)
 
   const data = `import { FC } from "react";
-import { IconInterface } from "@redesign-system/react";
+import { IconInterface } from "@redesign-system/react/libs";
 export declare const ${fileName}Icon: FC<IconInterface>;`
 
   writeFile(`./build/${fileName}Icon.d.ts`, data, { flag: 'w' }).catch(

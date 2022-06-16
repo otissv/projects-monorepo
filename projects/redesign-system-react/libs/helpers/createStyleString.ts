@@ -1,7 +1,7 @@
 /* eslint-plugin-disable functional */
 import { CssObjectType } from '@redesign-system/theme/libs'
 import { aliases } from '@redesign-system/theme/libs/utility/utility.alias'
-import { memorize } from 'c-c-ufunc/libs/memorize'
+import { memorize } from 'c-ufunc/libs/memorize'
 import { unitlessKeys as unitless } from './unitless'
 
 type cursorType = {

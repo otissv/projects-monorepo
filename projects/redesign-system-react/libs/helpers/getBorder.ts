@@ -1,4 +1,4 @@
-import { toUpperFirst } from 'c-c-ufunc/libs/toUpperFirst'
+import { toUpperFirst } from 'c-ufunc/libs/toUpperFirst'
 
 export function getBorder(
   border: { readonly [key: string]: string },

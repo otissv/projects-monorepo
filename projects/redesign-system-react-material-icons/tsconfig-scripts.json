@@ -1,0 +1,23 @@
+{
+  "extends": "tsconfig/lib.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "rootDir": ".",
+    "outDir": "build",
+    "resolveJsonModule": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules"
+  ],
+  "paths": {
+    "*": [
+      "node_modules/*"
+    ]
+  }
+}

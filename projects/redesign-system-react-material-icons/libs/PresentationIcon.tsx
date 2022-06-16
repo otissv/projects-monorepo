@@ -1,16 +1,17 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign-system/react";
-    export const PresentationIcon: FC<IconInterface> = function PresentationIcon({
-      className,
-      ...propsRest
-    }) {
-      const classNames =  `PresentationIcon ${className}`;
-      return (
-        <Icon alt="Presentation" className={classNames} {...propsRest}>
-          <path d="M2,3H10A2,2 0 0,1 12,1A2,2 0 0,1 14,3H22V5H21V16H15.25L17,22H15L13.25,16H10.75L9,22H7L8.75,16H3V5H2V3M5,5V14H19V5H5Z" />
+import { Icon, IconInterface } from "@redesign-system/react/libs";
 
-        </Icon>
-      );
-    };
-    PresentationIcon.displayName = 'PresentationIcon';
-      
+export const PresentationIcon: FC<IconInterface> = ({
+  className,
+  ...propsRest
+}) => {
+  const classNames =  `PresentationIcon ${className}`;
+  return (
+    <Icon alt="Presentation" className={classNames} {...propsRest}>
+      <path d="M2,3H10A2,2 0 0,1 12,1A2,2 0 0,1 14,3H22V5H21V16H15.25L17,22H15L13.25,16H10.75L9,22H7L8.75,16H3V5H2V3M5,5V14H19V5H5Z" />
+
+    </Icon>
+  );
+};
+PresentationIcon.displayName = 'PresentationIcon';
+  

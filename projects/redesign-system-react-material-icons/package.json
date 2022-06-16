@@ -3,15 +3,15 @@
   "name": "@redesign-system/react-material-icons",
   "version": "0.1.0",
   "license": "MIT",
-  "main": "build/index.js",
-  "typings": "build/index.d.ts",
+  "main": "build/libs/index.js",
+  "typings": "build/libs/index.d.ts",
   "author": "Otis Virginie",
   "module": "build/redesign-material-icons.esm.js",
   "files": [
     "build"
   ],
   "scripts": {
-    "build": "npm run clean && mkdir build && ts-node ./scripts",
+    "build": "npm run clean && mkdir build && ts-node --project tsconfig-scripts.json ./scripts",
     "generate": "swc libs -d build && swc libs/index.tsx -o build/index.js",
     "test": "jest",
     "test:coverage": "npm run build && jest --coverage",
@@ -61,6 +61,7 @@
     "react-dom": "^18.2.0",
     "rimraf": "^3.0.2",
     "sleep": "^6.3.0",
+    "to-words": "^3.2.0",
     "ts-loader": "^9.3.0",
     "ts-node": "^10.8.1",
     "tsconfig": "workspace:*",

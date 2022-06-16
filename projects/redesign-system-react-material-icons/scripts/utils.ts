@@ -1,7 +1,7 @@
 import * as childProcess from 'node:child_process'
 import * as fs from 'node:fs'
 import * as util from 'node:util'
-import T2W from 'numbers2words'
+import { ToWords } from 'to-words'
 import { toCamel, toUpperFirst } from 'c-ufunc/libs'
 import mkdirp from 'mkdirp'
 import rimraf from 'rimraf'
@@ -23,20 +23,18 @@ export const writeFileToDest = ({
 }) => writeFile(`${dest}/${fileName}.tsx`, data, { flag: 'w' })
 
 export const errorHandler = (error: unknown) => {
-  // eslint-disable-next-line functional/no-expression-statement
-  process.stdout.write(error as string)
-  // eslint-disable-next-line functional/no-expression-statement
+  console.error(error)
   process.exit(1)
 }
 
 export const fileNameBeginsWithNumberToWord = (file: string) => {
-  const translator = new T2W('EN_US')
+  const toWords = new ToWords({ localeCode: 'en-US' })
 
   const fileNameBeginsWithNumber = file.match(/^(\d)(.*)/)
 
   const fileName = (file: string) =>
     fileNameBeginsWithNumber
-      ? (file = `${translator.toWords(
+      ? (file = `${toWords.convert(
           parseInt(fileNameBeginsWithNumber[1], 10)
         )}-${fileNameBeginsWithNumber[2]}`)
       : file

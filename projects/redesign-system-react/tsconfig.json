@@ -7,7 +7,8 @@
   },
   "include": [
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "types/*",
   ],
   "exclude": [
     "dist",
@@ -16,6 +17,7 @@
   ],
   "paths": {
     "*": [
+      "types/*",
       "node_modules/*",
     ]
   },

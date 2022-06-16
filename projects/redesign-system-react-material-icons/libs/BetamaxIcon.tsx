@@ -1,16 +1,17 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign-system/react";
-    export const BetamaxIcon: FC<IconInterface> = function BetamaxIcon({
-      className,
-      ...propsRest
-    }) {
-      const classNames =  `BetamaxIcon ${className}`;
-      return (
-        <Icon alt="Betamax" className={classNames} {...propsRest}>
-          <path d="M4,5A2,2 0 0,0 2,7V17A2,2 0 0,0 4,19H20A2,2 0 0,0 22,17V7A2,2 0 0,0 20,5H4M8,9A4,4 0 0,1 12,13A4,4 0 0,1 8,17A4,4 0 0,1 4,13A4,4 0 0,1 8,9M13,9H20V17H13V9M8,11A2,2 0 0,0 6,13A2,2 0 0,0 8,15A2,2 0 0,0 10,13A2,2 0 0,0 8,11Z" />
+import { Icon, IconInterface } from "@redesign-system/react/libs";
 
-        </Icon>
-      );
-    };
-    BetamaxIcon.displayName = 'BetamaxIcon';
-      
+export const BetamaxIcon: FC<IconInterface> = ({
+  className,
+  ...propsRest
+}) => {
+  const classNames =  `BetamaxIcon ${className}`;
+  return (
+    <Icon alt="Betamax" className={classNames} {...propsRest}>
+      <path d="M4,5A2,2 0 0,0 2,7V17A2,2 0 0,0 4,19H20A2,2 0 0,0 22,17V7A2,2 0 0,0 20,5H4M8,9A4,4 0 0,1 12,13A4,4 0 0,1 8,17A4,4 0 0,1 4,13A4,4 0 0,1 8,9M13,9H20V17H13V9M8,11A2,2 0 0,0 6,13A2,2 0 0,0 8,15A2,2 0 0,0 10,13A2,2 0 0,0 8,11Z" />
+
+    </Icon>
+  );
+};
+BetamaxIcon.displayName = 'BetamaxIcon';
+  

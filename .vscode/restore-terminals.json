@@ -1,0 +1,71 @@
+{
+  "artificialDelayMilliseconds": 300,
+  "keepExistingTerminalsOpen": false,
+  "runOnStartup": true,
+  "terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "root",
+          "commands": ["git status"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "c-ufunc",
+          "commands": ["cd projects/c-ufunc"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "otissv",
+          "commands": ["cd projects/otissv"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "react",
+          "commands": ["cd projects/redesign-system-react"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "material-icons",
+          "commands": ["cd projects/redesign-system-react-material-icons"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "react-ui",
+          "commands": ["cd projects/redesign-system-react-ui"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "theme",
+          "commands": ["cd projects/redesign-system-theme"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "scripts",
+          "commands": ["cd projects/scripts"]
+        }
+      ]
+    }
+  ]
+}

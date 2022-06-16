@@ -1,7 +1,7 @@
 import React, { FC, createElement, cloneElement } from 'react'
 import { css as emotionCss } from '@emotion/css'
 import { animate } from 'popmotion'
-import { isFunction } from 'c-c-ufunc/libs/isFunction'
+import { isFunction } from 'c-ufunc/libs/isFunction'
 
 import {
   BaseInterface,

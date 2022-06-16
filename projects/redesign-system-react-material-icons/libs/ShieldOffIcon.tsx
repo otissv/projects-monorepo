@@ -1,16 +1,17 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign-system/react";
-    export const ShieldOffIcon: FC<IconInterface> = function ShieldOffIcon({
-      className,
-      ...propsRest
-    }) {
-      const classNames =  `ShieldOffIcon ${className}`;
-      return (
-        <Icon alt="ShieldOff" className={classNames} {...propsRest}>
-          <path d="M1,4.27L2.28,3L20.5,21.22L19.23,22.5L17,20.25C15.57,21.57 13.87,22.54 12,23C6.84,21.74 3,16.55 3,11V6.27L1,4.27M12,1L21,5V11C21,13.28 20.35,15.5 19.23,17.41L5.65,3.82L12,1Z" />
+import { Icon, IconInterface } from "@redesign-system/react/libs";
 
-        </Icon>
-      );
-    };
-    ShieldOffIcon.displayName = 'ShieldOffIcon';
-      
+export const ShieldOffIcon: FC<IconInterface> = ({
+  className,
+  ...propsRest
+}) => {
+  const classNames =  `ShieldOffIcon ${className}`;
+  return (
+    <Icon alt="ShieldOff" className={classNames} {...propsRest}>
+      <path d="M1,4.27L2.28,3L20.5,21.22L19.23,22.5L17,20.25C15.57,21.57 13.87,22.54 12,23C6.84,21.74 3,16.55 3,11V6.27L1,4.27M12,1L21,5V11C21,13.28 20.35,15.5 19.23,17.41L5.65,3.82L12,1Z" />
+
+    </Icon>
+  );
+};
+ShieldOffIcon.displayName = 'ShieldOffIcon';
+  

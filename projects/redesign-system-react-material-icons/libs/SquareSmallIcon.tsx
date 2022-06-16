@@ -1,16 +1,17 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign-system/react";
-    export const SquareSmallIcon: FC<IconInterface> = function SquareSmallIcon({
-      className,
-      ...propsRest
-    }) {
-      const classNames =  `SquareSmallIcon ${className}`;
-      return (
-        <Icon alt="SquareSmall" className={classNames} {...propsRest}>
-          <path d="M10,14V10H14V14H10Z" />
+import { Icon, IconInterface } from "@redesign-system/react/libs";
 
-        </Icon>
-      );
-    };
-    SquareSmallIcon.displayName = 'SquareSmallIcon';
-      
+export const SquareSmallIcon: FC<IconInterface> = ({
+  className,
+  ...propsRest
+}) => {
+  const classNames =  `SquareSmallIcon ${className}`;
+  return (
+    <Icon alt="SquareSmall" className={classNames} {...propsRest}>
+      <path d="M10,14V10H14V14H10Z" />
+
+    </Icon>
+  );
+};
+SquareSmallIcon.displayName = 'SquareSmallIcon';
+  

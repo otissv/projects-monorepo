@@ -1,16 +1,17 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign-system/react";
-    export const AlphaLIcon: FC<IconInterface> = function AlphaLIcon({
-      className,
-      ...propsRest
-    }) {
-      const classNames =  `AlphaLIcon ${className}`;
-      return (
-        <Icon alt="AlphaL" className={classNames} {...propsRest}>
-          <path d="M9,7V17H15V15H11V7H9Z" />
+import { Icon, IconInterface } from "@redesign-system/react/libs";
 
-        </Icon>
-      );
-    };
-    AlphaLIcon.displayName = 'AlphaLIcon';
-      
+export const AlphaLIcon: FC<IconInterface> = ({
+  className,
+  ...propsRest
+}) => {
+  const classNames =  `AlphaLIcon ${className}`;
+  return (
+    <Icon alt="AlphaL" className={classNames} {...propsRest}>
+      <path d="M9,7V17H15V15H11V7H9Z" />
+
+    </Icon>
+  );
+};
+AlphaLIcon.displayName = 'AlphaLIcon';
+  

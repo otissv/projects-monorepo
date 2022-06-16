@@ -1,16 +1,17 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign-system/react";
-    export const ToyBrickIcon: FC<IconInterface> = function ToyBrickIcon({
-      className,
-      ...propsRest
-    }) {
-      const classNames =  `ToyBrickIcon ${className}`;
-      return (
-        <Icon alt="ToyBrick" className={classNames} {...propsRest}>
-          <path d="M19 6V5A2 2 0 0 0 17 3H15A2 2 0 0 0 13 5V6H11V5A2 2 0 0 0 9 3H7A2 2 0 0 0 5 5V6H3V20H21V6Z" />
+import { Icon, IconInterface } from "@redesign-system/react/libs";
 
-        </Icon>
-      );
-    };
-    ToyBrickIcon.displayName = 'ToyBrickIcon';
-      
+export const ToyBrickIcon: FC<IconInterface> = ({
+  className,
+  ...propsRest
+}) => {
+  const classNames =  `ToyBrickIcon ${className}`;
+  return (
+    <Icon alt="ToyBrick" className={classNames} {...propsRest}>
+      <path d="M19 6V5A2 2 0 0 0 17 3H15A2 2 0 0 0 13 5V6H11V5A2 2 0 0 0 9 3H7A2 2 0 0 0 5 5V6H3V20H21V6Z" />
+
+    </Icon>
+  );
+};
+ToyBrickIcon.displayName = 'ToyBrickIcon';
+  

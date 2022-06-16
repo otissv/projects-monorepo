@@ -3955,11 +3955,11 @@ import { PowershellIcon } from './PowershellIcon'
 import { PrescriptionIcon } from './PrescriptionIcon'
 import { PresentationPlayIcon } from './PresentationPlayIcon'
 import { PresentationIcon } from './PresentationIcon'
-import { Printer3DNozzleAlertOutlineIcon } from './Printer3DNozzleAlertOutlineIcon'
-import { Printer3DNozzleAlertIcon } from './Printer3DNozzleAlertIcon'
-import { Printer3DNozzleOutlineIcon } from './Printer3DNozzleOutlineIcon'
-import { Printer3DNozzleIcon } from './Printer3DNozzleIcon'
-import { Printer3DIcon } from './Printer3DIcon'
+import { Printer3dNozzleAlertOutlineIcon } from './Printer3dNozzleAlertOutlineIcon'
+import { Printer3dNozzleAlertIcon } from './Printer3dNozzleAlertIcon'
+import { Printer3dNozzleOutlineIcon } from './Printer3dNozzleOutlineIcon'
+import { Printer3dNozzleIcon } from './Printer3dNozzleIcon'
+import { Printer3dIcon } from './Printer3dIcon'
 import { PrinterAlertIcon } from './PrinterAlertIcon'
 import { PrinterCheckIcon } from './PrinterCheckIcon'
 import { PrinterEyeIcon } from './PrinterEyeIcon'
@@ -4184,8 +4184,8 @@ import { RomanNumeral8Icon } from './RomanNumeral8Icon'
 import { RomanNumeral9Icon } from './RomanNumeral9Icon'
 import { RoomServiceOutlineIcon } from './RoomServiceOutlineIcon'
 import { RoomServiceIcon } from './RoomServiceIcon'
-import { Rotate3DVariantIcon } from './Rotate3DVariantIcon'
-import { Rotate3DIcon } from './Rotate3DIcon'
+import { Rotate3dVariantIcon } from './Rotate3dVariantIcon'
+import { Rotate3dIcon } from './Rotate3dIcon'
 import { RotateLeftVariantIcon } from './RotateLeftVariantIcon'
 import { RotateLeftIcon } from './RotateLeftIcon'
 import { RotateOrbitIcon } from './RotateOrbitIcon'
@@ -4419,10 +4419,10 @@ import { SignDirectionRemoveIcon } from './SignDirectionRemoveIcon'
 import { SignDirectionIcon } from './SignDirectionIcon'
 import { SignRealEstateIcon } from './SignRealEstateIcon'
 import { SignTextIcon } from './SignTextIcon'
-import { Signal2GIcon } from './Signal2GIcon'
-import { Signal3GIcon } from './Signal3GIcon'
-import { Signal4GIcon } from './Signal4GIcon'
-import { Signal5GIcon } from './Signal5GIcon'
+import { Signal2gIcon } from './Signal2gIcon'
+import { Signal3gIcon } from './Signal3gIcon'
+import { Signal4gIcon } from './Signal4gIcon'
+import { Signal5gIcon } from './Signal5gIcon'
 import { SignalCellular1Icon } from './SignalCellular1Icon'
 import { SignalCellular2Icon } from './SignalCellular2Icon'
 import { SignalCellular3Icon } from './SignalCellular3Icon'
@@ -5102,10 +5102,10 @@ import { VectorUnionIcon } from './VectorUnionIcon'
 import { VhsIcon } from './VhsIcon'
 import { VibrateOffIcon } from './VibrateOffIcon'
 import { VibrateIcon } from './VibrateIcon'
-import { Video3DOffIcon } from './Video3DOffIcon'
-import { Video3DVariantIcon } from './Video3DVariantIcon'
-import { Video3DIcon } from './Video3DIcon'
-import { Video4KBoxIcon } from './Video4KBoxIcon'
+import { Video3dOffIcon } from './Video3dOffIcon'
+import { Video3dVariantIcon } from './Video3dVariantIcon'
+import { Video3dIcon } from './Video3dIcon'
+import { Video4kBoxIcon } from './Video4kBoxIcon'
 import { VideoAccountIcon } from './VideoAccountIcon'
 import { VideoBoxOffIcon } from './VideoBoxOffIcon'
 import { VideoBoxIcon } from './VideoBoxIcon'
@@ -9333,11 +9333,11 @@ PowershellIcon,
 PrescriptionIcon,
 PresentationPlayIcon,
 PresentationIcon,
-Printer3DNozzleAlertOutlineIcon,
-Printer3DNozzleAlertIcon,
-Printer3DNozzleOutlineIcon,
-Printer3DNozzleIcon,
-Printer3DIcon,
+Printer3dNozzleAlertOutlineIcon,
+Printer3dNozzleAlertIcon,
+Printer3dNozzleOutlineIcon,
+Printer3dNozzleIcon,
+Printer3dIcon,
 PrinterAlertIcon,
 PrinterCheckIcon,
 PrinterEyeIcon,
@@ -9562,8 +9562,8 @@ RomanNumeral8Icon,
 RomanNumeral9Icon,
 RoomServiceOutlineIcon,
 RoomServiceIcon,
-Rotate3DVariantIcon,
-Rotate3DIcon,
+Rotate3dVariantIcon,
+Rotate3dIcon,
 RotateLeftVariantIcon,
 RotateLeftIcon,
 RotateOrbitIcon,
@@ -9797,10 +9797,10 @@ SignDirectionRemoveIcon,
 SignDirectionIcon,
 SignRealEstateIcon,
 SignTextIcon,
-Signal2GIcon,
-Signal3GIcon,
-Signal4GIcon,
-Signal5GIcon,
+Signal2gIcon,
+Signal3gIcon,
+Signal4gIcon,
+Signal5gIcon,
 SignalCellular1Icon,
 SignalCellular2Icon,
 SignalCellular3Icon,
@@ -10480,10 +10480,10 @@ VectorUnionIcon,
 VhsIcon,
 VibrateOffIcon,
 VibrateIcon,
-Video3DOffIcon,
-Video3DVariantIcon,
-Video3DIcon,
-Video4KBoxIcon,
+Video3dOffIcon,
+Video3dVariantIcon,
+Video3dIcon,
+Video4kBoxIcon,
 VideoAccountIcon,
 VideoBoxOffIcon,
 VideoBoxIcon,

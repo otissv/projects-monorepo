@@ -248,6 +248,7 @@ importers:
       react-dom: ^18.2.0
       rimraf: ^3.0.2
       sleep: ^6.3.0
+      to-words: ^3.2.0
       ts-loader: ^9.3.0
       ts-node: ^10.8.1
       tsconfig: workspace:*
@@ -291,6 +292,7 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       rimraf: 3.0.2
       sleep: 6.3.0
+      to-words: 3.2.0
       ts-loader: 9.3.0_jy5w4alwxi2du2dgjfsq7k3iza
       ts-node: 10.8.1_4b76yrgyjjqnshxcxxiuv7rt4e
       tsconfig: link:../../configs/tsconfig
@@ -13887,6 +13889,11 @@ packages:
       extend-shallow: 3.0.2
       regex-not: 1.0.2
       safe-regex: 1.1.0
+    dev: true
+
+  /to-words/3.2.0:
+    resolution: {integrity: sha512-ikoKM8VQ1/uK5P74Nl6WcdKFTmYRVGlpcxm7BXWqG1+MwdtSJ285iir2P4rVrljTZbRmzIYytRcNv/37Pqb5kg==}
+    engines: {node: '>=12.0.0'}
     dev: true
 
   /toggle-selection/1.0.6:
