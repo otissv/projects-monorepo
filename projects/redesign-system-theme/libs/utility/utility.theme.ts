@@ -116,7 +116,7 @@ import {
 
 export function utilityTheme<
   P extends PartialThemeInterface,
-  T extends PartialUtilityInterface,
+  T extends PartialUtilityInterface
 >(theme: P): T {
   const maybeTheme = maybe({})
 

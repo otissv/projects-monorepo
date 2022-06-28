@@ -37,7 +37,7 @@ export const chain = <To>(
   exec: <Value>(initialValue: Value): To => {
     return fns.reduce(
       (previousValue: any, fn: Function) => fn(previousValue),
-      initialValue,
+      initialValue
     )
   },
 })

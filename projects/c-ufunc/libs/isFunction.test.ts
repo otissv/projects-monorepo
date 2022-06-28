@@ -7,7 +7,7 @@ describe('isError', () => {
     expect(
       isFunction(function () {
         return undefined
-      }),
+      })
     ).toBe(true)
     expect(isFunction(() => undefined)).toBe(true)
   })

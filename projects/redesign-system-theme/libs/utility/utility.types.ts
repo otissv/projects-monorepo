@@ -26,10 +26,10 @@ export interface UtilityInterface {
    * Color
    */
   readonly color: (
-    color: ColorInterface,
+    color: ColorInterface
   ) => (value: string) => { readonly color: ColorTypes }
   readonly cl: (
-    color: ColorInterface,
+    color: ColorInterface
   ) => (value: string) => { readonly color: ColorTypes }
 
   /*
@@ -44,13 +44,13 @@ export interface UtilityInterface {
    * Background
    */
   readonly background: (
-    color: ColorInterface,
+    color: ColorInterface
   ) => (background: string) => { readonly background: string }
   readonly bg: (
-    color: ColorInterface,
+    color: ColorInterface
   ) => (background: string) => { readonly background: string }
   readonly backgroundAttachment: (
-    backgroundAttachment: BackgroundAttachmentTypes,
+    backgroundAttachment: BackgroundAttachmentTypes
   ) => { readonly backgroundAttachment: BackgroundAttachmentTypes }
   readonly bga: (backgroundAttachment: BackgroundAttachmentTypes) => {
     readonly backgroundAttachment: BackgroundAttachmentTypes
@@ -62,13 +62,13 @@ export interface UtilityInterface {
     readonly backgroundClip: BackgroundClipTypes
   }
   readonly backgroundColor: (
-    color: ColorInterface,
+    color: ColorInterface
   ) => (backgroundColor: ColorTypes) => { readonly backgroundColor: ColorTypes }
   readonly bgc: (
-    color: ColorInterface,
+    color: ColorInterface
   ) => (background: string) => { readonly background: ColorTypes }
   readonly backgroundPosition: (
-    backgroundPosition: BackgroundPositionTypes,
+    backgroundPosition: BackgroundPositionTypes
   ) => { readonly backgroundPosition: BackgroundPositionTypes }
   readonly bgp: (backgroundPosition: BackgroundPositionTypes) => {
     readonly backgroundPosition: BackgroundPositionTypes
@@ -96,19 +96,19 @@ export interface UtilityInterface {
    * Border
    */
   readonly border: (
-    border: BorderInterface,
+    border: BorderInterface
   ) => (border: string) => { readonly border: string }
   readonly borderBottom: (
-    border: BorderInterface,
+    border: BorderInterface
   ) => (borderBottom: string) => { readonly borderBottom: string }
   readonly borderLeft: (
-    border: BorderInterface,
+    border: BorderInterface
   ) => (borderLeft: string) => { readonly borderLeft: string }
   readonly borderRight: (
-    border: BorderInterface,
+    border: BorderInterface
   ) => (borderRight: string) => { readonly borderRight: string }
   readonly borderTop: (
-    border: BorderInterface,
+    border: BorderInterface
   ) => (borderTop: string) => { readonly borderTop: string }
   readonly borderX: (border: BorderInterface) => (value: string) => {
     readonly borderRight: string
@@ -122,25 +122,25 @@ export interface UtilityInterface {
     readonly borderWidth: string
   }
   readonly borderColor: (
-    color: ColorInterface,
+    color: ColorInterface
   ) => (borderColor: ColorTypes) => { readonly borderColor: ColorTypes }
   readonly borderStyle: (borderStyle: BorderStyleTypes) => {
     readonly borderStyle: BorderStyleTypes
   }
   readonly bd: (
-    border: BorderInterface,
+    border: BorderInterface
   ) => (border: string) => { readonly border: string }
   readonly bdb: (
-    border: BorderInterface,
+    border: BorderInterface
   ) => (borderBottom: string) => { readonly borderBottom: string }
   readonly bdl: (
-    border: BorderInterface,
+    border: BorderInterface
   ) => (borderLeft: string) => { readonly borderLeft: string }
   readonly bdr: (
-    border: BorderInterface,
+    border: BorderInterface
   ) => (borderRight: string) => { readonly borderRight: string }
   readonly bdt: (
-    border: BorderInterface,
+    border: BorderInterface
   ) => (borderTop: string) => { readonly borderTop: string }
   readonly bdx: (border: BorderInterface) => (value: string) => {
     readonly borderRight: string
@@ -152,26 +152,26 @@ export interface UtilityInterface {
   }
   readonly bdw: (borderWidth: string) => { readonly borderWidth: string }
   readonly bdc: (
-    color: ColorInterface,
+    color: ColorInterface
   ) => (borderColor: ColorTypes) => { readonly borderColor: ColorTypes }
   readonly bds: (bds: BorderStyleTypes) => {
     readonly borderStyle: BorderStyleTypes
   }
 
   readonly radius: (
-    radius: RadiusInterface,
+    radius: RadiusInterface
   ) => (borderRadius: string) => { readonly borderRadius: string }
   readonly borderBottomRadius: (
-    radius: RadiusInterface,
+    radius: RadiusInterface
   ) => (borderBottomRadius: string) => { readonly borderBottomRadius: string }
   readonly borderLeftRadius: (
-    radius: RadiusInterface,
+    radius: RadiusInterface
   ) => (borderLeftRadius: string) => { readonly borderLeftRadius: string }
   readonly borderRightRadius: (
-    radius: RadiusInterface,
+    radius: RadiusInterface
   ) => (borderRightRadius: string) => { readonly borderRightRadius: string }
   readonly borderTopRadius: (
-    radius: RadiusInterface,
+    radius: RadiusInterface
   ) => (borderTopRadius: string) => { readonly borderTopRadius: string }
   readonly borderXRadius: (radius: RadiusInterface) => (value: string) => {
     readonly borderRightRadius: string
@@ -182,19 +182,19 @@ export interface UtilityInterface {
     readonly borderBottomRadius: string
   }
   readonly r: (
-    radius: RadiusInterface,
+    radius: RadiusInterface
   ) => (borderRadius: string) => { readonly borderRadius: string }
   readonly rb: (
-    radius: RadiusInterface,
+    radius: RadiusInterface
   ) => (borderBottomRadius: string) => { readonly borderBottomRadius: string }
   readonly rl: (
-    radius: RadiusInterface,
+    radius: RadiusInterface
   ) => (borderLeftRadius: string) => { readonly borderLeftRadius: string }
   readonly rr: (
-    radius: RadiusInterface,
+    radius: RadiusInterface
   ) => (borderRightRadius: string) => { readonly borderRightRadius: string }
   readonly rt: (
-    radius: RadiusInterface,
+    radius: RadiusInterface
   ) => (borderTopRadius: string) => { readonly borderTopRadius: string }
   readonly rx: (radius: RadiusInterface) => (value: string) => {
     readonly borderRightRadius: string
@@ -349,10 +349,10 @@ export interface UtilityInterface {
    * Elevate/ Box Sizing
    */
   readonly elevate: (
-    elevate: ElevateInterface,
+    elevate: ElevateInterface
   ) => (boxShadow: string) => { readonly boxShadow: string }
   readonly e: (
-    elevate: ElevateInterface,
+    elevate: ElevateInterface
   ) => (boxShadow: string) => { readonly boxShadow: string }
   readonly boxSizing: (boxSizing: BoxSizingTypes) => {
     readonly boxSizing: BoxSizingTypes
@@ -450,28 +450,28 @@ export interface UtilityInterface {
    * Width / Height
    */
   readonly h: (
-    unit: UnitInterface,
+    unit: UnitInterface
   ) => (height: string) => { readonly height: string }
   readonly w: (
-    unit: UnitInterface,
+    unit: UnitInterface
   ) => (width: string) => { readonly width: string }
   readonly maxWidth: (
-    unit: UnitInterface,
+    unit: UnitInterface
   ) => (maxWidth: string) => { readonly maxWidth: string }
   readonly mw: (
-    unit: UnitInterface,
+    unit: UnitInterface
   ) => (maxWidth: string) => { readonly maxWidth: string }
   readonly maxHeight: (
-    unit: UnitInterface,
+    unit: UnitInterface
   ) => (maxHeight: string) => { readonly maxHeight: string }
   readonly mh: (
-    unit: UnitInterface,
+    unit: UnitInterface
   ) => (maxHeight: string) => { readonly maxHeight: string }
   readonly widthHeight: (
-    unit: UnitInterface,
+    unit: UnitInterface
   ) => (value: string) => { readonly width: string; readonly height: string }
   readonly wh: (
-    unit: UnitInterface,
+    unit: UnitInterface
   ) => (value: string) => { readonly width: string; readonly height: string }
 
   /*
@@ -539,7 +539,7 @@ export interface UtilityInterface {
    * Media
    */
   readonly mq: (
-    mediaQuires: MediaQueriesInterface,
+    mediaQuires: MediaQueriesInterface
   ) => (value: { readonly [key: string]: any }) => DynamicStyleFunction
 
   /*
@@ -607,32 +607,32 @@ export interface UtilityInterface {
    * Font
    */
   readonly fontSize: (
-    font: FontInterface,
+    font: FontInterface
   ) => (fontSize: string) => { readonly fontSize: string }
   readonly fs: (
-    font: FontInterface,
+    font: FontInterface
   ) => (fontSize: string) => { readonly fontSize: string }
   readonly lineHeight: (
-    font: FontInterface,
+    font: FontInterface
   ) => (lineHeight: string | number) => { readonly lineHeight: string | number }
   readonly lh: (
-    font: FontInterface,
+    font: FontInterface
   ) => (lineHeight: string | number) => { readonly lineHeight: string | number }
   readonly letterSpacing: (letterSpacing: string) => {
     readonly letterSpacing: string
   }
   readonly ls: (letterSpacing: string) => { readonly letterSpacing: string }
   readonly fontWeight: (
-    font: FontInterface,
+    font: FontInterface
   ) => (fontWeight: string | number) => { readonly fontWeight: string | number }
   readonly fw: (
-    font: FontInterface,
+    font: FontInterface
   ) => (fontWeight: string | number) => { readonly fontWeight: string | number }
   readonly fontFamily: (
-    font: FontInterface,
+    font: FontInterface
   ) => (fontFamily: FontFamilyTypes) => { readonly fontFamily: string }
   readonly ff: (
-    font: FontInterface,
+    font: FontInterface
   ) => (fontFamily: FontFamilyTypes) => { readonly fontFamily: string }
 
   /*

@@ -33,11 +33,11 @@ describe('bound', () => {
   it('should throw error values are not in the list', () => {
     expect(bound(days)('hello')('Monday')).toBeInstanceOf(Error)
     expect((bound(days)('hello')('Monday') as Error).message).toBe(
-      'hello is not a value in list',
+      'hello is not a value in list'
     )
     expect(bound(digits)(0)(1)).toBeInstanceOf(Error)
     expect((bound(digits)(0)(1) as Error).message).toBe(
-      '0 is not a value in list',
+      '0 is not a value in list'
     )
   })
 })

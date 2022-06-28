@@ -10,7 +10,7 @@ describe('isUrl', () => {
     expect(isUrl('http://foo.com/blah_blah_(wikipedia)_(again)')).toBe(true)
     expect(isUrl('http://www.example.com/wpstyle/?p=364')).toBe(true)
     expect(isUrl('https://www.example.com/foo/?bar=baz&inga=42&quux')).toBe(
-      true,
+      true
     )
     expect(isUrl('http://✪df.ws/123')).toBe(true)
     expect(isUrl('http://userid:password@example.com:8080')).toBe(true)
@@ -46,7 +46,7 @@ describe('isUrl', () => {
     expect(isUrl('http://www.stackoverflow.com.')).toBe(true)
     expect(isUrl('http://www.stackoverflow.com.')).toBe(true)
     expect(
-      isUrl('https://d1f4470da51b49289906b3d6cbd65074@app.getsentry.com/13176'),
+      isUrl('https://d1f4470da51b49289906b3d6cbd65074@app.getsentry.com/13176')
     ).toBe(true)
     // expect(isUrl("http://-.~_!$&'()*+,;=:%40:80%2f::::::@example.com")).toBe(
     //   true,

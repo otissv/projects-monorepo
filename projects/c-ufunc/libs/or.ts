@@ -14,7 +14,7 @@ const reducer =
       : reducer(conditions.slice(1, conditions.length))(value)(
           isFunction(conditions[0])
             ? (conditions[0] as any)(value)
-            : conditions[0],
+            : conditions[0]
         )
   }
 

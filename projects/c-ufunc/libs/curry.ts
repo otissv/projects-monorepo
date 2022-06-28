@@ -19,7 +19,7 @@
  * ```
  */
 export function curry<Args extends readonly any[], ReturnType>(
-  fn: (...args: Args) => ReturnType,
+  fn: (...args: Args) => ReturnType
 ): Curry<Args, ReturnType> {
   return ((...args: readonly any[]) => {
     if (args.length >= fn.length) {
@@ -40,7 +40,7 @@ https://stackoverflow.com/questions/65564650/typescript-type-safe-curry-function
 type Drop<
   N extends number,
   T extends readonly any[],
-  I extends readonly any[] = readonly [],
+  I extends readonly any[] = readonly []
 > = Length<I> extends N ? T : Drop<N, Tail<T>, Prepend<Head<T>, I>>
 
 // Add element E to array A (i.e Prepend<0, [1, 2]> = [0, 1, 2])

@@ -4,7 +4,7 @@ import { PartialThemeInterface } from '../theme'
 
 export function unitTheme<
   P extends PartialThemeInterface,
-  T extends PartialUnitInterface,
+  T extends PartialUnitInterface
 >(theme?: P): T {
   const unit = theme?.unit || {}
 

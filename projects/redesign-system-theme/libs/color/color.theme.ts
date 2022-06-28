@@ -23,7 +23,7 @@ function getDefaultColor(swatches: any) {
 
 export function colorTheme<
   P extends PartialThemeInterface,
-  T extends PartialColorInterface,
+  T extends PartialColorInterface
 >(theme?: P): T {
   const maybeTheme = maybe({})
   const hostSwatches: any = maybeTheme(theme?.swatches)

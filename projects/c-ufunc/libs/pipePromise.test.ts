@@ -11,18 +11,18 @@ describe('pipePromise', () => {
 
     expect(await pipePromise(toUpper)('Hello, World!')).toBe('HELLO, WORLD!')
     expect(await pipePromise(toUpper, toSnake)('Hello World!')).toBe(
-      'HELLO_WORLD!',
+      'HELLO_WORLD!'
     )
     expect(
-      await pipePromise(who('Universe'), toUpper, toSnake)('Hello World!'),
+      await pipePromise(who('Universe'), toUpper, toSnake)('Hello World!')
     ).toBe('HELLO_UNIVERSE!')
 
     expect(
       await pipePromise(
         who('Universe'),
         (string: string) => string.toUpperCase(),
-        toSnake,
-      )('Hello World!'),
+        toSnake
+      )('Hello World!')
     ).toBe('HELLO_UNIVERSE!')
   })
 

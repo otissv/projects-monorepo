@@ -21,7 +21,7 @@ export const clean =
     options: {
       readonly exclude?: any | readonly any[]
       readonly include?: any | readonly any[]
-    } = {},
+    } = {}
   ) =>
   (list: readonly Value[]): readonly Value[] =>
     list.filter((e: any) => {

@@ -5,7 +5,7 @@ import { maybe } from 'c-ufunc/libs/maybe'
 
 export function fontTheme<
   P extends PartialThemeInterface,
-  T extends PartialFontInterface,
+  T extends PartialFontInterface
 >(theme?: P): T {
   const maybeTheme = maybe({})
 

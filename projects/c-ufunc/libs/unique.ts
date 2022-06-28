@@ -10,7 +10,7 @@
 const reducer = <Value>(
   items: readonly Value[],
   // eslint-disable-next-line functional/prefer-readonly-type
-  set: Set<Value> = new Set(),
+  set: Set<Value> = new Set()
 ): any => {
   if (items.length === 0) {
     return Array.from(set)

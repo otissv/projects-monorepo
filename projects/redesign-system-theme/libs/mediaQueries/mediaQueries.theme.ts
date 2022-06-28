@@ -10,7 +10,7 @@ import { maybe } from 'c-ufunc/libs/maybe'
 
 export function breakpointsTheme<
   P extends PartialThemeInterface,
-  T extends PartialBreakpointsInterface,
+  T extends PartialBreakpointsInterface
 >(theme: P): T {
   const breakpoints: any = maybe({})(theme?.breakpoints)
 
@@ -26,7 +26,7 @@ export function breakpointsTheme<
 
 export function mediaQueriesTheme<
   P extends PartialThemeInterface,
-  T extends PartialMediaQueriesInterface,
+  T extends PartialMediaQueriesInterface
 >(theme: P): T {
   const mediaQueries: any = maybe({})(theme?.mediaQueries)
   const breakpoints: any = maybe({})(theme?.breakpoints)

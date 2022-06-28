@@ -6,6 +6,7 @@ import { errorHandler, map } from './utils'
 import { build } from './build'
 
 //TODO: add ES modules output
+// eslint-disable-next-line functional/no-expression-statement
 glob('./svg/**/*.svg')
   .then(map(createIcons))
   .then(createIndexExports)

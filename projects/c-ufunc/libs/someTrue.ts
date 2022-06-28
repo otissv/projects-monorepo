@@ -18,5 +18,5 @@ import { isFunction } from './isFunction'
  * ```
  */
 export const someTrue = <List extends readonly unknown[]>(
-  list: List,
+  list: List
 ): boolean => [...list].some((e) => Boolean(isFunction(e) ? (e as any)() : e))

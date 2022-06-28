@@ -5,7 +5,7 @@
 /* eslint-disable functional/no-loop-statement */
 
 export const deepMerge = <Rec extends Record<string, any>>(
-  target: Rec,
+  target: Rec
 ): ((source: Rec) => Rec) => {
   const state = { ...target }
 

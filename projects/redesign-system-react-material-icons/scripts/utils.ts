@@ -1,3 +1,5 @@
+/* eslint-disable functional/no-expression-statement */
+/* eslint-disable functional/no-try-statement */
 import * as childProcess from 'node:child_process'
 import * as fs from 'node:fs'
 import * as util from 'node:util'
@@ -17,11 +19,12 @@ export const writeFileToDest = ({
   fileName,
   dest,
 }: {
-  data: string
-  fileName: string
-  dest: string
+  readonly data: string
+  readonly fileName: string
+  readonly dest: string
 }) => writeFile(`${dest}/${fileName}.tsx`, data, { flag: 'w' })
 
+// eslint-disable-next-line functional/no-return-void
 export const errorHandler = (error: unknown) => {
   console.error(error)
   process.exit(1)
@@ -45,15 +48,16 @@ export const fileNameBeginsWithNumberToWord = (file: string) => {
 export const foldPaths = ({
   paths,
 }: {
-  paths: string[]
-  data: string
-  fileName: string
-  dest: string
+  readonly paths: readonly string[]
+  readonly data: string
+  readonly fileName: string
+  readonly dest: string
 }) => paths
 
 export const getPathsInfo = (path: string) => {
   try {
     if (typeof path !== 'string') {
+      // eslint-disable-next-line functional/no-throw-statement
       throw 'getPathsInfo: path must be string'
     }
     return svgPathInfo(path)
@@ -64,12 +68,12 @@ export const getPathsInfo = (path: string) => {
 
 export const map =
   (fn: Function) =>
-  <Item>(list: Item[]) => {
+  <Item>(list: readonly Item[]) => {
     list.map((i) => fn(i))
     return list
   }
 
-export const removeOutputDir = async (paths: string[]) =>
+export const removeOutputDir = async (paths: readonly string[]) =>
   rmdir('./src')
     .then(() => paths)
     .catch(errorHandler)
@@ -97,10 +101,10 @@ export const writeDataToFile = ({
   dest,
   ...props
 }: {
-  paths: string[]
-  data: string
-  fileName: string
-  dest: string
+  readonly paths: readonly string[]
+  readonly data: string
+  readonly fileName: string
+  readonly dest: string
 }) =>
   mkdirp(dest)
     .then(() => writeFileToDest({ data, fileName, dest }))

@@ -25,7 +25,7 @@ export const pipePromise =
       return fns.length === 0
         ? await value
         : await pipePromise(...fns.slice(1, fns.length))(
-            await fns[0](await value),
+            await fns[0](await value)
           )
     } catch (error) {
       return error

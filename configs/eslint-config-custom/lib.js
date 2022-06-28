@@ -19,11 +19,6 @@ module.exports = {
       },
     },
   ],
-  {
-    "globals": {
-        "process": true
-      }
-},
   rules: {
     'react/jsx-key': 'off',
 

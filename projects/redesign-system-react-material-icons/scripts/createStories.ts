@@ -1,6 +1,6 @@
 import { getPathsInfo, foldPaths, errorHandler, writeDataToFile } from './utils'
 
-const makeStories = async (paths: string[]) => {
+const makeStories = async (paths: readonly string[]) => {
   const { icons, imports } = paths.reduce(
     (acc, path) => {
       const { fileName } = getPathsInfo(path)
@@ -125,7 +125,7 @@ export const Default = () => {
   }
 }
 
-export const createStories = (paths: string[]) => {
+export const createStories = (paths: readonly string[]) => {
   return makeStories(paths)
     .then(writeDataToFile)
     .then(foldPaths)

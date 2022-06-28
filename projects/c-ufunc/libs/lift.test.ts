@@ -18,7 +18,7 @@ describe('lift', () => {
       `Why hello, ${first} ${last}. You look most fetching today.`
 
     expect(lift(compliment)(firstName)(lastName)(person)).toBe(
-      `Why hello, ${person.firstName} ${person.lastName}. You look most fetching today.`,
+      `Why hello, ${person.firstName} ${person.lastName}. You look most fetching today.`
     )
   })
 })

@@ -6,5 +6,5 @@ export const promiseAll = async <Value>(
   ...promises: readonly Promise<Value>[]
 ): Promise<readonly (Value | Error)[]> =>
   await Promise.all(promises.map(async (p) => await p)).catch((error) =>
-    Promise.reject(error),
+    Promise.reject(error)
   )

@@ -8,7 +8,7 @@ import { maybe } from 'c-ufunc/libs/maybe'
 
 export function scrollbarTheme<
   P extends PartialThemeInterface,
-  T extends PartialScrollbarInterface,
+  T extends PartialScrollbarInterface
 >(theme?: P): T {
   const maybeTheme = maybe({})
   const color: any = maybeTheme(theme?.color)

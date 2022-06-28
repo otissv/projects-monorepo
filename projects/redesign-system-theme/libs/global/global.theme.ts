@@ -5,7 +5,7 @@ import { PartialThemeInterface } from '../theme'
 
 export function globalTheme<
   P extends PartialThemeInterface,
-  T extends PartialGlobalInterface,
+  T extends PartialGlobalInterface
 >(theme: P): T {
   const maybeTheme = maybe({})
   const global: any = maybeTheme(theme?.global)

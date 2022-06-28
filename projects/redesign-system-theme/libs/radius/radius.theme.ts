@@ -13,7 +13,7 @@ import { PartialThemeInterface } from '../theme'
 
 export function radiusTheme<
   P extends PartialThemeInterface,
-  T extends PartialRadiusInterface,
+  T extends PartialRadiusInterface
 >(theme?: P): T {
   const radius: any = maybe({})(theme?.radius)
 

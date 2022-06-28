@@ -25,5 +25,5 @@ export const maybe =
   <None>(none: None) =>
   <Value>(value: Value): Value | None =>
     either(none)(value)(
-      typeof value === 'function' ? value() : typeof value !== 'undefined',
+      typeof value === 'function' ? value() : typeof value !== 'undefined'
     )

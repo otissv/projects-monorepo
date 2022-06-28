@@ -1,6 +1,6 @@
 import { errorHandler, getPathsInfo, writeDataToFile, foldPaths } from './utils'
 
-const makeIndex = async (paths: string[]) => {
+const makeIndex = async (paths: readonly string[]) => {
   const exportsString = paths.reduce((acc, path) => {
     const { fileName } = getPathsInfo(path)
 
@@ -16,5 +16,5 @@ const makeIndex = async (paths: string[]) => {
   }
 }
 
-export const createIndexExports = (paths: string[]) =>
+export const createIndexExports = (paths: readonly string[]) =>
   makeIndex(paths).then(writeDataToFile).then(foldPaths).catch(errorHandler)

@@ -18,7 +18,7 @@ import { BreakpointsInterface, MediaQueriesInterface } from '../mediaQueries'
 export type CssStringType = string
 export type CssObjectType = { [key: string]: any }
 export type CssFunctionType = (
-  props: ThemeInterface | any,
+  props: ThemeInterface | any
 ) => { [key: string]: any } | string
 export type CssFunctionArrayType = Array<CssFunctionType | CssStringType>
 

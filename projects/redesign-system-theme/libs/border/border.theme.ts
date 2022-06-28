@@ -16,7 +16,7 @@ import { PartialThemeInterface } from '../theme'
 
 export function borderTheme<
   P extends PartialThemeInterface,
-  T extends PartialBorderInterface,
+  T extends PartialBorderInterface
 >(theme?: P): T {
   const maybeTheme = maybe({})
   const border: any = maybeTheme(theme?.border)

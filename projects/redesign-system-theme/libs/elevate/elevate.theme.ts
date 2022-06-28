@@ -15,7 +15,7 @@ import { PartialThemeInterface } from '../theme'
 
 export function elevateTheme<
   P extends PartialThemeInterface,
-  T extends PartialElevateInterface,
+  T extends PartialElevateInterface
 >(theme?: P): T {
   const elevate: any = maybe({})(theme?.elevate)
 

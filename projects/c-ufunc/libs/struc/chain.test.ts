@@ -14,7 +14,7 @@ describe('argNames', () => {
     const toUpperCase = (str: string) => str.toUpperCase()
     const toSnake = (str: string) => str.replace(' ', '_')
     expect(chain(toUpperCase).chain(toSnake).exec('hello world')).toBe(
-      'HELLO_WORLD',
+      'HELLO_WORLD'
     )
   })
 })

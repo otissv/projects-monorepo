@@ -115,7 +115,7 @@ export function getBackground(color: ColorInterface) {
 }
 
 export function getBackgroundAttachment(
-  backgroundAttachment: BackgroundAttachmentTypes,
+  backgroundAttachment: BackgroundAttachmentTypes
 ): {
   readonly backgroundAttachment: BackgroundAttachmentTypes
 } {
@@ -131,7 +131,7 @@ export function getBackgroundClip(backgroundClip: BackgroundClipTypes): {
 }
 export function getBackgroundColor(color: ColorInterface) {
   return (
-    backgroundColor: ColorTypes,
+    backgroundColor: ColorTypes
   ): { readonly background: ColorTypes } => ({
     background:
       (color[backgroundColor as keyof ColorInterface] as string) ||
@@ -139,7 +139,7 @@ export function getBackgroundColor(color: ColorInterface) {
   })
 }
 export function getBackgroundPosition(
-  backgroundPosition: BackgroundPositionTypes,
+  backgroundPosition: BackgroundPositionTypes
 ): {
   readonly backgroundPosition: BackgroundPositionTypes
 } {
@@ -178,7 +178,7 @@ export function getRadiuses(
     none: RADIUS_NONE,
     round: RADIUS_ROUND,
     rounded: RADIUS_ROUNDED,
-  },
+  }
 ) {
   return (value: keyof RadiusInterface | string): string => {
     switch (value) {
@@ -229,7 +229,7 @@ export function getBorderTop(border: BorderInterface) {
 
 export function getBorderY(border: BorderInterface) {
   return (
-    value: string,
+    value: string
   ): {
     readonly borderTop: string
     readonly borderBottom: string
@@ -241,7 +241,7 @@ export function getBorderY(border: BorderInterface) {
 
 export function getBorderX(border: BorderInterface) {
   return (
-    value: string,
+    value: string
   ): {
     readonly borderRight: string
     readonly borderLeft: string
@@ -277,7 +277,7 @@ export function getBorderStyle(borderStyle: BorderStyleTypes): {
 
 export function getRadius(radius: RadiusInterface) {
   return (
-    value: keyof RadiusInterface,
+    value: keyof RadiusInterface
   ): {
     readonly borderRadius: string
   } => ({
@@ -287,7 +287,7 @@ export function getRadius(radius: RadiusInterface) {
 
 export function getBorderBottomRadius(radius: RadiusInterface) {
   return (
-    borderBottomRadius: keyof RadiusInterface,
+    borderBottomRadius: keyof RadiusInterface
   ): {
     readonly borderBottomRadius: string
   } => ({
@@ -297,7 +297,7 @@ export function getBorderBottomRadius(radius: RadiusInterface) {
 
 export function getBorderLeftRadius(radius: RadiusInterface) {
   return (
-    borderLeftRadius: keyof RadiusInterface,
+    borderLeftRadius: keyof RadiusInterface
   ): {
     readonly borderLeftRadius: string
   } => ({
@@ -307,7 +307,7 @@ export function getBorderLeftRadius(radius: RadiusInterface) {
 
 export function getBorderRightRadius(radius: RadiusInterface) {
   return (
-    borderRightRadius: keyof RadiusInterface,
+    borderRightRadius: keyof RadiusInterface
   ): {
     readonly borderRightRadius: string
   } => ({
@@ -317,7 +317,7 @@ export function getBorderRightRadius(radius: RadiusInterface) {
 
 export function getBorderTopRadius(radius: RadiusInterface) {
   return (
-    borderTopRadius: keyof RadiusInterface,
+    borderTopRadius: keyof RadiusInterface
   ): {
     readonly borderTopRadius: string
   } => ({
@@ -327,7 +327,7 @@ export function getBorderTopRadius(radius: RadiusInterface) {
 
 export function getBorderYRadius(radius: RadiusInterface) {
   return (
-    value: keyof RadiusInterface,
+    value: keyof RadiusInterface
   ): {
     readonly borderTopRadius: string
     readonly borderBottomRadius: string
@@ -339,7 +339,7 @@ export function getBorderYRadius(radius: RadiusInterface) {
 
 export function getBorderXRadius(radius: RadiusInterface) {
   return (
-    value: keyof RadiusInterface,
+    value: keyof RadiusInterface
   ): {
     readonly borderRightRadius: string
     readonly borderLeftRadius: string
@@ -355,7 +355,7 @@ export function getBorderXRadius(radius: RadiusInterface) {
 
 export function getElevate(elevate: ElevateInterface) {
   return (
-    value: string | keyof ElevateInterface,
+    value: string | keyof ElevateInterface
   ): {
     readonly boxShadow: string
   } => {
@@ -485,7 +485,7 @@ export function getAlignSelf(value: FlexSelfTypes): {
  */
 export function getHeight(unit: UnitInterface) {
   return (
-    height: string | keyof UnitInterface,
+    height: string | keyof UnitInterface
   ): {
     readonly height: string
   } => ({
@@ -495,7 +495,7 @@ export function getHeight(unit: UnitInterface) {
 
 export function getWidth(unit: UnitInterface) {
   return (
-    width: string | keyof UnitInterface,
+    width: string | keyof UnitInterface
   ): {
     readonly width: string
   } => ({
@@ -505,7 +505,7 @@ export function getWidth(unit: UnitInterface) {
 
 export function getMaxHeight(unit: UnitInterface) {
   return (
-    maxHeight: string | keyof UnitInterface,
+    maxHeight: string | keyof UnitInterface
   ): {
     readonly maxHeight: string
   } => ({
@@ -515,7 +515,7 @@ export function getMaxHeight(unit: UnitInterface) {
 
 export function getMaxWidth(unit: UnitInterface) {
   return (
-    maxWidth: string | keyof UnitInterface,
+    maxWidth: string | keyof UnitInterface
   ): {
     readonly maxWidth: string
   } => ({
@@ -525,7 +525,7 @@ export function getMaxWidth(unit: UnitInterface) {
 
 export function getWidthHeight(unit: UnitInterface) {
   return (
-    value: string,
+    value: string
   ): {
     readonly height: string
     readonly width: string
@@ -613,7 +613,7 @@ export function getWhiteSpace(whiteSpace: WhiteSpaceTypes): {
 
 export function getMediaQuires(
   breakpoints: BreakpointsInterface,
-  unit: UnitInterface,
+  unit: UnitInterface
 ) {
   return (hostBreakpoints: { readonly [key: string]: any }): DynamicStyle => {
     const { sm, md, lg, xl } = breakpoints
@@ -683,7 +683,7 @@ export function getMediaQuires(
       ],
       {
         literal: true,
-      },
+      }
     )(result)[0]
   }
 }
@@ -780,7 +780,7 @@ export function getOverflowY(overflowY: OverflowTypes): {
 }
 
 export function getOverflowScrolling(
-  overflowScrolling: OverflowScrollingTypes,
+  overflowScrolling: OverflowScrollingTypes
 ): { readonly '-webkit-Overflow-scrolling': OverflowScrollingTypes } {
   return { '-webkit-Overflow-scrolling': overflowScrolling }
 }
@@ -797,7 +797,7 @@ export function getOverflowWrap(overflowWrap: OverflowWrapTypes): {
  */
 export function getFontSize(font: FontInterface) {
   return (
-    fontSize: number | string,
+    fontSize: number | string
   ): {
     readonly fontSize: string
   } => {
@@ -809,7 +809,7 @@ export function getFontSize(font: FontInterface) {
 
 export function getLineHeight(font: FontInterface) {
   return (
-    lineHeight: number | string,
+    lineHeight: number | string
   ): {
     readonly lineHeight: string | number
   } => {
@@ -831,7 +831,7 @@ export function getLetterSpacing(letterSpacing: string): {
 
 export function getFontWeight(font: FontInterface) {
   return (
-    fontWeight: number | string,
+    fontWeight: number | string
   ): {
     readonly fontWeight: string
   } => {
@@ -844,7 +844,7 @@ export function getFontWeight(font: FontInterface) {
 
 export function getFontFamily(font: FontInterface) {
   return (
-    fontFamily: FontFamilyTypes,
+    fontFamily: FontFamilyTypes
   ): {
     readonly fontFamily: FontFamilyTypes
   } => {
@@ -948,7 +948,7 @@ export function getTransition(transition: TransitionTypes): {
 }
 
 export function getEaseTransition(
-  options?: Partial<TransitionEaseInterface>,
+  options?: Partial<TransitionEaseInterface>
 ): string {
   const {
     delay = '',
@@ -1083,7 +1083,7 @@ export function isValidUnitValue(value: string | number): boolean {
 }
 
 export function allPositions(
-  unit: UnitInterface,
+  unit: UnitInterface
 ): (value: string | number, prop: string) => Record<string, any> {
   return (value: string | number, prop: string) => {
     const propsList = prop.split(';')
@@ -1124,7 +1124,7 @@ export function unitPositions({
 }: UnitPositionsInterface): Record<string, any> {
   const unitsReducer = (
     accumulator: { readonly [key: string]: any },
-    key: string,
+    key: string
   ): any => {
     if (key === 'default') return accumulator
 

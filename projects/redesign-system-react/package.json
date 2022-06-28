@@ -11,9 +11,7 @@
     "start": "run-p watch storybook",
     "build": "npm run clean && mkdir build && ts-node node_modules/scripts/libs/build-package",
     "dev": "tsc --watch",
-    "test": "jest",
-    "test:coverage": "npm run build && jest --coverage",
-    "test:watch": "jest --watch",
+    "test": "echo \"Warning: no test specified\"",
     "lint": "eslint . --ext .ts",
     "lint:watch": "esw . --ext .ts -w",
     "lint:fix": "eslint . --ext .ts  --fix",
@@ -92,7 +90,7 @@
     "@redesign-system/theme": "workspace:*",
     "c-ufunc": "workspace:*",
     "csstype": "^3.1.0",
-    "popmotion": "^11.0.3",
+    "popmotion": "^9.4.0",
     "style-value-types": "^5.1.0"
   },
   "resolutions": {

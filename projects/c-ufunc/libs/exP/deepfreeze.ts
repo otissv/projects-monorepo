@@ -11,7 +11,7 @@
  * @example
  */
 export const deepFreeze = <Value extends Record<string | number, any>>(
-  obj: Value,
+  obj: Value
 ): Value => {
   Object.freeze(obj)
 

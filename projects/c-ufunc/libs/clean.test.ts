@@ -19,13 +19,13 @@ describe('clean', () => {
     expect(
       clean({
         include: ['0'],
-      })(['0', ...falsyValues]),
+      })(['0', ...falsyValues])
     ).toEqual([])
 
     expect(
       clean({
         include: 'a',
-      })(['a', ...falsyValues]),
+      })(['a', ...falsyValues])
     ).toEqual([])
   })
 })

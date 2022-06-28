@@ -11,7 +11,7 @@ describe('pipe', () => {
     expect(pipe(toUpper)('Hello, World!')).toBe('HELLO, WORLD!')
     expect(pipe(toUpper, toSnake)('Hello World!')).toBe('HELLO_WORLD!')
     expect(pipe(who('Universe'), toUpper, toSnake)('Hello World!')).toBe(
-      'HELLO_UNIVERSE!',
+      'HELLO_UNIVERSE!'
     )
   })
 

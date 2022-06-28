@@ -13,7 +13,7 @@ import { PartialThemeInterface } from '../theme'
 
 export function transitionTheme<
   P extends PartialThemeInterface,
-  T extends PartialTransitionInterface,
+  T extends PartialTransitionInterface
 >(theme?: P): T {
   const transition: any = maybe({})(theme?.transition)
 

@@ -14,6 +14,6 @@
  * ```
  */
 export const head = <Value>(
-  list: readonly Value[] | string,
+  list: readonly Value[] | string
 ): readonly Value[] =>
   Array.isArray(list) && list.length !== 0 ? [list[0]] : []

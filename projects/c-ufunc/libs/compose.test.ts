@@ -12,7 +12,7 @@ describe('compose', () => {
     expect(compose(toUpper)('Hello, World!')).toBe('HELLO, WORLD!')
     expect(compose(toUpper, toSnake)('Hello World!')).toBe('HELLO_WORLD!')
     expect(compose(toUpper, toSnake, who('Universe'))('Hello World!')).toBe(
-      'HELLO_UNIVERSE!',
+      'HELLO_UNIVERSE!'
     )
   })
 

@@ -1,18 +1,19 @@
+/* eslint-disable functional/no-try-statement */
 import { readFile, errorHandler, writeDataToFile, getPathsInfo } from './utils'
 
 export const pathInfo = async (
   path: string
 ): Promise<{
-  fileName: string
-  path: string
+  readonly fileName: string
+  readonly path: string
 }> => getPathsInfo(path)
 
 const requireSvg = async ({
   path,
   ...props
 }: {
-  fileName: string
-  path: string
+  readonly fileName: string
+  readonly path: string
 }) => {
   try {
     return {
@@ -30,9 +31,9 @@ const makeReactIcon = async ({
   data,
   ...props
 }: {
-  path: string
-  data: string | void
-  fileName: string
+  readonly path: string
+  readonly data: string | void
+  readonly fileName: string
 }) => {
   try {
     const componentName = `${fileName}Icon`
@@ -65,9 +66,9 @@ ${componentName}.displayName = '${componentName}';
 export const createIcons = (
   path: string
 ): Promise<{
-  data: any
-  fileName: any
-  dest: any
+  readonly data: any
+  readonly fileName: any
+  readonly dest: any
 } | void> =>
   pathInfo(path)
     .then(requireSvg)
