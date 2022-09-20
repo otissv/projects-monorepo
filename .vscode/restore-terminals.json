@@ -22,6 +22,14 @@
     {
       "splitTerminals": [
         {
+          "name": "git-cms",
+          "commands": ["cd projects/git-cms"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
           "name": "otissv",
           "commands": ["cd projects/otissv"]
         }

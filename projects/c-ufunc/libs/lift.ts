@@ -9,7 +9,7 @@
  * @returns Returns the result of f(g(x))(h(x)
  *
  * @usage
- * `import { lift } from "ufunc/lift"`
+ * `import { lift } from "c-ufunc/libs/lift"`
  *
  * @example
  * ````

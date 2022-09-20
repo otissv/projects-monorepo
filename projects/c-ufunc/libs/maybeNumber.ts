@@ -8,7 +8,7 @@ import { maybeType } from './maybeType'
  * @returns Returns the value if the value is a number, else returns 0.
  *
  * @usage
- * import \{ maybeNumber \} from "ufunc/maybeNumber"
+ * import \{ maybeNumber \} from "c-ufunc/libs/maybeNumber"
  *
  * @example
  * ```

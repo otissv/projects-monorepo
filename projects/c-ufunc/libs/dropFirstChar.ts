@@ -8,7 +8,7 @@ import { dropChars } from './dropChars'
  * @returns Returns a new string without the first character.
  *
  *  @usage
- * `import { dropFirstChar } from "ufunc/dropFirstChar"`
+ * `import { dropFirstChar } from "c-ufunc/libs/dropFirstChar"`
  *
  * @example
  * ```

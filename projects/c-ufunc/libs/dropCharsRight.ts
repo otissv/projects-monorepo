@@ -9,7 +9,7 @@ import { maybeString } from './maybeString'
  * @returns Returns a sub-string from the right of the string starting from position n.
  *
  * @usage
- * `import { dropCharsRight } from "ufunc/dropCharsRight"`
+ * `import { dropCharsRight } from "c-ufunc/libs/dropCharsRight"`
  *
  * @example
  * ```

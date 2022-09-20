@@ -7,7 +7,7 @@ import { maybeString } from './maybeString'
  * @returns Returns a string all in lowercase.
  *
  * @usage
- * `import { toLower } from "ufunc/toLower"`
+ * `import { toLower } from "c-ufunc/libs/toLower"`
  *
  * @example
  * ```

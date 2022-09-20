@@ -4,7 +4,7 @@
  * @returns Returns true if NODE_ENV environment variable is development.
  *
  * @usage
- * `import \{ isDev \} from "ufunc/isDev"`
+ * `import \{ isDev \} from "c-ufunc/libs/isDev"`
  *
  * @example
  * ```

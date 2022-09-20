@@ -7,7 +7,7 @@
  * @returns Return a new array with only n items from the end of the list.
  *
  * @usage
- * `import { takeRight }from "ufunc/takeRight"`
+ * `import { takeRight }from "c-ufunc/libs/takeRight"`
  *
  * @example
  * ```

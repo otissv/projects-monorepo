@@ -6,7 +6,7 @@
  * @returns Returns a partial applied function which takes the remaining arguments.
  *
  * @usage
- * `import { curry } from "ufunc/curry"`
+ * `import { curry } from "c-ufunc/libs/curry"`
  *
  * @example
  * ```

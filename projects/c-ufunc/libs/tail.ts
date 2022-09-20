@@ -6,7 +6,7 @@
  * @returns  Returns an array with all but the first item in the list.
  *
  * @usage
- * `import { tail }from "ufunc/tail"`
+ * `import { tail }from "c-ufunc/libs/tail"`
  *
  * @example
  * ```

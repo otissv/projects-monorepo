@@ -8,7 +8,7 @@ import { maybeString } from './maybeString'
  * @returns Returns a string in pascal case.
  *
  * @usage
- * `import { toPascalCase } from "ufunc/toPascalCase"`
+ * `import { toPascalCase } from "c-ufunc/libs/toPascalCase"`
  *
  * @example
  * ```

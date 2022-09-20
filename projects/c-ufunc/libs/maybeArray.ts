@@ -6,7 +6,7 @@
  * @returns Returns the value if the list is an array, else returns an empty array.
  *
  * @usage
- * import \{ maybeArray \} from "ufunc/maybeArray"
+ * import \{ maybeArray \} from "c-ufunc/libs/maybeArray"
 
  * @example
  * ```

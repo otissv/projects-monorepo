@@ -6,7 +6,7 @@
  * @returns Returns the first item in a array.
  *
  * @usage
- * `import \{ first \} from "ufunc/first "`
+ * `import \{ first \} from "c-ufunc/libs/first "`
  *
  * @example
  * ```

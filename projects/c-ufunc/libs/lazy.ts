@@ -5,7 +5,7 @@
  * @returns Returns a function that can be lazy evaluated.
  *
  * @usage
- * import \{ lazy \} from "ufunc/lazy"
+ * import \{ lazy \} from "c-ufunc/libs/lazy"
  *
  * @example
  * ```

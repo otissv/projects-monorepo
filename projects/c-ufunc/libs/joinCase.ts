@@ -10,7 +10,7 @@ import { toLower } from './toLower'
  * @returns Joins the string using the joiner.
  *
  * @usage
- * `import { joinCase } from "ufunc/joinCase"`
+ * `import { joinCase } from "c-ufunc/libs/joinCase"`
  *
  * @example
  * ```

@@ -5,7 +5,7 @@
  * @returns Returns true if all arguments are true, else returns false.
  *
  * @usage
- * `import \{ everyTrue \} from "ufunc/everyTrue"`
+ * `import \{ everyTrue \} from "c-ufunc/libs/everyTrue"`
  *
  * @example
  * ```

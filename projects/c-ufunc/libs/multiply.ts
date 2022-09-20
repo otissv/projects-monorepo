@@ -7,7 +7,7 @@
  * @return Returns the result of a multiplied by b
  *
  * @usage
- * import \{ multiply \} from "ufunc/multiply"
+ * import \{ multiply \} from "c-ufunc/libs/multiply"
  *
  * @example
  * ```

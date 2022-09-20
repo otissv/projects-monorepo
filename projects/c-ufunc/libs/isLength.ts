@@ -7,7 +7,7 @@
  * @returns Returns a function that takes a value as an argument which returns true if value is the same as length, else returns false.
  *
  * @usage
- * `import \{ isLength \} from "ufunc/isLength"`
+ * `import \{ isLength \} from "c-ufunc/libs/isLength"`
  *s
  * @example
  */

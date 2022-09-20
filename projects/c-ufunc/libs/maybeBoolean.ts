@@ -8,7 +8,7 @@ import { maybeType } from './maybeType'
  * @returns Returns the value if the value is a boolean, else returns false.
  *
  * @usage
- * import \{ maybeBoolean \} from "ufunc/maybeBoolean"
+ * import \{ maybeBoolean \} from "c-ufunc/libs/maybeBoolean"
  *
  * @example
  * ```

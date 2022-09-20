@@ -8,7 +8,7 @@ import { toLower } from './toLower'
  * @returns Returns a string with the first character lower cased.
  *
  * @usage
- * `import { toLowerFirst } from "ufunc/toLowerFirst"`
+ * `import { toLowerFirst } from "c-ufunc/libs/toLowerFirst"`
  *
  * @example
  * ```

@@ -6,7 +6,7 @@
  * @returns   Returns frozen object.
  *
  *  @usage
- * import \{ deepFreeze \} from "ufunc/deepFreeze"
+ * import \{ deepFreeze \} from "c-ufunc/libs/deepFreeze"
  *
  * @example
  */

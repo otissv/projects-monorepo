@@ -8,7 +8,7 @@ import { plus } from './plus'
  * @returns Returns the total of all numbers added together.
  *
  * @usage
- * `import { total } from "ufunc/total"`
+ * `import { total } from "c-ufunc/libs/total"`
  *
  * @example
  * ```

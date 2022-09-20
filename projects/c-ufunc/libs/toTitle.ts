@@ -9,7 +9,7 @@ import { toUpper } from './toUpper'
  * @returns Returns a string with all words in capitalized.
  *
  * @usage
- * `import { toTitle } from "ufunc/toTitle"`
+ * `import { toTitle } from "c-ufunc/libs/toTitle"`
  *
  * @example
  * ```

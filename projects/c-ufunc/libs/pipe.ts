@@ -7,7 +7,7 @@
  * @returns Returns the result of all the mapped functions.
  *
  * @usage
- * `import \{ pipe \} from "ufunc/pipe"`
+ * `import \{ pipe \} from "c-ufunc/libs/pipe"`
  *
  * @example
  * ```

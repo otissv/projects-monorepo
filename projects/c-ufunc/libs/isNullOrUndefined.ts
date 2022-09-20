@@ -7,7 +7,7 @@
  *
  *
  * @usage
- * `import \{ isNullOrUndefined \} from "ufunc/isNullOrUndefined "`
+ * `import \{ isNullOrUndefined \} from "c-ufunc/libs/isNullOrUndefined "`
  *
  * @example
  * ```

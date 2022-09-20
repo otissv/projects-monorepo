@@ -6,7 +6,7 @@
  *
  * @return Returns the result of a plus b.
  * @usage
- * import \{ plus \} from "ufunc/plus"
+ * import \{ plus \} from "c-ufunc/libs/plus"
  *
  * @example
  * ```

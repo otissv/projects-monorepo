@@ -1,0 +1,82 @@
+{
+  "name": "git-cms",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Otis Virginie",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.esm.js",
+  "publishConfig": {
+    "registry": "https://otis.bytesafe.dev/r/default/"
+  },
+  "scripts": {
+    "start:dev": "run-p watch develop",
+    "build": "npm run clean && mkdir build && ts-node node_modules/scripts/libs/build-package",
+    "dev": "ts-node-dev libs/main.ts",
+    "watch": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "test": "jest",
+    "test:coverage": "npm run build && jest --coverage",
+    "test:watch": "jest --watch",
+    "clean": "rimraf ./build",
+    "prepare": "npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint"
+    }
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.12",
+    "@types/eslint": "^8.4.3",
+    "@types/express": "^4.17.14",
+    "@types/jest": "^28.1.3",
+    "@types/node-fetch": "2",
+    "@types/prettier": "^2.6.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "dot-env": "^0.0.1",
+    "eslint": "^8.18.0",
+    "eslint-config-custom": "workspace:*",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.1.1",
+    "eslint-plugin-disable": "^2.0.3",
+    "eslint-plugin-functional": "^4.2.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.1.0",
+    "graphql": "^16.5.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.1",
+    "jest-json-schema-extended": "^1.0.1",
+    "jsdoc": "^3.6.10",
+    "node-fetch": "2",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "scripts": "workspace:*",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.8.1",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig": "workspace:*",
+    "tslib": "^2.4.0",
+    "typedoc": "^0.23.2",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@octokit/auth-app": "^3.6.1",
+    "@octokit/rest": "^18.12.0",
+    "body-parser": "^1.20.0",
+    "c-ufunc": "workspace:*",
+    "cors": "^2.8.5",
+    "cuid": "^2.1.8",
+    "deepmerge": "^4.2.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "gray-matter": "^4.0.3",
+    "js-base64": "^3.7.2",
+    "probot": "^12.2.4",
+    "universal-github-app-jwt": "^1.1.0",
+    "yaml": "^2.1.1"
+  }
+}

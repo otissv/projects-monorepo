@@ -7,7 +7,7 @@
  * @returns  Return new array without the n items from the end of the list.
  *
  * @usage
- * `import { dropRight } from "ufunc/dropRight"`
+ * `import { dropRight } from "c-ufunc/libs/dropRight"`
  *
  * @example
  * ```

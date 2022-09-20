@@ -8,7 +8,7 @@
  * @returns Returns the value if value is correct type, else returns none.
  *
  * @usage
- * import \{ maybeType \} from "ufunc/maybeType"
+ * import \{ maybeType \} from "c-ufunc/libs/maybeType"
  *
  * @example
  * ```

@@ -6,7 +6,7 @@
  * @returns Returns a string in snake case.
  *
  * @usage
- * `import { add } from "ufunc/add"`
+ * `import { add } from "c-ufunc/libs/add"`
  *
  * @example
  * ```

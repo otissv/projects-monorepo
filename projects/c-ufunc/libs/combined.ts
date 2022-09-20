@@ -13,7 +13,7 @@ const apply =
  * @returns Returns a new combined array.
  *
  * @usage
- * `import { combined } from "ufunc/combined"`
+ * `import { combined } from "c-ufunc/libs/combined"`
  *
  * @example
  * ```

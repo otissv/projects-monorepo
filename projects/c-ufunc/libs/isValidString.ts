@@ -6,7 +6,7 @@
  * @returns Returns true if the value is a string and is not empty, else returns false
  *
  * @usage
- * `import \{ isValidString \} from "ufunc/isValidString"`
+ * `import \{ isValidString \} from "c-ufunc/libs/isValidString"`
  *
  * @example
  * ```

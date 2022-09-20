@@ -8,7 +8,7 @@ import { maybeType } from './maybeType'
  * @returns Returns value if value is a string, else return an empty string.
  *
  * @usage
- * import \{ maybeString \} from "ufunc/maybeString"
+ * import \{ maybeString \} from "c-ufunc/libs/maybeString"
  *
  * @example
  * ```

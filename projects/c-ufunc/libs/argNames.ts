@@ -6,7 +6,7 @@
  * @returns Returns an array of argument names.
  *
  * @usage
- * `import \{ argNames \} from "ufunc/argNames"`
+ * `import \{ argNames \} from "c-ufunc/libs/argNames"`
  *
  * @example
  * ```

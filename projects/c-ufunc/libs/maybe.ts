@@ -9,7 +9,7 @@ import { either } from './either'
  * @returns Returns the value if it is defined, else returns none.
  *
  * @usage
- * import \{ maybe \} from "ufunc/maybe"
+ * import \{ maybe \} from "c-ufunc/libs/maybe"
  *
  * @example
  * ```

@@ -6,7 +6,7 @@
  * @returns Returns true if value is a string and can be converted to a number.
  *
  * @usage
- * `import \{ isStringNumber \} from "ufunc/isStringNumber"`
+ * `import \{ isStringNumber \} from "c-ufunc/libs/isStringNumber"`
  *
  * @example
  * ```

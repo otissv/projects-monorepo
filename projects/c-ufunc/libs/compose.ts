@@ -7,7 +7,7 @@
  * @returns Returns the result of all the mapped functions.
  *
  * @usage
- * `import \{ compose \} from "ufunc/compose"`
+ * `import \{ compose \} from "c-ufunc/libs/compose"`
  *
  * @example
  * ```

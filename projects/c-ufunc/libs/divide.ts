@@ -6,7 +6,7 @@
  *
  * @return Returns the result of a divided by b.
  * @usage
- * import \{ divide \} from "ufunc/divide"
+ * import \{ divide \} from "c-ufunc/libs/divide"
  *
  * @example
  * ```

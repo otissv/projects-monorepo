@@ -8,7 +8,7 @@ import { joinCase } from './joinCase'
  * @returns Returns a string in snake case.
  *
  * @usage
- * `import { toSnakeCase } from "ufunc/toSnakeCase"`
+ * `import { toSnakeCase } from "c-ufunc/libs/toSnakeCase"`
  *
  * @example
  * ```

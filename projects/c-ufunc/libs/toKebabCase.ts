@@ -7,7 +7,7 @@ import { joinCase } from './joinCase'
  * @returns Returns a string in kebab case.
  *
  * @usage
- * `import { toKebabCase } from "ufunc/toKebabCase"`
+ * `import { toKebabCase } from "c-ufunc/libs/toKebabCase"`
  *
  * @example
  * ```

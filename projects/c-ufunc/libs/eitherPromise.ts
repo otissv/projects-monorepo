@@ -6,7 +6,7 @@
  * @param   condition - Condition to be evaluated.
  * 
  * @usage
- * `import \{ eitherPromise \} from "ufunc/eitherPromise"`
+ * `import \{ eitherPromise \} from "c-ufunc/libs/eitherPromise"`
  *
  * @example
  * ```

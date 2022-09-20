@@ -7,7 +7,7 @@
  * @returns Returns a Promise with the result of all the mapped functions.
  *
  * @usage
- * `import \{ pipePromise \} from "ufunc/pipePromise"`
+ * `import \{ pipePromise \} from "c-ufunc/libs/pipePromise"`
  *
  * @example
  * ```

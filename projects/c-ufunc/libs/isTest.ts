@@ -4,7 +4,7 @@
  * @returns Returns true if NODE_ENV environment variable is test.
  *
  * @usage
- * `import \{ isTest \} from "ufunc/isTest"`
+ * `import \{ isTest \} from "c-ufunc/libs/isTest"`
  *
  * @example
  * ```

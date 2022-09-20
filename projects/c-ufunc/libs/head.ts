@@ -5,7 +5,7 @@
  * @returns Returns an array with only the first item in the list.
  *
  * @usage
- * `import \{ head \} from "ufunc/head "`
+ * `import \{ head \} from "c-ufunc/libs/head "`
  *
  * @example
  * ```

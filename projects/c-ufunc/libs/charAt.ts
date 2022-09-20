@@ -9,7 +9,7 @@ import { maybeString } from './maybeString'
  * @returns Returns the character in the string at position n.
  *
  * @usage
- * `import { charAt } from "ufunc/charAt"`
+ * `import { charAt } from "c-ufunc/libs/charAt"`
  *
  * @example
  * ```

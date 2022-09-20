@@ -7,7 +7,7 @@
  * @returns Return new array without the n items from the beginning of the list.
  *
  * @usage
- * `import { drop } from "ufunc/drop"`
+ * `import { drop } from "c-ufunc/libs/drop"`
  *
  * @example
  * ```

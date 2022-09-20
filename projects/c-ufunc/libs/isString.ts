@@ -6,7 +6,7 @@
  * @returns Returns true if value is a string.
  *
  * @usage
- * `import \{ isString \} from "ufunc/isString"`
+ * `import \{ isString \} from "c-ufunc/libs/isString"`
  *
  * @example
  * ```

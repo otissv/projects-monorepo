@@ -8,7 +8,7 @@
  * @returns If condition truthy returns some, else returns none.
  *
  * @usage
- * `import \{ either \} from "ufunc/either"`
+ * `import \{ either \} from "c-ufunc/libs/either"`
  *
  * @example
  * ```

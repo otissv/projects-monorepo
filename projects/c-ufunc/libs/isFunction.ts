@@ -6,7 +6,7 @@
  * @returns Returns true if value is of type value, else returns false.
  *
  * @usage
- * `import \{ isFunction \} from "ufunc/isFunction"`
+ * `import \{ isFunction \} from "c-ufunc/libs/isFunction"`
  *
  * @example
  * ```

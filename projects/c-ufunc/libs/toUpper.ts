@@ -8,7 +8,7 @@ import { maybeString } from './maybeString'
  * @returns Return a string all in uppercase.
  *
  * @usage
- * `import { toUpper } from "ufunc/toUpper"`
+ * `import { toUpper } from "c-ufunc/libs/toUpper"`
  *
  * @example
  * ```

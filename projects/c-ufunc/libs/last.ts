@@ -6,7 +6,7 @@
  * @returns Returns the last item in a list.
  *
  * @usage
- * `import \{ last \} from "ufunc/last"`
+ * `import \{ last \} from "c-ufunc/libs/last"`
  *
  * @example
  * ```

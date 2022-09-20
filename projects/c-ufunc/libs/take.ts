@@ -7,7 +7,7 @@
  * @returns Return a new array with only n items from the beginning of the list.
  *
  * @usage
- * `import { take }from "ufunc/take"`
+ * `import { take }from "c-ufunc/libs/take"`
  *
  * @example
  * ```

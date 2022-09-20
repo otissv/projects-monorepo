@@ -8,7 +8,7 @@ import { maybeType } from './maybeType'
  * @returns Returns the value if the value is a boolean, else an empty object.
  *
  * @usage
- * import \{ maybeObject \} from "ufunc/maybeObject"
+ * import \{ maybeObject \} from "c-ufunc/libs/maybeObject"
  *
  * @example
  * maybeObject({ a: 1 }) // { a: 1 }

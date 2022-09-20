@@ -7,7 +7,7 @@ import { isFunction } from './isFunction'
  * @returns Returns true if some arguments are true, else returns false.
  *
  * @usage
- * `import \{ someTrue \} from "ufunc/someTrue"`
+ * `import \{ someTrue \} from "c-ufunc/libs/someTrue"`
  *
  * @example
  * ```

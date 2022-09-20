@@ -24,7 +24,7 @@ import {
  * @returns Returns true or false.
  *
  * @usage
- * `import \{ compare \} from "ufunc/compare"`
+ * `import \{ compare \} from "c-ufunc/libs/compare"`
  *
  * @example
  * ```

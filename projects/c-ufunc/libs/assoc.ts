@@ -8,7 +8,7 @@
  *  that takes a value that returns a new object where the value is assigned to a property with the name of the key.
  *
  * @usage
- * `import \{ assoc \} from "ufunc/assoc"`
+ * `import \{ assoc \} from "c-ufunc/libs/assoc"`
  *
  * @example
  * ```

@@ -11,7 +11,7 @@ import { EQ, GT, LT, BoundTypes } from './types'
  * If an value is not in the list an Error is returned.
  *
  * @usage
- * `import \{ bound \} from "ufunc/bound"`
+ * `import \{ bound \} from "c-ufunc/libs/bound"`
  *
  * @example
  * ```

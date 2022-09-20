@@ -8,7 +8,7 @@
  * @returns Returns mapped value.
  *
  * @usage
- * `import \{ fmap \} from "ufunc/fmap"`
+ * `import \{ fmap \} from "c-ufunc/libs/fmap"`
  *
  * @example
  * ```

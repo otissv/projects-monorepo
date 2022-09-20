@@ -6,7 +6,7 @@
  * @returns Returns true if is value is a valid URL, else returns false.
  *
  * @usage
- * import \{ isUrl \} from "ufunc/isUrl"
+ * import \{ isUrl \} from "c-ufunc/libs/isUrl"
  *
  * @example
  * isValidUrl('http://foo.com/blah_blah') // true

@@ -7,7 +7,7 @@ import { maybeString } from './maybeString'
  * @returns Return the first character of a string.
  *
  * @usage
- * `import { firstChar } from "ufunc/firstChar"`
+ * `import { firstChar } from "c-ufunc/libs/firstChar"`
  *
  * @example
  * ```

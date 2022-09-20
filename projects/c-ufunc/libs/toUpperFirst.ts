@@ -9,7 +9,7 @@ import { toUpper } from './toUpper'
  * @returns Returns a string with the first character upper cased.
  *
  * @usage
- * `import { toUpperFirst } from "ufunc/toUpperFirst"`
+ * `import { toUpperFirst } from "c-ufunc/libs/toUpperFirst"`
  *
  * @example
  * ```

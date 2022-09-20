@@ -5,7 +5,7 @@
  * @returns Returns the first argument supplied to itself.
  *
  * @usage
- * `import \{ identity \} from "ufunc/identity"`
+ * `import \{ identity \} from "c-ufunc/libs/identity"`
  *
  * @example
  */

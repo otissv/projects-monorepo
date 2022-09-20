@@ -7,7 +7,7 @@
  * @returns Returns a number if value can be converted else returns 0.
  *
  * @usage
- * `import \{ toFloat \} from "ufunc/toFloat "`
+ * `import \{ toFloat \} from "c-ufunc/libs/toFloat "`
  *
  * @example
  * ```

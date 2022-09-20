@@ -8,7 +8,7 @@
  * @returns Returns an array with the cleaned items removed.
  *
  * @usage
- * `import \{ clean \} from "ufunc/clean"`
+ * `import \{ clean \} from "c-ufunc/libs/clean"`
  *
  * @example
  * ```

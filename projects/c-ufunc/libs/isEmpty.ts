@@ -8,7 +8,7 @@ import { isNullOrUndefined } from './isNullOrUndefined'
  * @returns Returns true if value is empty, else returns false.
  *
  * @usage
- * `import \{ isEmpty \} from "ufunc/isEmpty"`
+ * `import \{ isEmpty \} from "c-ufunc/libs/isEmpty"`
  *
  * @example
  * ```

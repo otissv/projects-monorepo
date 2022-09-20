@@ -18,7 +18,7 @@ type ChainType<ReturnType> = {
  * @param initialValue -  Initial value to passed to the reducer.
  *
  * @usage
- * `import \{ chain \} from "ufunc/chain"`
+ * `import \{ chain \} from "c-ufunc/libs/chain"`
  *
  * @example
  * ```

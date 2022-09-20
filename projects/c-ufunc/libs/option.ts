@@ -7,7 +7,7 @@
  * @returns If some is nullish returns none else returns some.
  *
  * @usage
- * `import \{ option \} from "ufunc/option"`
+ * `import \{ option \} from "c-ufunc/libs/option"`
  *
  * @example
  * ```

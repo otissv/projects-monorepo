@@ -6,7 +6,7 @@
  * @returns Return true if value is an instance of error else returns false.
  *
  * @usage
- * `import \{ isError \} from "ufunc/isError"`
+ * `import \{ isError \} from "c-ufunc/libs/isError"`
  *
  * @example
  * ```

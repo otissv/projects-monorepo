@@ -5,7 +5,7 @@
  *
  * @return Returns the remainder when the first operand is divided by the second operand.
  * @usage
- * import \{ mod \} from "ufunc/mod"
+ * import \{ mod \} from "c-ufunc/libs/mod"
  *
  * @example
  * ```

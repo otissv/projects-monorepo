@@ -6,7 +6,7 @@
  *
  * @return Returns the result of a minus b.
  * @usage
- * import \{ subtract \} from "ufunc/subtract"
+ * import \{ subtract \} from "c-ufunc/libs/subtract"
  *
  * @example
  * ```

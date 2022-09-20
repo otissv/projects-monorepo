@@ -9,7 +9,7 @@ import { maybeString } from './maybeString'
  * @returns Returns a sub-string starting from position n.
  *
  * @usage
- * `import { charAt } from "ufunc/charAt"`
+ * `import { charAt } from "c-ufunc/libs/charAt"`
  *
  * @example
  * ```

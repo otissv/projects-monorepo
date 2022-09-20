@@ -7,7 +7,7 @@
  * @returns Returns an array with the results.
  *
  * @usage
- * `import \{ times \} from "ufunc/times "`
+ * `import \{ times \} from "c-ufunc/libs/times "`
  *
  * @example
  * ```

@@ -8,7 +8,7 @@ import { maybeString } from './maybeString'
  * @returns Returns a camel cased string.
  *
  * @usage
- * `import { toCamel } from "ufunc/toCamel"`
+ * `import { toCamel } from "c-ufunc/libs/toCamel"`
  *
  * @example
  * ```

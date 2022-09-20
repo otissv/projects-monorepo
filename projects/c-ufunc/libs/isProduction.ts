@@ -4,7 +4,7 @@
  * @returns Returns true if NODE_ENV environment variable is production.
  *
  * @usage
- * `import \{ isProduction \} from "ufunc/isProduction"`
+ * `import \{ isProduction \} from "c-ufunc/libs/isProduction"`
  *
  * @example
  * ```
