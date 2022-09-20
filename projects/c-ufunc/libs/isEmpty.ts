@@ -36,7 +36,7 @@ export const isEmpty = <Value>(value: Value): boolean => {
       return false
 
     case type == 'object':
-      return !Object.keys(value).length
+      return !Object.keys(value as object).length
 
     default:
       return !value

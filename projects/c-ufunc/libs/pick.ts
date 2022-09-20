@@ -17,7 +17,7 @@
  */
 export const pick =
   (keysToEsxtracrt: readonly string[]) =>
-  <Obj>(obj: Obj) =>
+  <Obj extends {}>(obj: Obj) =>
     Object.keys(obj).reduce(
       (acc: Partial<Obj>, key) => ({
         ...acc,
