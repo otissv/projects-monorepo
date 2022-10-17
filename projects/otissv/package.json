@@ -2,6 +2,8 @@
   "name": "otissv",
   "version": "0.0.0",
   "private": true,
+  "main": "build/libs/index.js",
+  "types": "build/libs/index.d.ts",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

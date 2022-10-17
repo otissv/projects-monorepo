@@ -1,0 +1,45 @@
+:root {
+  --accent: #c00b68;
+
+  --font-family-serif: EB Garamond, serif;
+  --font-family-sans: Montserrat, sans-serif;
+  --body-font-family: var(--font-family-sans);
+
+  --line-height: 1.6;
+
+  --border-color: #cecece;
+  --border: 1px solid #cecece;
+
+  --heading-font-family: var(--font-family-serif);
+  --heading-font-weight: normal;
+  --heading-font-line-height: 1;
+
+  --text: #000000;
+  --background-color: ##fff;
+  --background-color-2: #141620;
+  --background-color-3: #395186;
+  --background-color-4: hsla(211, 26%, 21%, 1);
+
+  --link-color: var(--accent);
+  --container: 1600px;
+  --code-meta-spacing: 8px;
+  --blockquote-border-color: rgb(74, 85, 104);
+
+  --nav-color-active: #000000;
+  --nav-color: #000000;
+  --nav-color-hover: #000000;
+
+  --footer-color: #3b3b3b;
+  --footer-background-color: #e1e1e1;
+
+  --subscribe-background-color: #000000;
+  --subscribe-color: #ffffff;
+
+  --cta-background-color: #000000;
+  --cta-background-hover-color: var(--accent);
+  --cta-color: #ffffff;
+  --cta-border: 3px solid #ffffff;
+  --cta-text-transform: uppercase;
+  --cta-font-family: var(--font-family-serif);
+  --cta-letter-spacing: 0.5px;
+}

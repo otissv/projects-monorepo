@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "main": "build/libs/index.js",
-  "typings": "build/libs/index.d.ts",
+  "types": "build/libs/index.d.ts",
   "author": "Otis Virginie",
   "module": "build/redesign-material-icons.esm.js",
   "files": [

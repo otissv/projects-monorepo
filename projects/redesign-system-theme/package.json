@@ -2,8 +2,8 @@
   "name": "@redesign-system/theme",
   "version": "0.1.0",
   "license": "MIT",
-  "main": "libs/index.d.ts",
-  "typings": "libs/index.d.ts",
+  "main": "build/libs/index.js",
+  "types": "build/libs/index.d.ts",
   "publishConfig": {
     "access": "public"
   },

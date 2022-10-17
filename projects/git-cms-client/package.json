@@ -2,6 +2,8 @@
   "name": "git-cms-client",
   "version": "0.0.0",
   "private": true,
+  "main": "build/libs/index.js",
+  "types": "build/libs/index.d.ts",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,11 +12,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/server": "^11.10.0",
+    "@redesign-system/react-ui": "workspace:*",
+    "@redesign-system/react": "workspace:*",
+    "@redesign-system/react-material-icons": "workspace:*",
+    "@redesign-system/theme": "workspace:*",
     "c-ufunc": "workspace:*",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "ui": "workspace:*"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.18",

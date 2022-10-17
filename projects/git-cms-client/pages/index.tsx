@@ -1,13 +1,13 @@
 import React from 'react'
-import { Button } from 'ui'
+
 import { argNames } from 'c-ufunc/libs/argNames'
 
-export default function Web() {
+export default function Web({ folders }) {
+  console.log(folders)
   return (
     <div>
       git-cms
       <h1>{argNames((a: number, b: number) => a + b)}</h1>
-      <Button />
     </div>
   )
 }
@@ -28,7 +28,7 @@ export async function getServerSideProps(context) {
   )
   const result = await res.json()
 
-  const filesList = result.data.reduce((acc: any, current) => {
+  const folders = result.data.reduce((acc: any, current) => {
     const [folder, files] = current.path.split('/')
     return {
       ...acc,
@@ -41,7 +41,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      filesList,
+      folders,
     }, // will be passed to the page component as props
   }
 }

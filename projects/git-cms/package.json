@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "license": "MIT",
   "author": "Otis Virginie",
-  "main": "libs/main.js",
-  "types": "libs/main.d.ts",
+  "main": "build/libs/index.js",
+  "types": "build/libs/index.d.ts",
   "publishConfig": {
     "registry": "https://otis.bytesafe.dev/r/default/"
   },

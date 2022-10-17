@@ -14,7 +14,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install",
     "test": "turbo run test",
-    "purge": "npx turbo run purge"
+    "purge": "rimraf node_modules; npx turbo run purge"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",

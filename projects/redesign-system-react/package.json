@@ -3,7 +3,8 @@
   "name": "@redesign-system/react",
   "version": "0.1.0",
   "license": "MIT",
-  "typings": "index.d.ts",
+  "main": "build/libs/index.js",
+  "types": "build/libs/index.d.ts",
   "publishConfig": {
     "access": "public"
   },

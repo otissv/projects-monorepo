@@ -8,3 +8,9 @@ import theme from './theme'
 addons.setConfig({
   theme,
 })
+
+export const parameters = {
+  docs: {
+    theme: themes.dark,
+  },
+}
