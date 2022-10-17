@@ -35,12 +35,12 @@ export const postSaveFileContentService = ({
 }) =>
   octokit.repos
     .createOrUpdateFileContents({
-      branch: branch.trim(),
+      branch,
       content: Base64.encode(content),
-      message: message.trim(),
-      owner: owner.trim(),
-      path: path.trim(),
-      repo: repo.trim(),
+      message,
+      owner,
+      path,
+      repo,
       ...(sha ? { sha } : {}),
       committer,
       author,

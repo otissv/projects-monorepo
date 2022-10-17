@@ -3,7 +3,7 @@ import { errorHandler, getPathsInfo, exec, writeFile } from './utils'
 
 import pkg from '../package.json'
 
-const createDefinitions = async (paths: string[]) => {
+const createDefinitions = async (paths: readonly string[]) => {
   const iconExports = paths.reduce((acc, path) => {
     const { fileName } = getPathsInfo(path)
 
@@ -32,12 +32,12 @@ export declare const ${fileName}Icon: FC<IconInterface>;`
   )
 }
 
-const buildSource = async (paths: string[]) =>
+const buildSource = async (paths: readonly string[]) =>
   exec('npm run generate')
     .then(() => paths)
     .catch(errorHandler)
 
-const createPackageJson = (paths: string[]) => {
+const createPackageJson = (paths: readonly string[]) => {
   const npmPkg = {
     name: pkg.name,
     version: pkg.version,
@@ -60,7 +60,7 @@ const createPackageJson = (paths: string[]) => {
     .catch(errorHandler)
 }
 
-export const build = async (paths: string[]) =>
+export const build = async (paths: readonly string[]) =>
   createPackageJson(paths)
     .then(createDefinitions)
     .then(buildSource)

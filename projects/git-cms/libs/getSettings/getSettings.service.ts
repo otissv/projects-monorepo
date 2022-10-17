@@ -15,9 +15,9 @@ export const getSettingsService = ({
   readonly repo: string
 }) =>
   getFileContentService({
-    branch: branch.trim(),
-    owner: owner.trim(),
-    repo: repo.trim(),
+    branch,
+    owner,
+    repo,
     octokit,
     path: '/git-cms.yml',
   }).catch(rejectError)

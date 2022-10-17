@@ -10,6 +10,8 @@
     "dev": {
       "cache": false
     },
-    "test": {}
+    "test": {},
+    "purge": {}
+    
   }
 }

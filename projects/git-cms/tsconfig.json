@@ -1,9 +1,15 @@
 {
-  "extends": "tsconfig/server.json",
+  "extends": "tsconfig/node.json",
   "compilerOptions": {
     "baseUrl": "./",
     "rootDir": ".",
-    "outDir": "build"
+    "outDir": "build",
+    "target": "esnext",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "lib": [
+      "ES2015"
+    ]
   },
   "include": [
     "**/*.ts",

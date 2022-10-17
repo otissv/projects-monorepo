@@ -11,6 +11,6 @@ export const getRepoService = ({
   readonly repo: string
 }) =>
   octokit.repos
-    .get({ owner: owner.trim(), repo: repo.trim() })
+    .get({ owner: owner, repo: repo })
     .then(({ data }: any) => data)
     .catch(rejectError)

@@ -39,19 +39,15 @@ export const getFileContentService = ({
 }) =>
   octokit.repos
     .getContent({
-      ref: branch.trim(),
-      owner: owner.trim(),
-      repo: repo.trim(),
-      path: path.trim(),
+      ref: branch,
+      owner: owner,
+      repo: repo,
+      path: path,
     })
-    .then(({ data: { content, name, path, sha } }: any) => {
-      // eslint-disable-next-line functional/no-expression-statement
-
-      return {
-        name,
-        path,
-        sha,
-        content: parseFileContent({ content, path }),
-      }
-    })
+    .then(({ data: { content, name, path, sha } }: any) => ({
+      name,
+      path,
+      sha,
+      content: parseFileContent({ content, path }),
+    }))
     .catch(rejectError)

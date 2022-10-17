@@ -1,9 +1,10 @@
 {
-  "extends": "tsconfig/lib.json",
+  "extends": "tsconfig/node.json",
   "compilerOptions": {
     "baseUrl": "./",
     "rootDir": ".",
-    "outDir": "build"
+    "outDir": "build",
+    "module": "CommonJS"
   },
   "include": [
     "**/*.ts",

@@ -6,7 +6,10 @@
 import util from 'util'
 import childProcess from 'child_process'
 
-const pkg = require(`${process.cwd()}/package.json`)
+// const loadJSON = (path: string) =>
+//   JSON.parse(fs.readFileSync(new URL(path, import.meta.url)) as any)
+
+const pkg = require(`${process.cwd()}/package.json` as any)
 
 const exec = util.promisify(childProcess.exec)
 

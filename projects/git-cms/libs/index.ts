@@ -11,7 +11,7 @@ import { removeHeader } from './middleware/removeHeader.middlware'
 import { routes } from './routes/routes'
 import { queryToBody } from './utils'
 
-export = async (app: any, { getRouter }: any) => {
+export default async (app: any, { getRouter }: any) => {
   try {
     const router = getRouter('/git-cms')
     router.use(cors())

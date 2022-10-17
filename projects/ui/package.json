@@ -5,6 +5,7 @@
   "types": "./libs/index.tsx",
   "license": "MIT",
   "scripts": {
+    "purge": "rimraf node_modules",
     "lint": "eslint *.ts*"
   },
   "devDependencies": {

@@ -25,22 +25,21 @@ export const getFileListService = ({
         const { tree } = JSON.parse(text)
         const folders = settings.content[0].folders
 
-        const files: any = {}
+        const files: any = []
 
         for (const { type, path, url, sha } of tree) {
           for (const folder of folders) {
             // eslint-disable-next-line functional/no-conditional-statement
             if (type === 'blob' && folder === path.substr(0, folder.length)) {
               // eslint-disable-next-line functional/immutable-data
-              files[sha] = {
+              files.push({
                 path,
                 url,
                 sha,
-              }
+              })
             }
           }
         }
-
         return files
       })
       .catch(rejectError)

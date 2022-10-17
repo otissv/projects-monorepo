@@ -1,5 +1,5 @@
-import { Button } from 'ui';
-import { argNames } from 'c-ufunc/argNames';
+import { Button } from 'ui'
+import { argNames } from 'c-ufunc/libs/argNames'
 
 export default function Web() {
   return (
@@ -7,5 +7,5 @@ export default function Web() {
       <h1>{argNames((a: number, b: number) => a + b)}</h1>
       <Button />
     </div>
-  );
+  )
 }

@@ -16,10 +16,10 @@ export const getFileInfoService = ({
 }) =>
   octokit.repos
     .getContent({
-      ref: branch.trim(),
-      owner: owner.trim(),
-      repo: repo.trim(),
-      path: path.trim(),
+      ref: branch,
+      owner,
+      repo,
+      path,
     })
     .then(({ data }: Record<string, any>) => data)
     .catch(rejectError)

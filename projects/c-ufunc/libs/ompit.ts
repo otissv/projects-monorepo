@@ -18,7 +18,7 @@
  */
 export const omit =
   (keysToExstracrt: readonly string[]) =>
-  <Obj>(obj: Obj) =>
+  <Obj extends Record<any, any>>(obj: Obj) =>
     Object.keys(obj).reduce(
       (acc: Partial<Obj>, key) => ({
         ...acc,

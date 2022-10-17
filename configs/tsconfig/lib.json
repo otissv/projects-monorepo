@@ -3,8 +3,8 @@
   "display": "Lib",
   "extends": "./base.json",
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "esnext",
+    "module": "esnext",
     "lib": ["dom", "esnext"],
     "allowJs": true,
     "composite": false,
@@ -34,5 +34,9 @@
       "*": ["src/*", "node_modules/*"]
     }
   },
-  "exclude": ["build", "node_modules"]
+  "exclude": ["build", "node_modules"],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  }
 }
