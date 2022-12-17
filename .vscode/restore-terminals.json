@@ -82,6 +82,14 @@
           "commands": ["cd projects/scripts"]
         }
       ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "store-subscriptions",
+          "commands": ["cd projects/store-subscriptions"]
+        }
+      ]
     }
   ]
 }
