@@ -3,6 +3,8 @@
 
 import fetch from 'node-fetch'
 import { rejectError } from 'c-ufunc'
+import { config } from '../config'
+import { getFileListMock } from './getFileList.mock'
 
 export const getFileListService = ({
   branch,
@@ -14,34 +16,33 @@ export const getFileListService = ({
   readonly owner: string
   readonly repo: string
   readonly settings: any
-}) => {
-  return (
-    fetch(
-      `https://api.github.com/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`
-    )
-      .then((res: any) => res.text())
-      // eslint-disable-next-line functional/no-return-void
-      .then((text: string) => {
-        const { tree } = JSON.parse(text)
-        const folders = settings.content[0].folders
+}) =>
+  config().isMock
+    ? getFileListMock
+    : fetch(
+        `https://api.github.com/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`
+      )
+        .then((res: any) => res.text())
+        // eslint-disable-next-line functional/no-return-void
+        .then((text: string) => {
+          const { tree } = JSON.parse(text)
+          const folders = settings.content[0].folders
 
-        const files: any = []
+          const files: any = []
 
-        for (const { type, path, url, sha } of tree) {
-          for (const folder of folders) {
-            // eslint-disable-next-line functional/no-conditional-statement
-            if (type === 'blob' && folder === path.substr(0, folder.length)) {
-              // eslint-disable-next-line functional/immutable-data
-              files.push({
-                path,
-                url,
-                sha,
-              })
+          for (const { type, path, url, sha } of tree) {
+            for (const folder of folders) {
+              // eslint-disable-next-line functional/no-conditional-statement
+              if (type === 'blob' && folder === path.substr(0, folder.length)) {
+                // eslint-disable-next-line functional/immutable-data
+                files.push({
+                  path,
+                  url,
+                  sha,
+                })
+              }
             }
           }
-        }
-        return files
-      })
-      .catch(rejectError)
-  )
-}
+          return files
+        })
+        .catch(rejectError)

@@ -6,7 +6,7 @@ export default {
   component: App,
 }
 
-import { createStore } from '../index'
+import { createStore } from '../store'
 import { StoreProvider } from '../react/StoreContext'
 import { NotificationProiver } from './components/Notifications/NotificationContenxt'
 import App from './App'

@@ -50,7 +50,7 @@ export const Default = () => {
 
   return (
     <ThemeProvider>
-      <Table>
+      <Table stripped>
         <thead>
           <tr>
             <th></th>

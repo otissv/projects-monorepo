@@ -11,10 +11,7 @@ import { Radio } from '../Radio'
 import { ErrorMessage, ErrorMessageInterface } from '../ErrorMessage'
 import { Label, LabelInterface } from '../Label'
 import { formRadioTheme } from './formRadio.theme'
-
-interface HelpMessageInterface {
-  readonly required?: boolean
-}
+import { FormRaidoHelpMessageInterface } from './formRadio.types'
 
 function HelpMessage({ children }: any) {
   return <p>{children}</p>
@@ -116,7 +113,7 @@ export const FormRadio: FC<FormRadioInterface> = function FormRadio({
         <Either check={isString(helpMessage as string)}>
           <HelpMessage required={required}>{helpMessage}</HelpMessage>
           <HelpMessage
-            {...(helpMessage as HelpMessageInterface)}
+            {...(helpMessage as FormRaidoHelpMessageInterface)}
             required={required}
           />
         </Either>

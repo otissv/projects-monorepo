@@ -5,4 +5,6 @@ export * from './ThemeContext'
 export * from './helpers'
 export * from './hooks'
 export * from './Match'
-export * from 'popmotion'
+import * as pop from 'popmotion'
+
+export const popmotion = pop

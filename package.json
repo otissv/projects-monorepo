@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.1"
+    "lint-staged": "^13.0.3"
   },
   "packageManager": "pnpm@7.2.1",
   "lint-staged": {

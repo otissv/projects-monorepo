@@ -11,10 +11,7 @@ import { Textbox } from '../Textbox'
 import { ErrorMessage, ErrorMessageInterface } from '../ErrorMessage'
 import { Label, LabelInterface } from '../Label'
 import { formTextboxTheme } from './formTextboxField.theme'
-
-interface HelpMessageInterface {
-  readonly required?: boolean
-}
+import { FormTextBoxHelpMessageInterface } from './formTextbox.types'
 
 function HelpMessage({ children }: any) {
   return <p>{children}</p>
@@ -98,7 +95,7 @@ export const FormTextbox: FC<FormTextBoxInterface> = function FormTextbox({
         <Either check={isString(helpMessage as string)}>
           <HelpMessage required={required}>{helpMessage}</HelpMessage>
           <HelpMessage
-            {...(helpMessage as HelpMessageInterface)}
+            {...(helpMessage as FormTextBoxHelpMessageInterface)}
             required={required}
           />
         </Either>

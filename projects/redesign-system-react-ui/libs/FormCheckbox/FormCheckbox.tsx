@@ -11,10 +11,7 @@ import { Checkbox } from '../Checkbox'
 import { ErrorMessage, ErrorMessageInterface } from '../ErrorMessage'
 import { Label, LabelInterface } from '../Label'
 import { formCheckboxTheme } from './formCheckbox.theme'
-
-interface HelpMessageInterface {
-  readonly required?: boolean
-}
+import { FormCheckboxHelpMessageInterface } from './formCheckbox.types'
 
 function HelpMessage({ children }: any) {
   return <p>{children}</p>
@@ -115,7 +112,7 @@ export const FormCheckbox: FC<FormCheckboxInterface> = function FormCheckbox({
         <Either check={isString(helpMessage as string)}>
           <HelpMessage required={required}>{helpMessage}</HelpMessage>
           <HelpMessage
-            {...(helpMessage as HelpMessageInterface)}
+            {...(helpMessage as FormCheckboxHelpMessageInterface)}
             required={required}
           />
         </Either>

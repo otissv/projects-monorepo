@@ -4,25 +4,10 @@ import { pipe } from 'c-ufunc/libs/pipe'
 
 import { useStore } from './StoreContext'
 import { Event, EventAction } from '../types'
-import { Store } from '..'
+import { publish, Store } from '../store'
 
-export function publish<State>(
-  store: Store<State>,
-  ...events: readonly Event<State>[]
-) {
-  events.forEach(({ type, actions }) => {
-    const fns = Array.isArray(actions) ? actions : [actions]
-
-    const nextState = pipe(...fns)(store.state)
-
-    store.publish([
-      type,
-      {
-        [type.split('.')[0]]: store.get(type.split('.')[0], nextState),
-      },
-    ])
-  })
-}
+const propsToArray = (props: string | readonly string[]) =>
+  typeof props === 'string' ? [props] : props
 
 export function useBroadcast<State>(...actions: readonly EventAction<State>[]) {
   const store = useStore().current
@@ -56,8 +41,9 @@ export function useSubscribe<State>(
   storeRef: {
     readonly current: Store<State>
   },
-  eventType: string
+  eventTypes: string | readonly string[]
 ) {
+  const eventTypesArray = propsToArray(eventTypes)
   const store = storeRef.current
 
   const [forceUpdate, setForceUpdate] = React.useState(false)
@@ -65,25 +51,38 @@ export function useSubscribe<State>(
   React.useEffect(() => {
     // Add event listener
     const updateState = () => setForceUpdate(!forceUpdate)
-    store.on(eventType, updateState)
+
+    eventTypesArray.forEach((eventType) => store.on(eventType, updateState))
 
     return () => {
       // remove event listeners.
       // stop multiple listers from being created.
-      store.listeners(eventType).forEach(() => {
-        store.removeListener(eventType, updateState)
-      })
+
+      eventTypesArray.forEach((eventType) =>
+        store.listeners(eventType).forEach(() => {
+          store.removeListener(eventType, updateState)
+        })
+      )
     }
-  }, [store, eventType, forceUpdate, setForceUpdate])
+  }, [store, eventTypes, forceUpdate, setForceUpdate])
 
   function dispatch(...actions: readonly EventAction<State>[]) {
-    publish(store, {
-      type: eventType,
-      actions,
-    })
+    eventTypesArray.forEach((eventType) =>
+      publish(store, {
+        type: eventType,
+        actions,
+      })
+    )
   }
 
-  const state = [store.get(eventType), dispatch]
+  const state = [
+    eventTypesArray.reduce((previousValue, eventType) => {
+      return { ...previousValue, [eventType]: store.get(eventType) } as any
+    }, {}),
+    dispatch,
+  ]
+
+  console.log(state[0])
 
   // eslint-disable-next-line functional/no-return-void
   type Dispatch<State> = (...actions: readonly EventAction<State>[]) => void

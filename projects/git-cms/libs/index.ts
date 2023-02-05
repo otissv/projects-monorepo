@@ -5,6 +5,7 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 
 import { appContext } from './middleware/appContext.middleware'
+import { rateLimiter } from './middleware/rateLimit.middleware'
 import { removeHeader } from './middleware/removeHeader.middlware'
 // import { Request, Response } from 'express'
 
@@ -14,6 +15,7 @@ import { queryToBody } from './utils'
 export default async (app: any, { getRouter }: any) => {
   try {
     const router = getRouter('/git-cms')
+    router.use(rateLimiter())
     router.use(cors())
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     router.use(require('express').static('public'))

@@ -2,6 +2,8 @@ import { Octokit } from '@octokit/rest'
 import { rejectError } from 'c-ufunc'
 import yaml from 'yaml'
 import matter from 'gray-matter'
+import { config } from '../config'
+import { getFileContentMock } from './getFileContent.mock'
 
 const parseFileContent = ({ content, path }: Record<string, any>) => {
   const split = path.split('.')
@@ -37,17 +39,19 @@ export const getFileContentService = ({
   readonly path: string
   readonly repo: string
 }) =>
-  octokit.repos
-    .getContent({
-      ref: branch,
-      owner: owner,
-      repo: repo,
-      path: path,
-    })
-    .then(({ data: { content, name, path, sha } }: any) => ({
-      name,
-      path,
-      sha,
-      content: parseFileContent({ content, path }),
-    }))
-    .catch(rejectError)
+  config().isMock
+    ? getFileContentMock
+    : octokit.repos
+        .getContent({
+          ref: branch,
+          owner: owner,
+          repo: repo,
+          path: path,
+        })
+        .then(({ data: { content, name, path, sha } }: any) => ({
+          name,
+          path,
+          sha,
+          content: parseFileContent({ content, path }),
+        }))
+        .catch(rejectError)

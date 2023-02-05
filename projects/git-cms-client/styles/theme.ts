@@ -1542,7 +1542,7 @@ const baseTheme: any = {
       boxSizing: 'border-box',
       height: '100%',
       background: 'var(--background-color)',
-      color: '#000000',
+      color: 'var(--text)',
     },
     body: {
       fontFamily: 'var(--body-font-family)',
@@ -1552,7 +1552,7 @@ const baseTheme: any = {
       lineHeight: 'var(--line-height)',
       fontStyle: 'normal',
       background: 'var(--background-color)',
-      color: '#000000',
+      color: 'var(--text)',
       margin: 0,
       padding: 0,
       wordWrap: 'break-word',
