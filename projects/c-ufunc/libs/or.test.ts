@@ -4,15 +4,15 @@ import { or } from './or'
 describe('or', () => {
   it('should', () => {
     expect(
-      or((a: number) => a % 5 === 0)
-        .or((a: number) => a % 3 === 0)
+      or((a: number) => a === 5 && 'Fizz')
+        .or((a: number) => a === 3 && 'Buzz')
         .exec(5)
-    ).toBe(true)
+    ).toBe('Fizz')
 
     expect(
-      or((a: number) => a % 5 === 0)
-        .or((a: number) => a % 3 === 0)
+      or((a: number) => a === 5 && 'Fizz')
+        .or((a: number) => a === 3 && 'Buzz')
         .exec(3)
-    ).toBe(true)
+    ).toBe('Buzz')
   })
 })

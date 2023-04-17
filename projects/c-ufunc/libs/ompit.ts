@@ -1,5 +1,5 @@
 /**
- * Transforms a string to snake case
+ * Omits keys from an object.
  *
  *
  * @param   array- Array of keys (strings) to omitted.
@@ -18,13 +18,17 @@
  */
 export const omit =
   (keysToExstracrt: readonly string[]) =>
-  <Obj extends Record<any, any>>(obj: Obj) =>
-    Object.keys(obj).reduce(
-      (acc: Partial<Obj>, key) => ({
-        ...acc,
-        ...(keysToExstracrt.includes(key as any)
-          ? {}
-          : { [key]: (obj as any)[key] }),
-      }),
-      {}
-    )
+  <Obj extends Record<any, any>>(obj: Obj) => {
+    const newObj: Partial<Obj> = {}
+
+    // eslint-disable-next-line functional/no-loop-statement
+    for (const key in obj) {
+      // eslint-disable-next-line functional/no-conditional-statement
+      if (!keysToExstracrt.includes(key)) {
+        // eslint-disable-next-line functional/no-expression-statement, functional/immutable-data
+        ;(newObj as any)[key] = obj[key]
+      }
+    }
+
+    return newObj
+  }

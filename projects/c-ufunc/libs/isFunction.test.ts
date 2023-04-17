@@ -1,18 +1,17 @@
 /* eslint-plugin-disable functional */
 
-import { isFunction } from './isFunction'
+import { ifFunction } from './ifFunction'
 
 describe('isError', () => {
-  it('should return true if value is an instance of Error', () => {
+  it('should return function restult', () => {
     expect(
-      isFunction(function () {
-        return undefined
+      ifFunction(function () {
+        return 'hello'
       })
-    ).toBe(true)
-    expect(isFunction(() => undefined)).toBe(true)
+    ).toBe('hello')
   })
 
-  it('should return false if value is not an instance of Error', () => {
-    expect(isFunction('error')).toBe(false)
+  it('should return vlaue', () => {
+    expect(ifFunction('hello')).toBe('hello')
   })
 })

@@ -17,11 +17,17 @@
  */
 export const pick =
   (keysToEsxtracrt: readonly string[]) =>
-  <Obj extends {}>(obj: Obj) =>
-    Object.keys(obj).reduce(
-      (acc: Partial<Obj>, key) => ({
-        ...acc,
-        ...(keysToEsxtracrt.includes(key) ? { [key]: (obj as any)[key] } : {}),
-      }),
-      {}
-    )
+  <Obj extends {}>(obj: Obj): Partial<Obj> => {
+    const newObj: Partial<Obj> = {}
+
+    // eslint-disable-next-line functional/no-loop-statement
+    for (const key in obj) {
+      // eslint-disable-next-line functional/no-conditional-statement
+      if (keysToEsxtracrt.includes(key)) {
+        // eslint-disable-next-line functional/no-expression-statement, functional/immutable-data
+        ;(newObj as any)[key] = obj[key]
+      }
+    }
+
+    return newObj
+  }

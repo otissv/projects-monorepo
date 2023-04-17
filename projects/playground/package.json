@@ -1,17 +1,13 @@
 {
-  "name": "c-ufunc",
+  "name": "playground",
   "private": true,
-  "version": "1.0.0",
-  "description": "c-func is a set of Typescript and JavaScript functional methods",
-  "keywords": [
-    "javascript",
-    "typescript",
-    "functional programming"
-  ],
-  "repository": "git@github.com:otissv/ufunc.git",
-  "author": "Otis Virginie",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "repository": "",
+  "author": "",
   "license": "MIT",
-  "main": "build/libs/index.js",
+  "main": "./build/index.js",
   "types": "build/libs/index.d.ts",
   "scripts": {
     "start": "npx http-server ./docs",
@@ -50,5 +46,12 @@
     "tslib": "^2.4.0",
     "typedoc": "^0.23.15",
     "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "c-ufunc": "workspace:*"
+  },
+  "typings": "./build/index.d.ts",
+  "publishConfig": {
+    "access": "public"
   }
 }

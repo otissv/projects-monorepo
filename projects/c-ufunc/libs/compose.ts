@@ -18,7 +18,19 @@
  * // "HELLO_WORLD!"
  * ```
  */
+/* eslint-disable functional/no-let */
+/* eslint-disable functional/no-expression-statement */
+/* eslint-disable functional/no-loop-statement */
 export const compose =
   <Fn extends Function>(...fns: readonly Fn[]) =>
-  <Value>(value: Value): any =>
-    fns.reduceRight((acc: unknown, fn: Fn) => fn(acc), value)
+  <Value>(value: Value): any => {
+    const fnsLength = fns.length - 1
+    let result = value
+
+    for (let i = 0; i < fns.length; i++) {
+      const fn = fns[fnsLength - i]
+      result = fn(result)
+    }
+
+    return result
+  }
