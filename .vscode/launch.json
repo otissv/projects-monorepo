@@ -5,11 +5,22 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "chrome",
+      "name": "Edge localhost:3010",
+      "type": "msedge",
       "request": "launch",
-      "name": "Launch Chrome against localhost",
-      "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}"
+      "url": "http://localhost:3010",
+      "webRoot": "${workspaceFolder}/projects/chat-ai"
+    },
+    {
+      "name": "Playgroud",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/projects/playground/libs/index.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": [
+        "${workspaceFolder}/out/**/*.js"
+      ]
     }
   ]
 }
+// /home/ninja/Projects/projects-monorepo/projects/playground/tsconfig.json

@@ -24,6 +24,7 @@ export const Content = ({
   fileName: State['fileName']
   content: State['content']
 }) => {
+  console.log('fileName: ', fileName)
   // // const [meta, content, schema] = store?.content?.data?.content || [{}, [], []]
 
   // const update = (fields, id: string, payload) => {

@@ -23,6 +23,7 @@ export const Button: FC<ButtonInterface> = function Button({
   // eslint-disable-next-line @typescript-eslint/no-empty-function, prettier/prettier
   onClick = () => {},
   css = '',
+  type = 'button',
   ...propsRest
 }) {
   const { theme } = useTheme()
@@ -63,6 +64,7 @@ export const Button: FC<ButtonInterface> = function Button({
       tabIndex={0}
       theme={theme}
       css={cssList}
+      type={type}
       __ignore="stretch"
       {...propsRest}
     >

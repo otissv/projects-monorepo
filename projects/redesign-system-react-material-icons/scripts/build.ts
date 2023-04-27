@@ -43,7 +43,6 @@ const createPackageJson = (paths: readonly string[]) => {
     version: pkg.version,
     license: pkg.license,
     main: pkg.main,
-    typings: pkg.typings,
     author: pkg.author,
     module: pkg.module,
     publishConfig: {

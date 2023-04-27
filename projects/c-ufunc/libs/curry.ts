@@ -20,7 +20,7 @@
  */
 export function curry<Args extends readonly any[], ReturnType>(
   fn: (...args: Args) => ReturnType
-): Curry<Args, ReturnType> {
+) {
   return ((...args: readonly any[]) => {
     if (args.length >= fn.length) {
       return (fn as Function)(...args) as ReturnType
@@ -37,37 +37,37 @@ https://stackoverflow.com/questions/65564650/typescript-type-safe-curry-function
 */
 
 // Drop N entries from array T
-type Drop<
+export type Drop<
   N extends number,
   T extends readonly any[],
   I extends readonly any[] = readonly []
 > = Length<I> extends N ? T : Drop<N, Tail<T>, Prepend<Head<T>, I>>
 
 // Add element E to array A (i.e Prepend<0, [1, 2]> = [0, 1, 2])
-type Prepend<E, A extends readonly any[]> = readonly [E, ...A]
+export type Prepend<E, A extends readonly any[]> = readonly [E, ...A]
 
 // Get the tail of the array, i.e Tail<[0, 1, 2]> = [1, 2]
-type Tail<A extends readonly any[]> = A extends readonly [any]
+export type Tail<A extends readonly any[]> = A extends readonly [any]
   ? readonly []
   : A extends readonly [any, ...infer T]
   ? T
   : never
 
 // Get the head of the array, i.e Head<[0, 1, 2]> = 0
-type Head<A extends readonly any[]> = A extends readonly [infer H]
+export type Head<A extends readonly any[]> = A extends readonly [infer H]
   ? H
   : A extends readonly [infer H, ...any]
   ? H
   : never
 
 // Get the length of an array
-type Length<T extends readonly any[]> = T['length']
+export type Length<T extends readonly any[]> = T['length']
 
 // Use type X if X is assignable to Y, otherwise Y
-type Cast<X, Y> = X extends Y ? X : Y
+export type Cast<X, Y> = X extends Y ? X : Y
 
 // Curry a function
-type Curry<P extends readonly any[], R> = <T extends readonly any[]>(
+export type Curry<P extends readonly any[], R> = <T extends readonly any[]>(
   ...args: Cast<T, Partial<P>>
 ) => Drop<Length<T>, P> extends readonly [any, ...(readonly any[])]
   ? Curry<Cast<Drop<Length<T>, P>, readonly any[]>, R>

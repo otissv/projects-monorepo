@@ -8,4 +8,5 @@ export interface ButtonInterface extends ThemeComponentInterface {
   readonly role?: string
   readonly size?: number
   readonly stretch?: boolean
+  readonly type?: string
 }

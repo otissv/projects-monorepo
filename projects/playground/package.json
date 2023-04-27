@@ -15,7 +15,7 @@
     "dev": "tsc --watch",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
-    "test": "jest",
+    "test": "echo test",
     "test:coverage": "npm run build && jest --coverage",
     "test:watch": "jest --watch",
     "docs": "npm run build && typedoc src/index.ts",

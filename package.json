@@ -14,7 +14,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install",
     "test": "turbo run test",
-    "purge": "rimraf node_modules; npx turbo run purge"
+    "purge": "rimraf node_modules; npx turbo run purge",
+    "create": "ts-node ./projects/scripts/libs/create-project.ts"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
@@ -27,7 +28,8 @@
   },
   "dependencies": {
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.3"
+    "lint-staged": "^13.0.3",
+    "ts-node": "^10.9.1"
   },
   "packageManager": "pnpm@7.2.1",
   "lint-staged": {

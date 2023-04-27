@@ -1,0 +1,29 @@
+Seting up the terminal
+
+1. fish[https://fishshell.com/] shell
+2. fisher[https://github.com/jorgebucaran/fisher]
+3. tide[https://github.com/IlanCosman/tide]
+4. nerdfonts[https://www.nerdfonts.com/]
+5. exa[https://the.exa.website/]
+6. bat[]
+
+In termnal add
+`brew install fish`
+
+Add to /etc/shells file. `whcih fish` to get path.
+
+```bash
+`
+`/usr/local/bin/fish`
+```
+
+Set fish[https://fishshell.com/] as default shell in terminal
+`chsh -s /usr/local/bin/fish`
+
+Restart terminal and fish start with the shell.
+
+2. Install fisher[https://github.com/jorgebucaran/fisher] to manage plugins. Must be run in fish shell.
+   `curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher`
+
+3. Install tide[https://github.com/IlanCosman/tide] theme for fish shell.
+   `fisher install IlanCosman/tide`

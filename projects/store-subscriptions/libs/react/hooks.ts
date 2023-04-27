@@ -82,8 +82,6 @@ export function useSubscribe<State>(
     dispatch,
   ]
 
-  console.log(state[0])
-
   // eslint-disable-next-line functional/no-return-void
   type Dispatch<State> = (...actions: readonly EventAction<State>[]) => void
 

@@ -14,6 +14,14 @@
     {
       "splitTerminals": [
         {
+          "name": "projects",
+          "commands": ["cd projects"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
           "name": "c-ufunc",
           "commands": ["cd projects/c-ufunc"]
         }
@@ -88,6 +96,22 @@
         {
           "name": "store-subscriptions",
           "commands": ["cd projects/store-subscriptions"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "use-devtools-hook",
+          "commands": ["cd projects/use-devtools-hook"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "chat-ai",
+          "commands": ["cd projects/chat-ai"]
         }
       ]
     }

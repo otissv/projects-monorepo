@@ -11,6 +11,7 @@ export function map(fn?: (key: string | number, value: any) => any): any {
       case Boolean(object.forEach): {
         // eslint-disable-next-line functional/no-expression-statement
         object.forEach((value: string, key: string) =>
+          // eslint-disable-next-line functional/immutable-data
           (list as any).push(fn ? fn(key, value) : [key, value])
         )
         return list

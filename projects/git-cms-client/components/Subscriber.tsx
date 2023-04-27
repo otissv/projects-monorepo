@@ -35,6 +35,7 @@ const useSubscriberWithData = <State, Type>({
         state[1]((_state: State) => ({ [eventType]: initailState[eventType] }))
       )
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return state

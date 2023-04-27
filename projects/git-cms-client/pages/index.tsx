@@ -14,8 +14,8 @@ export default function Index({ folders }) {
   )
 }
 
-export async function getServerSideProps(context) {
-  const folders = await getFileList()
+export async function getServerSideProps(_context) {
+  const folders = (await getFileList()) || {}
 
   return {
     props: { folders }, // will be passed to the page component as props

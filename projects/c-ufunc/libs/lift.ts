@@ -12,7 +12,7 @@
  * `import { lift } from "c-ufunc/libs/lift"`
  *
  * @example
- * ````
+ * ```
  * type Person = {
  *   readonly firstName: string;
  *   readonly lastName: string;
@@ -29,7 +29,7 @@
  *
  * lift(compliment)(firstName)(lastName)(person)
  * // "Why hello, Otis Virginie. You look most fetching today."
- * ``
+ * ```
  */
 export const lift =
   <F extends Function>(f: F) =>

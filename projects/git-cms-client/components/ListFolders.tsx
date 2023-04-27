@@ -63,18 +63,10 @@ export const Listfolders: FC<{
     router.push(router.pathname, { query: { folder } })
   }
 
-  const handleOnFileClick = (folder: string, file: string) => async (e) => {
+  const handleOnFileClick = (folder: string, file: string) => async (_e) => {
     // const content = await getFileContent(`${folder}/${file}`)
 
-    router.push(router.pathname, { query: { folder, content: file } })
-
-    // setStore(
-    //   () =>
-    //     ({
-    //       folder,
-    //       fileName: file,
-    //     } as any)
-    // )
+    router.push(router.pathname, { query: { folder, fileName: file } })
   }
 
   return (

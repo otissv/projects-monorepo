@@ -1,8 +1,8 @@
 export const logger =
-  (printer: (...messages: readonly string[]) => unknown) =>
-  (...messages: readonly string[]) =>
+  (printer: (...logs: readonly unknown[]) => unknown) =>
+  (...logs: readonly unknown[]) =>
   <Value>(value: Value): Value => {
     // eslint-disable-next-line functional/no-expression-statement
-    printer(...messages)
+    printer(...logs)
     return value
   }

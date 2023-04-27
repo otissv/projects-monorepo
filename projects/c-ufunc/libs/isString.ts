@@ -12,7 +12,7 @@
  * ```
  * isString('Hello, World!') // true
  *
- * isStringNumber(1 ) // false
+ * isString(1) // false
  * ```
  */
 export const isString = <Value>(value: Value): boolean =>
