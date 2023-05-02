@@ -131,7 +131,7 @@ describe('collection', () => {
       collection()
         .add('id')(users)
         .keys()
-        .toArray((x: number) => x + 1)
+        .toArray((x) => (x as number) + 1)
     ).toEqual([1, 2, 3])
     expect(collection().add('id')(users).keys().toString(2)).toEqual(
       JSON.stringify([0, 1, 2], null, 2)
@@ -218,17 +218,17 @@ describe('collection', () => {
   })
 
   it('reduceRight', () => {
-    const actaul = collection()
+    const actual = collection()
       .add('id')(users)
       .reduceRight((acc: string[], [key, value]) => [
         ...acc,
-        `${key}_${value.get('username')}`,
+        `${String(key)}_${value.get('username')}`,
       ])([])
       .exec()
-    expect(actaul).toEqual(['2_user2', '1_user1', '0_user0'])
+    expect(actual).toEqual(['2_user2', '1_user1', '0_user0'])
   })
 
-  it('revserve', () => {
+  it('reserve', () => {
     expect(collection().add('id')(users).reverse().exec()).toEqual(
       usersReverse()
     )
@@ -313,7 +313,6 @@ describe('collection', () => {
     expect(
       collection().add('id')(users).values().toArray(mapToObject())
     ).toEqual(users)
-
     expect(collection().add('id')(users).values().toString(2)).toEqual(
       JSON.stringify(users, null, 2)
     )
@@ -321,37 +320,21 @@ describe('collection', () => {
 
   it('toArray', () => {
     const coll = collection().add('id')(users)
-    const coll1 = collection().add('id')(users).toArray()
 
-    const coll2 = coll.toArray((item: Map<any, any>) => mapToObject()(item))
+    expect(collection().toArray()).toEqual([])
+    expect(coll.toArray(([_id, item]) => mapToObject()(item))).toEqual(users)
 
-    console.log('coll1', coll1)
-    console.log('coll2', coll2)
+    const newUser = {
+      id: 3,
+      username: 'user3',
+      email: 'user0@example.com',
+      age: 33,
+      city: 'Rome',
+    }
 
-    const coll3 = coll
-      .add('id')([
-        {
-          id: 3,
-          username: 'user3',
-          email: 'user0@example.com',
-          age: 33,
-          city: 'Rome',
-        },
-      ])
-      .toArray()
-
-    console.log('coll3', coll3)
-
-    // expect(collection().toArray()).toEqual([])
-    // expect(
-
-    // ).toEqual(usersArrayMap())
-
-    // coll.add('id')(users).toArray()
-
-    // expect(coll.toArray((item: Map<any, any>) => mapToObject()(item))).toEqual(
-    //   users
-    // )
+    expect(coll.add('id')([newUser]).toArray()).toEqual(
+      usersArrayMap([newUser])
+    )
   })
 
   it('toObject', () => {
@@ -374,7 +357,7 @@ describe('collection item', () => {
 
   it('concat', () => {
     const newProps = {
-      country: 'Uninted Kingdom',
+      country: 'United Kingdom',
     }
     expect(
       collection()

@@ -35,8 +35,8 @@ export const usersMap = () =>
     new Map()
   )
 
-export const usersArrayMap = () =>
-  users.map((user) => new Map(Object.entries(user)))
+export const usersArrayMap = (items: readonly Record<string, any>[] = []) =>
+  [...users, ...items].map((user) => new Map(Object.entries(user)))
 
 export const userEntries = () => usersMap().entries()
 

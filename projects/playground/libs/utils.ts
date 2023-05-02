@@ -11,9 +11,11 @@ export const toString =
     JSON.stringify(fn ? fn(value) : value, null, n)
 
 export const mapToObject =
-  <Key, Value>(fn?: ([key, value]: [Key, Value]) => any) =>
+  <Key, Value>(
+    fn?: ([key, value]: [Key, Value]) => Record<string | number | symbol, Value>
+  ) =>
   (map: Map<Key, Value>) => {
-    const obj: Record<string, any> = {}
+    const obj: Record<string | number | symbol, any> = {}
     for (const [key, value] of map) {
       obj[key as any] = fn ? fn([key, value]) : value
     }

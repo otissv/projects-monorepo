@@ -12,7 +12,7 @@ import {
   mapClear,
   mapDeleteItem,
   mapMerge,
-  mapSquence,
+  mapSequence as mapSequence,
   mapEffect,
   mapLogger,
   mapFilter,
@@ -21,7 +21,7 @@ import {
   mapMap,
   mapReduce,
   mapReduceRight,
-  mapRevese,
+  mapRevere,
   mapSet,
   mapSize,
   collectionUpdateItem,
@@ -36,125 +36,138 @@ import {
   toString,
 } from './utils'
 
+type ID = string | number | symbol
+
+export const collection = <Key, Value>() => {
+  type Item = Map<Key, Value>
+  const coll: Map<ID, Item> = new Map()
+  const sequence: Function[] = []
+
+  return methods(sequence)(coll)
+}
+
 const get =
-  <Key, Value extends Map<any, any>>(id: Key) =>
-  (coll: Map<any | number, Value>) => {
+  <Key, Value>(id: ID) =>
+  (coll: Map<ID, Map<Key, Value>>) => {
     const map = id != null ? coll.get(id as any) || new Map() : coll
     return itemMethods(map)
   }
 
 const methods =
-  <Key, Value extends Map<any, any>>(coll: Map<any, Value>) =>
-  (sequence: Function[]) => {
-    console.log('methods coll', coll)
+  (sequence: Function[]) =>
+  <Key, Value>(coll: Map<ID, Map<Key, Value>>) => {
+    type Item = Map<any, any>
+
     return {
       add:
-        <Key>(id: Key) =>
+        (id: ID) =>
         <Data extends Record<string, any>>(data: Data[] | string) => {
           sequence.push(addToCollection(id)(data))
-          return methods(coll)(sequence)
+          return methods(sequence)(coll)
         },
       clear: () => {
         sequence.push(mapClear)
-        return methods(coll)(sequence)
+        return methods(sequence)(coll)
       },
       // clone: () => {
-      //   return methods(mapSquence(sequence)(coll))(sequence)
+      //   return methods(mapSequence(sequence)(coll))(sequence)
       // },
-      delete: (id: Key) => {
+      delete: (id: ID) => {
         sequence.push(mapDeleteItem(id))
-        return methods(coll)(sequence)
+        return methods(sequence)(coll)
       },
       entries: () => {
         return {
           exec: () => coll.entries(),
-          toArray: (fn?: ([key, value]: [Key, Value]) => any) =>
+          toArray: (fn?: ([id, item]: [ID, Item]) => any) =>
             mapEntriesToArray(fn)(coll),
           toString: (n?: number) =>
             toString(
-              mapEntriesToArray(([key, value]) => [
-                `${key}`,
-                mapToObject()(value),
+              mapEntriesToArray(([id, item]) => [
+                `${id}`,
+                mapToObject()(item),
               ]) as any
             )(n)(coll),
         }
       },
-      filter: (fn: ([key, value]: [Key, Value]) => boolean) => {
+      filter: (fn: ([id, item]: [ID, Item]) => boolean) => {
         sequence.push(mapFilter(fn))
-        return methods(mapFilter(fn)(coll))(sequence)
+        return methods(sequence)(mapFilter(fn)(coll))
       },
-      find: (fn: ([key, value]: [Key, Value]) => boolean) => {
+      find: (fn: ([id, item]: [ID, Item]) => boolean) => {
         sequence.push(mapFindItem(fn))
-        return itemMethods(mapSquence(sequence)(coll))
+        return itemMethods(mapSequence(sequence)(coll))
       },
-      forEach: (fn: ([key, value]: [Key, Value]) => any) => {
+      forEach: (fn: ([id, item]: [ID, Item]) => any) => {
         sequence.push(mapForEach(fn))
-        return methods(coll)(sequence)
+        return methods(sequence)(coll)
       },
-      exec: () => mapSquence(sequence)(coll),
-      get: (id?: Key) => {
-        return id != null ? get(id)(coll) : itemMethods(coll)
+      exec: () => mapSequence([...sequence])(coll),
+      get: (id?: ID) => {
+        return id != null ? get(id as string)(coll) : itemMethods(coll)
       },
-      has: (id: Key) => {
-        const hasId = coll.has(id)
+      has: (id: ID) => {
+        const items = mapSequence(sequence)(coll)
+        const hasId = items.has(id)
         return {
           exec: () => hasId,
           toString: (n?: number) =>
-            hasId ? toString()(n)(mapToObject()(coll.get(id) as any)) : '',
+            hasId ? toString()(n)(mapToObject()(items.get(id) as any)) : '',
           toObject: () =>
-            hasId ? mapToObject()(coll.get(id) as any) : undefined,
-          get: () => (hasId ? itemMethods(coll.get(id) as any) : undefined),
+            hasId ? mapToObject()(items.get(id) as any) : undefined,
+          get: () => (hasId ? itemMethods(items.get(id) as any) : undefined),
         }
       },
       keys: () => {
+        const items = mapSequence(sequence)(coll)
         return {
-          exec: () => coll.keys(),
-          toArray: <Key>(fn?: (key: Key) => any) => mapKeysToArray(fn)(coll),
+          exec: () => items.keys(),
+          toArray: (fn?: (id: ID) => any) => mapKeysToArray(fn)(items),
           toString: (n?: number) =>
-            JSON.stringify(mapKeysToArray()(coll), null, n),
+            JSON.stringify(mapKeysToArray()(items), null, n),
         }
       },
       effect: (fn: (collection: typeof coll) => void) => {
         sequence.push(mapEffect(fn))
 
-        return methods(coll)(sequence)
+        return methods(sequence)(coll)
       },
       log: () => {
         sequence.push(mapLogger)
-        return methods(coll)(sequence)
+        return methods(sequence)(coll)
       },
-      map: (fn: (value: [Key, Value]) => any) => {
+      map: (fn: (value: [ID, Item]) => any) => {
         sequence.push(mapMap(fn))
-        return methods(coll)(sequence)
+        return methods(sequence)(coll)
       },
-      merge: (map: Map<Key, Value>) => {
+      merge: (map: Map<ID, Item>) => {
         sequence.push(mapMerge(map))
-        return methods(coll)(sequence)
+        return methods(sequence)(coll)
       },
       reduce:
-        <Data>(fn: (acc: Data, [key, value]: [Key, Value]) => Data) =>
+        <Data>(fn: (acc: Data, [id, Item]: [ID, Item]) => Data) =>
         (acc: Data) => {
           sequence.push(mapReduce(fn)(acc))
-          return methods(coll)(sequence)
+          return methods(sequence)(coll)
         },
       reduceRight:
-        <Data>(fn: (acc: Data, [key, value]: [Key, Value]) => Data) =>
+        <Data>(fn: (acc: Data, [id, Item]: [ID, Item]) => Data) =>
         (acc: Data) => {
           sequence.push(mapReduceRight(fn)(acc))
-          return methods(coll)(sequence)
+          return methods(sequence)(coll)
         },
       reverse: () => {
-        sequence.push(mapRevese)
-        return methods(coll)(sequence)
+        sequence.push(mapRevere)
+        return methods(sequence)(coll)
       },
-      set: ([id, obj]: [Key, Record<any, any | Value>]) => {
+      set: ([id, obj]: [ID, Item | Record<ID, any>]) => {
         const data = obj instanceof Map ? obj : new Map(Object.entries(obj))
         sequence.push(mapSet([id, data]))
-        return methods(coll)(sequence)
+        return methods(sequence)(coll)
       },
       size: () => {
         sequence.push(mapSize)
-        return methods(coll)(sequence)
+        return methods(sequence)(coll)
       },
 
       // sort: (fn?: ([a, b]: [[Key, Value], [Key, Value]]) => number) => {
@@ -171,30 +184,35 @@ const methods =
       //   return methods(coll)
       // },
 
-      update: ([id, obj]: [Key, Record<any, any | Value>]) => {
+      update: ([id, obj]: [
+        ID,
+        Item | Record<string | number | symbol, any>
+      ]) => {
         sequence.push(collectionUpdateItem([id, obj]))
-        return methods(coll)(sequence)
+        return methods(sequence)(coll)
       },
       values: () => {
+        const items = mapSequence(sequence)(coll)
         return {
-          exec: () => coll.values(),
-          toArray: (fn?: (value: Value) => any) => mapValuesToArray(fn)(coll),
+          exec: () => items.values(),
+          toArray: (fn?: (item: Item) => any) => mapValuesToArray(fn)(items),
           toString: (n?: number) =>
-            JSON.stringify(mapValuesToArray(mapToObject())(coll), null, n),
+            JSON.stringify(mapValuesToArray(mapToObject())(items), null, n),
         }
       },
-      toArray: (fn?: (value: Value) => any) => {
-        sequence.push(mapToArray(fn))
-        return mapSquence(sequence)(coll)
+      toArray: (fn?: ([id, item]: [ID, Item]) => any) => {
+        return mapSequence([...sequence, mapToArray(fn)])(coll)
       },
-      toObject: () => {
-        // sequence.push(collectionToObject)
-        collectionToObject
-        return mapSquence(sequence)(coll)
+      toObject: (fn?: ([id, item]: [ID, Item]) => any) => {
+        return mapSequence([...sequence, collectionToObject(fn)])(coll)
       },
       toString: (n?: number) => {
-        sequence.push(toString(mapToArray(mapToObject()) as any)(n))
-        return mapSquence(sequence)(coll)
+        return mapSequence([
+          ...sequence,
+          toString(
+            mapToArray(([_id, item]) => mapToObject()(item as Item)) as any
+          )(n),
+        ])(coll)
       },
     }
   }
@@ -289,11 +307,4 @@ const itemMethods = <Key, Value>(map: Map<any | number, Value>) => {
     toObject: () => mapToObject()(newMap),
     toString: (n?: number) => toString(mapToObject() as any)(n)(newMap),
   }
-}
-
-export const collection = <Key, Value extends Map<any, any>>() => {
-  const coll: Map<any | number, Value> = new Map()
-  const sequence: Function[] = []
-
-  return methods<Key, Value>(coll)(sequence)
 }

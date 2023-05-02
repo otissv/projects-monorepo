@@ -12,15 +12,19 @@
       "webRoot": "${workspaceFolder}/projects/chat-ai"
     },
     {
-      "name": "Playgroud",
+      "name": "Typescript",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/projects/playground/libs/index.ts",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": [
-        "${workspaceFolder}/out/**/*.js"
-      ]
-    }
+      "args": [
+        "${relativeFile}"
+      ],
+      "runtimeArgs": [
+        "-r",
+        "ts-node/register"
+      ],
+      "cwd": "${workspaceRoot}",
+      "internalConsoleOptions": "openOnSessionStart"
+    },
   ]
 }
 // /home/ninja/Projects/projects-monorepo/projects/playground/tsconfig.json

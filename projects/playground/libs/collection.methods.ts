@@ -33,7 +33,7 @@ export const mapDeleteItem =
     return map
   }
 
-export const mapSquence =
+export const mapSequence =
   (sequence: Function[]) =>
   <Key, Value extends Map<Key, any>>(map: Map<any, Value>) => {
     // eslint-disable-next-line functional/no-let
@@ -42,7 +42,6 @@ export const mapSquence =
     for (const fn of sequence) {
       newMap = fn(newMap)
     }
-
     return newMap
   }
 
@@ -134,7 +133,7 @@ export const mapReduceRight =
     return acc
   }
 
-export const mapRevese = <Key, Value>(map: Map<Key, Value>) => {
+export const mapRevere = <Key, Value>(map: Map<Key, Value>) => {
   const arr = Array.from(map)
   map.clear()
   for (let i = arr.length - 1; i >= 0; i--) {
@@ -173,33 +172,32 @@ export const collectionUpdateItem =
   }
 
 export const mapToArray =
-  <Value extends Map<any, any>>(fn?: (value: Value) => any) =>
-  <Key>(map: Map<Key, Value>) => {
+  <Key, Value>(fn?: ([key, value]: [Key, Value]) => any) =>
+  (map: Map<Key, Value>) => {
     if (map.size === 0) return []
 
     const arr = []
 
-    for (const [_key, value] of map) {
+    for (const [key, value] of map) {
       if (fn) {
-        arr.push(fn(value))
+        arr.push(fn([key, value]))
       } else {
         arr.push(value)
       }
     }
-    // console.log('mapToArray', arr)
 
     return arr
   }
 
-export const collectionToObject = <Key, Value extends Map<any, any>>(
-  map: Map<Key, Value>
-) => {
-  if (map.size === 0) return {}
-  const obj: Record<string, any> = {}
+export const collectionToObject =
+  <Key, Value>(fn?: ([key, value]: [Key, Value]) => Record<any, any>) =>
+  (map: Map<Key, Value>) => {
+    if (map.size === 0) return {}
+    const obj: Record<string, any> = {}
 
-  for (const [key, value] of map) {
-    obj[key as any] = mapToObject()(value)
+    for (const [key, value] of map) {
+      obj[key as any] = mapToObject(fn)(value as any)
+    }
+
+    return obj
   }
-
-  return obj
-}
