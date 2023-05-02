@@ -10,7 +10,10 @@ import {
   userKeys,
   userValues,
   usersReverse,
+  userEntries,
 } from './data'
+
+//TODO: make sure all methods with { exec, toObject, toString, toArray } are tested
 
 describe('collection', () => {
   it('add', () => {
@@ -38,20 +41,20 @@ describe('collection', () => {
   })
 
   it('entries', () => {
-    // const entries = collection().add('id')([users[0], users[1], users[2]]).log()
-    // // .entries()
-    // entries
-    // userEntries
-    // expect(entries.exec()).toEqual(userEntries())
-    // expect(entries.toArray()).toEqual(
-    //   usersArrayMap().reduce(
-    //     (acc: any[], user) => [...acc, [user.get('id'), user]],
-    //     []
-    //   )
-    // )
-    // expect(entries.toString(2)).toEqual(
-    //   JSON.stringify(Object.entries(users), null, 2)
-    // )
+    const entries = collection()
+      .add('id')([users[0], users[1], users[2]])
+      .entries()
+    userEntries
+    expect(entries.exec()).toEqual(userEntries())
+    expect(entries.toArray()).toEqual(
+      usersArrayMap().reduce(
+        (acc: any[], user) => [...acc, [user.get('id'), user]],
+        []
+      )
+    )
+    expect(entries.toString(2)).toEqual(
+      JSON.stringify(Object.entries(users), null, 2)
+    )
   })
 
   it('filter', () => {
@@ -105,12 +108,19 @@ describe('collection', () => {
     expect(actual.exec()).toEqual(expected())
   })
 
+  it('get', () => {
+    expect(collection().add('id')(users).get(0).exec()).toEqual(
+      new Map(Object.entries(users[0]))
+    )
+    expect(collection().add('id')(users).get(10).exec()).toEqual(new Map())
+  })
+
   it('has', () => {
     expect(collection().add('id')(users).has(0).exec()).toEqual(true)
     expect(collection().add('id')(users).has(3).exec()).toEqual(false)
 
     expect(collection().add('id')(users).has(0).toObject()).toEqual(users[0])
-    expect(collection().add('id')(users).has(10).toObject()).toBe(undefined)
+    expect(collection().add('id')(users).has(10).toObject()).toEqual({})
 
     expect(collection().add('id')(users).has(0).toString(2)).toEqual(
       JSON.stringify(users[0], null, 2)
@@ -118,10 +128,13 @@ describe('collection', () => {
     expect(collection().add('id')(users).has(10).toString(2)).toEqual('')
 
     expect(
-      collection().add('id')(users).has(0).get()?.value('username')
+      collection().add('id')(users).has(0).get().value('username')
     ).toEqual('user0')
-    expect(collection().add('id')(users).has(10).get()?.value('username')).toBe(
+    expect(collection().add('id')(users).has(10).get().value('username')).toBe(
       undefined
+    )
+    expect(collection().add('id')(users).has(0).get().exec()).toEqual(
+      usersMap().get(0)
     )
   })
 
@@ -355,19 +368,6 @@ describe('collection item', () => {
     )
   })
 
-  it('concat', () => {
-    const newProps = {
-      country: 'United Kingdom',
-    }
-    expect(
-      collection()
-        .add('id')(users)
-        .get(0)
-        .concat(new Map(Object.entries(newProps)))
-        .exec()
-    ).toEqual(new Map(Object.entries({ ...users[0], ...newProps })))
-  })
-
   it('delete', () => {
     expect(collection().add('id')(users).get(0).delete('email').exec()).toEqual(
       (() => {
@@ -379,20 +379,23 @@ describe('collection item', () => {
   })
 
   it('entries', () => {
-    expect(collection().add('id')(users).get(0).entries()).toEqual(
+    expect(collection().add('id')(users).get(0).entries().exec()).toEqual(
       new Map(Object.entries(users[0])).entries()
     )
   })
 
   it('forEach', () => {
-    const actual: Record<string, any> = {}
+    const fn = jest.fn()
 
-    collection()
-      .add('id')(users)
-      .get(0)
-      .forEach(([key, value]) => (actual[key as any] = value))
+    const actual = collection().add('id')(users).get(0).forEach(fn).exec()
+    expect(actual).toEqual(usersMap().get(0))
 
-    expect(actual).toEqual(users[0])
+    expect(fn).toBeCalledTimes(5)
+    expect(fn).toBeCalledWith(['id', 0])
+    expect(fn).toBeCalledWith(['username', 'user0'])
+    expect(fn).toBeCalledWith(['email', 'user0@example.com'])
+    expect(fn).toBeCalledWith(['age', 33])
+    expect(fn).toBeCalledWith(['city', 'London'])
   })
 
   it('has', () => {
@@ -400,19 +403,36 @@ describe('collection item', () => {
       true
     )
     expect(collection().add('id')(users).get(1).has('foo').exec()).toBe(false)
-    expect(collection().add('id')(users).get(1).has('foo').get()).toBe(
-      undefined
-    )
     expect(
-      collection().add('id')(users).get(0).has('username').get()?.exec()
+      collection().add('id')(users).get(1).has('foo').get().exec()
+    ).toEqual(new Map())
+    expect(
+      collection().add('id')(users).get(0).has('username').get().exec()
     ).toEqual(new Map(Object.entries(users[0])))
+    expect(
+      collection().add('id')(users).get(10).has('username').get().exec()
+    ).toEqual(new Map())
+
+    expect(
+      collection().add('id')(users).get(0).has('username').toObject()
+    ).toEqual(users[0])
+    expect(collection().add('id')(users).get(0).has('foo').toObject()).toEqual(
+      {}
+    )
+
+    expect(
+      collection().add('id')(users).get(0).has('username').toString(2)
+    ).toEqual(JSON.stringify(users[0], null, 2))
+    expect(collection().add('id')(users).get(0).has('foo').toString(2)).toEqual(
+      ''
+    )
   })
 
   it('keys', () => {
-    expect(collection().add('id')(users).get(0).keys()).toEqual(
+    expect(collection().add('id')(users).get(0).keys().exec()).toEqual(
       new Map(Object.entries(users[0])).keys()
     )
-    expect(collection().add('id')(users).get(10).keys()).toEqual(
+    expect(collection().add('id')(users).get(10).keys().exec()).toEqual(
       new Map().entries()
     )
   })
@@ -423,7 +443,21 @@ describe('collection item', () => {
         .add('id')(users)
         .get(0)
         .map(([key, value]) => [key, value])
+        .exec()
     ).toEqual(Object.entries(users[0]))
+  })
+
+  it('merge', () => {
+    const newProps = {
+      country: 'United Kingdom',
+    }
+    expect(
+      collection()
+        .add('id')(users)
+        .get(0)
+        .merge(new Map(Object.entries(newProps)))
+        .exec()
+    ).toEqual(new Map(Object.entries({ ...users[0], ...newProps })))
   })
 
   it('reduce', () => {
@@ -432,6 +466,7 @@ describe('collection item', () => {
         .add('id')(users)
         .get(0)
         .reduce((acc: string[], [_key, value]) => [...acc, value])([])
+        .exec()
     ).toEqual([0, 'user0', 'user0@example.com', 33, 'London'])
   })
 
@@ -441,6 +476,7 @@ describe('collection item', () => {
         .add('id')(users)
         .get(0)
         .reduceRight((acc: string[], [_key, value]) => [...acc, value])([])
+        .exec()
     ).toEqual(['London', 33, 'user0@example.com', 'user0', 0])
   })
 
@@ -462,8 +498,8 @@ describe('collection item', () => {
   })
 
   it('should set item', () => {
-    expect(collection().add('id')(users).get(0).size()).toEqual(5)
-    expect(collection().add('id')(users).get(10).size()).toEqual(0)
+    expect(collection().add('id')(users).get(0).size().exec()).toEqual(5)
+    expect(collection().add('id')(users).get(10).size().exec()).toEqual(0)
   })
 
   it('value', () => {
@@ -474,13 +510,14 @@ describe('collection item', () => {
   })
 
   it('values', () => {
-    expect(collection().add('id')(users).get(0).values()).toEqual(
+    expect(collection().add('id')(users).get(0).values().exec()).toEqual(
       new Map(Object.entries(users[0])).values()
     )
-    expect(collection().add('id')(users).get(10).values()).toEqual(
+    expect(collection().add('id')(users).get(10).values().exec()).toEqual(
       new Map().values()
     )
   })
+  userValues
 
   it('toArray', () => {
     expect(collection().add('id')(users).get(0).toArray()).toEqual([

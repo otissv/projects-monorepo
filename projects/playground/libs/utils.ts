@@ -37,9 +37,7 @@ export const mapKeysToArray =
   }
 
 export const mapEntriesToArray =
-  <Key, Value extends Map<any, any>>(
-    fn?: ([key, value]: [Key, Value]) => any
-  ) =>
+  <Key, Value>(fn?: ([key, value]: [Key, Value]) => any) =>
   (map: Map<Key, Value>) => {
     const arr: any[] = []
     for (const [key, value] of map) {

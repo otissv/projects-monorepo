@@ -33,27 +33,12 @@ export const mapDeleteItem =
     return map
   }
 
-export const mapSequence =
-  (sequence: Function[]) =>
-  <Key, Value extends Map<Key, any>>(map: Map<any, Value>) => {
-    // eslint-disable-next-line functional/no-let
-    let newMap = cloneDeep(map)
-
-    for (const fn of sequence) {
-      newMap = fn(newMap)
-    }
-    return newMap
-  }
-
 export const mapEffect =
   <Key, Value>(fn: (map: Map<Key, Value>) => any) =>
   (map: Map<Key, Value>) => {
     fn(map)
     return map
   }
-
-export const mapLogger = <Key, Value>(map: Map<Key, Value>) =>
-  mapEffect(console.log)(map)
 
 export const mapFilter =
   <Key, Value>(fn: ([key, value]: [Key, Value]) => boolean) =>
@@ -85,9 +70,11 @@ export const mapForEach =
     for (const [key, value] of map) {
       fn([key, value])
     }
-
     return map
   }
+
+export const mapLogger = <Key, Value>(map: Map<Key, Value>) =>
+  mapEffect(console.log)(map)
 
 export const mapMap =
   <Key, Value>(fn: (value: [Key, Value]) => any) =>
@@ -142,6 +129,18 @@ export const mapRevere = <Key, Value>(map: Map<Key, Value>) => {
   return map
 }
 
+export const mapSequence =
+  (sequence: Function[]) =>
+  <Key, Value extends Map<Key, any>>(map: Map<any, Value>) => {
+    // eslint-disable-next-line functional/no-let
+    let newMap = cloneDeep(map)
+
+    for (const fn of sequence) {
+      newMap = fn(newMap)
+    }
+    return newMap
+  }
+
 export const mapSet =
   <Key, Value>([key, value]: [Key, Value]) =>
   (map: Map<Key, Value>) => {
@@ -192,6 +191,7 @@ export const mapToArray =
 export const collectionToObject =
   <Key, Value>(fn?: ([key, value]: [Key, Value]) => Record<any, any>) =>
   (map: Map<Key, Value>) => {
+    console.log(map)
     if (map.size === 0) return {}
     const obj: Record<string, any> = {}
 
