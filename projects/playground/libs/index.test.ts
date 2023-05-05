@@ -14,7 +14,7 @@ import {
 } from './data'
 
 //TODO: make sure all methods with { exec, toObject, toString, toArray } are tested
-
+//TODO: make sure all methods with { exec, toObject, toString, toArray } have log
 describe('collection', () => {
   it('add', () => {
     expect(collection().add('id')(users).exec()).toEqual(usersMap())
@@ -44,7 +44,7 @@ describe('collection', () => {
     const entries = collection()
       .add('id')([users[0], users[1], users[2]])
       .entries()
-    userEntries
+
     expect(entries.exec()).toEqual(userEntries())
     expect(entries.toArray()).toEqual(
       usersArrayMap().reduce(
@@ -268,28 +268,6 @@ describe('collection', () => {
     expect(collection().add('id')(users).size().exec()).toEqual(3)
   })
 
-  // it('should sort collection', () => {
-  //   const a = collection()
-  //     .add('id')(users)
-  //     .sort((a) => {
-  //       console.log(a)
-  //       return 1
-  //     })
-  //     .exec()
-  //   a
-  //   // console.log(a)
-  //   // expect().toEqual(
-  //   //   (() => {
-  //   //     const map = new Map(usersMap())
-  //   //     const sorted = new Map()
-  //   //     map.forEach((value, key) => {
-  //   //       sorted.set(key, value)
-  //   //     })
-  //   //     return sorted
-  //   //   })()
-  //   // )
-  // })
-
   it('update', () => {
     expect(
       collection()
@@ -379,9 +357,20 @@ describe('collection item', () => {
   })
 
   it('entries', () => {
-    expect(collection().add('id')(users).get(0).entries().exec()).toEqual(
-      new Map(Object.entries(users[0])).entries()
-    )
+    const userEntries = [
+      ['id', 0],
+      ['username', 'user0'],
+      ['email', 'user0@example.com'],
+      ['age', 33],
+      ['city', 'London'],
+    ]
+    const entries = collection().add('id')([users[0]]).get(0).entries()
+
+    expect(entries.exec()).toEqual(new Map(userEntries as any).entries())
+    expect(entries.toArray()).toEqual(userEntries)
+
+    console.log(entries.toString(2))
+    // expect(entries.toString(2)).toEqual(JSON.stringify(userEntries, null, 2))
   })
 
   it('forEach', () => {

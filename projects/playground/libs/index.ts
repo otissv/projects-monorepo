@@ -239,12 +239,9 @@ const itemMethods =
           toArray: (fn?: ([id, item]: [Key, Value]) => any) =>
             mapEntriesToArray(fn)(item as Item),
           toString: (n?: number) =>
-            toString(
-              mapEntriesToArray(([id, item]) => [
-                `${id}`,
-                mapToObject()(item as Item),
-              ]) as any
-            )(n)(item),
+            toString(mapEntriesToArray(([id, item]) => [`${id}`, item]) as any)(
+              n
+            )(item),
         }
       },
       exec: () => mapSequence(sequence)(item as Map<ID, Item>),
