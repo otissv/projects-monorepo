@@ -15,6 +15,16 @@ import { EQ, GT, LT, BoundTypes } from './types'
  *
  * @example
  * ```
+ * const days = [
+ * 'Monday',
+ * 'Tuesday',
+ * 'Wednesday',
+ * 'Thursday',
+ * 'Friday',
+ * 'Saturday',
+ * 'Sunday',
+ * ]
+ *
  * bound(days)('Monday')('Monday')
  * // EQ
  *

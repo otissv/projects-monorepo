@@ -76,8 +76,6 @@ describe('insert', () => {
   it('should insert at end if not in collection', () => {
     const actual = insert(10)(data)({ lg: 99, lt: 99 })
 
-    console.log(actual)
-
     expect(actual).toEqual([
       { lg: 0, lt: 0 },
       { lg: 1, lt: 1 },

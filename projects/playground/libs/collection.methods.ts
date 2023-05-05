@@ -6,7 +6,7 @@
 /* eslint-disable functional/no-loop-statement */
 /* eslint-disable functional/prefer-readonly-type */
 
-import { cloneDeep } from 'c-ufunc/libs/exP/cloneDeep'
+import { cloneDeep } from 'c-ufunc/libs/cloneDeep'
 import { mapToObject } from './utils'
 
 export const addToCollection =

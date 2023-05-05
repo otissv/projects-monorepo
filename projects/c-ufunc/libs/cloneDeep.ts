@@ -6,26 +6,33 @@
 /* eslint-disable functional/no-conditional-statement */
 // not a good clone.
 
-import { isString } from '../isString'
-import { isNumber } from '../isNumber'
-import { isFunction } from '../isFunction'
-import { someTrue } from '../someTrue'
-import { isNullOrUndefined } from '../isNullOrUndefined'
-import { isError } from '../isError'
-export const getType = <Value>(value: Value) =>
-  (({} as Object).toString.call(value).slice(8, -1))
+import { isString } from './isString'
+import { isNumber } from './isNumber'
+import { isFunction } from './isFunction'
+import { someTrue } from './someTrue'
+import { isNullOrUndefined } from './isNullOrUndefined'
+import { isError } from './isError'
+import { isArray } from './isArray'
+import { isMap } from './isMap'
+import { isSet } from './isSet'
+import { isBoolean } from './isBoolean'
+import { isDate } from './isDate'
 
-export const isArray = <Value>(value: Value): boolean => Array.isArray(value)
-export const isWeakMap = <Value>(value: Value): boolean => Array.isArray(value)
-export const isMap = <Value>(value: Value) =>
-  value instanceof Date || getType(value) === 'Map'
-export const isSet = <Value>(value: Value) =>
-  value instanceof Date || getType(value) === 'Set'
-export const isBoolean = <Value>(value: Value) => typeof value === 'boolean'
-export const isDate = <Value>(value: Value) =>
-  (value instanceof Date || getType(Date) === 'Date') &&
-  !isNaN((value as Date).valueOf())
-
+/**
+ * Deep clones a value
+ *
+ * @param value - Value to be cloned.
+ *
+ * @returns Returns a deep clone of the value.
+ *
+ * @usage
+ * `import { cloneDeep } from "c-ufunc/libs/cloneDeep"`
+ * @example
+ * ```
+ * cloneDeep({ a: 1, b: { c: 2 } })
+ * // { a: 1, b: { c: 2 } }
+ * ```
+ */
 export const cloneDeep = <Value>(value: Value): Value => {
   switch (true) {
     case someTrue([
@@ -48,6 +55,7 @@ export const cloneDeep = <Value>(value: Value): Value => {
       }
       return result as Value
     }
+
     case isSet(value): {
       const result = new Set<any>()
       for (const val of (value as Set<any>).values()) {

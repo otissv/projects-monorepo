@@ -2,27 +2,35 @@
 /* eslint-disable functional/immutable-data */
 /* eslint-disable functional/no-expression-statement */
 /* eslint-disable functional/no-loop-statement */
-import { isString } from './isString'
-import { isNumber } from './isNumber'
-import { isFunction } from './isFunction'
-import { someTrue } from './someTrue'
+import { isArray } from './isArray'
+import { isBoolean } from './isBoolean'
+import { isDate } from './isDate'
 import { isError } from './isError'
-export const getType = <Value>(value: Value) =>
-  (({} as Object).toString.call(value).slice(8, -1))
+import { isFunction } from './isFunction'
+import { isMap } from './isMap'
+import { isNull } from './isNull'
+import { isNumber } from './isNumber'
+import { isSet } from './isSet'
+import { isString } from './isString'
+import { isUndefined } from './isUndefined'
+import { someTrue } from './someTrue'
 
-export const isArray = <Value>(value: Value): boolean => Array.isArray(value)
-export const isWeakMap = <Value>(value: Value): boolean => Array.isArray(value)
-export const isMap = <Value>(value: Value) =>
-  value instanceof Date || getType(value) === 'Map'
-export const isSet = <Value>(value: Value) =>
-  value instanceof Date || getType(value) === 'Set'
-export const isBoolean = <Value>(value: Value) => typeof value === 'boolean'
-export const isDate = <Value>(value: Value) =>
-  (value instanceof Date || getType(Date) === 'Date') &&
-  !isNaN((value as Date).valueOf())
-export const isUndefined = <Value>(value: Value) => typeof value === 'undefined'
-export const isNull = <Value>(value: Value) => value === null
-
+/**
+ * Converts a value to a string
+ *
+ * @param value - Value to be converted.
+ *
+ * @returns Returns a string.
+ *
+ * @usage
+ * `import { toString } from "c-ufunc/libs/toString"`
+ *
+ * @example
+ * ```
+ * toString()(2)({ firstName: 'otis', lastNmame: 'jimenez' })`
+ * // {"firstName":"otis","lastNmame":"jimenez"}
+ * ``
+ */
 export const toString =
   (fn?: (value: unknown) => any | readonly any[]) =>
   (n?: number) =>
@@ -41,13 +49,15 @@ const convertToStringable = (value: unknown) => {
       isString(value),
       isNumber(value),
       isBoolean(value),
-      isFunction(value),
-      isError(value),
     ]): {
       return value
     }
     case isSet(value): {
-      return
+      const arr: any[] = []
+      for (const val of value as any[]) {
+        arr.push(convertToStringable(val))
+      }
+      return arr
     }
     case isMap(value): {
       const obj: Record<string | number | symbol, any> = {}
@@ -59,6 +69,17 @@ const convertToStringable = (value: unknown) => {
     case isDate(value): {
       return (value as Date).toISOString()
     }
+    case isError(value): {
+      return {
+        name: (value as Error).name,
+        message: (value as Error).message,
+        stack: (value as Error).stack,
+      }
+    }
+
+    case isFunction(value): {
+      return (value as Function).toString()
+    }
     case isArray(value): {
       const arr: any[] = []
       for (const val of value as Array<any>) {
@@ -67,9 +88,6 @@ const convertToStringable = (value: unknown) => {
       return arr
     }
 
-    case typeof value === 'object': {
-      return
-    }
     default:
       return value
   }
