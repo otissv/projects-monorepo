@@ -13,8 +13,6 @@ import {
   userEntries,
 } from './data'
 
-//TODO: make sure all methods with { exec, toObject, toString, toArray } are tested
-//TODO: make sure all methods with { exec, toObject, toString, toArray } have log
 describe('collection', () => {
   it('add', () => {
     expect(collection().add('id')(users).exec()).toEqual(usersMap())
@@ -55,6 +53,11 @@ describe('collection', () => {
     expect(entries.toString(2)).toEqual(
       JSON.stringify(Object.entries(users), null, 2)
     )
+
+    const fn = jest.fn()
+    expect(entries.effect(fn).exec()).toEqual(userEntries())
+    expect(fn).toBeCalledTimes(1)
+    expect(fn).toBeCalledWith(userEntries())
   })
 
   it('filter', () => {
@@ -136,6 +139,11 @@ describe('collection', () => {
     expect(collection().add('id')(users).has(0).get().exec()).toEqual(
       usersMap().get(0)
     )
+
+    const fn = jest.fn()
+    expect(collection().add('id')(users).has(0).effect(fn).exec()).toBe(true)
+    expect(fn).toBeCalledTimes(1)
+    expect(fn).toBeCalledWith(true)
   })
 
   it('keys', () => {
@@ -149,6 +157,13 @@ describe('collection', () => {
     expect(collection().add('id')(users).keys().toString(2)).toEqual(
       JSON.stringify([0, 1, 2], null, 2)
     )
+
+    const fn = jest.fn()
+    expect(collection().add('id')(users).keys().effect(fn).exec()).toEqual(
+      userKeys()
+    )
+    expect(fn).toBeCalledTimes(1)
+    expect(fn).toBeCalledWith(userKeys())
   })
 
   it('map', () => {
@@ -307,6 +322,13 @@ describe('collection', () => {
     expect(collection().add('id')(users).values().toString(2)).toEqual(
       JSON.stringify(users, null, 2)
     )
+
+    const fn = jest.fn()
+    expect(collection().add('id')(users).values().effect(fn).exec()).toEqual(
+      userValues()
+    )
+    expect(fn).toBeCalledTimes(1)
+    expect(fn).toBeCalledWith(userValues())
   })
 
   it('toArray', () => {
@@ -365,12 +387,18 @@ describe('collection item', () => {
       ['city', 'London'],
     ]
     const entries = collection().add('id')([users[0]]).get(0).entries()
+    const expected = new Map(userEntries as any).entries()
+    expected
 
-    expect(entries.exec()).toEqual(new Map(userEntries as any).entries())
+    expect(entries.exec()).toEqual(expected)
     expect(entries.toArray()).toEqual(userEntries)
 
-    console.log(entries.toString(2))
-    // expect(entries.toString(2)).toEqual(JSON.stringify(userEntries, null, 2))
+    const fn = jest.fn()
+    entries.effect(fn)
+    expect(fn).toBeCalledTimes(1)
+    // expect(fn).toBeCalledWith(expected)
+
+    expect(entries.toString(2)).toEqual(JSON.stringify(userEntries, null, 2))
   })
 
   it('forEach', () => {
@@ -415,6 +443,11 @@ describe('collection item', () => {
     expect(collection().add('id')(users).get(0).has('foo').toString(2)).toEqual(
       ''
     )
+
+    const fn = jest.fn()
+    expect(collection().add('id')(users).has(0).effect(fn).exec()).toBe(true)
+    expect(fn).toBeCalledTimes(1)
+    expect(fn).toBeCalledWith(true)
   })
 
   it('keys', () => {
@@ -424,6 +457,13 @@ describe('collection item', () => {
     expect(collection().add('id')(users).get(10).keys().exec()).toEqual(
       new Map().entries()
     )
+
+    const fn = jest.fn()
+    expect(collection().add('id')(users).keys().effect(fn).exec()).toEqual(
+      userKeys()
+    )
+    expect(fn).toBeCalledTimes(1)
+    expect(fn).toBeCalledWith(userKeys())
   })
 
   it('map', () => {
@@ -505,6 +545,12 @@ describe('collection item', () => {
     expect(collection().add('id')(users).get(10).values().exec()).toEqual(
       new Map().values()
     )
+    const fn = jest.fn()
+    expect(collection().add('id')(users).values().effect(fn).exec()).toEqual(
+      userValues()
+    )
+    expect(fn).toBeCalledTimes(1)
+    expect(fn).toBeCalledWith(userValues())
   })
   userValues
 

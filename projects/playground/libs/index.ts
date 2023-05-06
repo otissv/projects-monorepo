@@ -63,9 +63,6 @@ const methods =
         sequence.push(mapClear)
         return methods(sequence)(coll)
       },
-      // clone: () => {
-      //   return methods(mapSequence(sequence)(coll))(sequence)
-      // },
       delete: (id: ID) => {
         sequence.push(mapDeleteItem(id))
         return methods(sequence)(coll)
@@ -74,6 +71,16 @@ const methods =
         const items = mapSequence(sequence)(coll)
 
         return {
+          effect: (
+            fn: (entries: IterableIterator<[any, Map<Key, Value>]>) => void
+          ) => {
+            fn(items.entries())
+            return methods(sequence)(coll).entries()
+          },
+          log: () => {
+            sequence.push(mapLogger)
+            return methods(sequence)(coll).entries()
+          },
           exec: () => items.entries(),
           toArray: (fn?: ([id, item]: [ID, Item]) => any) =>
             mapEntriesToArray(fn)(items),
@@ -112,6 +119,14 @@ const methods =
         const items = mapSequence(sequence)(coll)
         const hasId = items.has(id)
         return {
+          effect: (fn: (has: boolean) => void) => {
+            fn(hasId)
+            return methods(sequence)(coll).has(id)
+          },
+          log: () => {
+            sequence.push(mapLogger)
+            return methods(sequence)(coll).has(id)
+          },
           exec: () => hasId,
           get: () =>
             itemMethods([])(hasId ? (items.get(id) as any) : new Map()),
@@ -123,6 +138,14 @@ const methods =
       keys: () => {
         const items = mapSequence(sequence)(coll)
         return {
+          effect: (fn: (keys: IterableIterator<any>) => void) => {
+            fn(items.keys())
+            return methods(sequence)(coll).keys()
+          },
+          log: () => {
+            sequence.push(mapLogger)
+            return methods(sequence)(coll).keys()
+          },
           exec: () => items.keys(),
           toArray: (fn?: (id: ID) => any) => mapKeysToArray(fn)(items),
           toString: (n?: number) =>
@@ -167,20 +190,6 @@ const methods =
         return methods(sequence)(coll)
       },
 
-      // sort: (fn?: ([a, b]: [[Key, Value], [Key, Value]]) => number) => {
-      //   const arr = Array.from(coll)
-      //   coll.clear()
-
-      //   const x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-      //   x.sort((x: any) => {
-      //     console.log(x)
-      //     return 1
-      //   })
-
-      //   // .forEach(([key, value]) => coll.set(key, value))
-      //   return methods(coll)
-      // },
-
       update: ([id, obj]: [
         ID,
         Item | Record<string | number | symbol, any>
@@ -191,6 +200,14 @@ const methods =
       values: () => {
         const items = mapSequence(sequence)(coll)
         return {
+          effect: (fn: (keys: IterableIterator<any>) => void) => {
+            fn(items.values())
+            return methods(sequence)(coll).values()
+          },
+          log: () => {
+            sequence.push(mapLogger)
+            return methods(sequence)(coll).values()
+          },
           exec: () => items.values(),
           toArray: (fn?: (item: Item) => any) => mapValuesToArray(fn)(items),
           toString: (n?: number) =>
@@ -235,6 +252,14 @@ const itemMethods =
       },
       entries: () => {
         return {
+          effect: (fn: (entries: IterableIterator<[Key, Value]>) => void) => {
+            fn(item.entries())
+            return itemMethods(sequence)(item).entries()
+          },
+          log: () => {
+            sequence.push(mapLogger)
+            return itemMethods(sequence)(item).entries()
+          },
           exec: () => item.entries(),
           toArray: (fn?: ([id, item]: [Key, Value]) => any) =>
             mapEntriesToArray(fn)(item as Item),
@@ -253,6 +278,14 @@ const itemMethods =
         const items = mapSequence(sequence)(item as Map<ID, Item>)
         const hasId = items.has(id)
         return {
+          effect: (fn: (has: boolean) => void) => {
+            fn(hasId)
+            return itemMethods(sequence)(items).has(id)
+          },
+          log: () => {
+            sequence.push(mapLogger)
+            return itemMethods(sequence)(items).has(id)
+          },
           exec: () => hasId,
           get: () => itemMethods([])(hasId ? items : new Map()),
           toObject: () => (hasId ? mapToObject()(items) : {}),
@@ -263,6 +296,14 @@ const itemMethods =
       keys: () => {
         const items = mapSequence(sequence)(item as Map<ID, Item>)
         return {
+          effect: (fn: (keys: IterableIterator<any>) => void) => {
+            fn(items.keys())
+            return itemMethods(sequence)(items).keys()
+          },
+          log: () => {
+            sequence.push(mapLogger)
+            return itemMethods(sequence)(items).keys()
+          },
           exec: () => items.keys(),
           toArray: (fn?: (id: Key) => any) => mapKeysToArray(fn)(items),
           toString: (n?: number) =>
@@ -308,6 +349,14 @@ const itemMethods =
         const items = mapSequence(sequence)(item as Map<ID, Item>)
         const values = items.values()
         return {
+          effect: (fn: (keys: IterableIterator<any>) => void) => {
+            fn(items.values())
+            return itemMethods(sequence)(items).values()
+          },
+          log: () => {
+            sequence.push(mapLogger)
+            return itemMethods(sequence)(items).values()
+          },
           exec: () => values,
           toArray: (fn?: (map: Item) => any) => mapValuesToArray(fn)(items),
           toString: (n?: number) =>
