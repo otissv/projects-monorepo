@@ -1,5 +1,5 @@
 {
-  "name": "playground",
+  "name": "collection",
   "private": true,
   "version": "0.0.0",
   "description": "",
@@ -15,7 +15,7 @@
     "dev": "tsc --watch",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
-    "test": "echo test",
+    "test": "jest",
     "test:coverage": "npm run build && jest --coverage",
     "test:watch": "jest --watch",
     "docs": "npm run build && typedoc src/index.ts",
@@ -45,8 +45,7 @@
     "ts-node": "^10.9.1",
     "tslib": "^2.4.0",
     "typedoc": "^0.23.15",
-    "typescript": "^4.8.3",
-    "events": "^3.3.0"
+    "typescript": "^4.8.3"
   },
   "dependencies": {
     "c-ufunc": "workspace:*"

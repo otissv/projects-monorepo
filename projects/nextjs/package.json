@@ -1,0 +1,38 @@
+{
+  "name": "nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/server": "^11.10.0",
+    "@redesign-system/react": "workspace:*",
+    "@redesign-system/react-material-icons": "workspace:*",
+    "@redesign-system/react-ui": "workspace:*",
+    "@redesign-system/theme": "workspace:*",
+    "@types/events": "^3.0.0",
+    "c-ufunc": "workspace:*",
+    "collection": "workspace:*",
+    "events": "^3.3.0",
+    "next": "^13.4.2",
+    "pubsub-js": "^1.9.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "store-subscriptions": "workspace:*",
+    "swr": "^1.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.7",
+    "@types/react": "18.0.24",
+    "eslint": "8.26.0",
+    "eslint-config-custom": "workspace:*",
+    "next-transpile-modules": "9.1.0",
+    "rimraf": "^3.0.2",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.8.4"
+  }
+}

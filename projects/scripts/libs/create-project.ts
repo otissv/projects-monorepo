@@ -1,4 +1,3 @@
-/* eslint-disable functional/no-expression-statement */
 import inquirer from 'inquirer'
 import chalk from 'chalk'
 import fs from 'fs'
@@ -23,7 +22,6 @@ interface ProjectInfo {
 
 const templates = ['nextjs', 'react-components', 'library']
 
-// eslint-disable-next-line functional/prefer-readonly-type
 const chekIfProjectNameIsExists = (templates: string[]) => {
   switch (true) {
     case !process.argv[2] || process.argv[2].trim().length === 0:
@@ -85,7 +83,6 @@ const getProjectInfo = (templateName: string) => {
   }
 }
 
-// eslint-disable-next-line functional/prefer-readonly-type
 const selectTempalte = (_values: string[]) =>
   inquirer.prompt({
     type: 'list',

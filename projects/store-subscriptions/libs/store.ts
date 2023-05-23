@@ -1,22 +1,17 @@
-/* eslint-disable functional/no-return-void */
-/* eslint-disable functional/immutable-data */
-/* eslint-disable functional/no-expression-statement */
-/* eslint-disable functional/no-this-expression */
-/* eslint-disable functional/no-class */
 import EventEmitter from 'events'
 import { deepMerge } from 'c-ufunc/libs/exP/deepmerge'
 
 import { EventType, Event } from './types'
-import { pipe } from 'c-ufunc'
+import { pipe } from 'c-ufunc/libs/pipe'
+import { cloneDeep } from 'c-ufunc/libs/cloneDeep'
 
 export class Store<State> extends EventEmitter {
-  // eslint-disable-next-line functional/prefer-readonly-type
-  state: State
+  private _state: State
   readonly initialState
 
   constructor(initialState: State) {
     super()
-    this.state = initialState
+    this._state = initialState
     this.initialState = initialState
   }
 
@@ -26,17 +21,19 @@ export class Store<State> extends EventEmitter {
       .split('.')
       .reduce(
         (previousValue, current) => (previousValue as any)[current],
-        state || this.state
+        state || this._state
       )
+  }
+
+  state() {
+    return cloneDeep(this._state)
   }
 
   publish<State>([eventType, updateState]: readonly [
     EventType,
     Partial<State>
   ]) {
-    //TODO: handle publishing multiple events
-    //TODO: walk the event path and publish up the tree
-    this.state = deepMerge(this.state as any)(updateState as any)
+    this._state = deepMerge(this._state as any)(updateState as any)
 
     //TODO: maybe see if state has changed before emitting
     this.emit(eventType as string, this.get(eventType as string))
@@ -45,7 +42,7 @@ export class Store<State> extends EventEmitter {
   // TODO: subscribe() {}
 
   broadcast(nextState: Partial<State>) {
-    this.state = deepMerge(this.state as any)(nextState as any)
+    this._state = deepMerge(this._state as any)(nextState as any)
     this.eventNames().forEach((eventType) => {
       this.emit(eventType, this.get(eventType as string))
     })

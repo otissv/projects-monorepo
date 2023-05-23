@@ -6,17 +6,13 @@ module.exports = {
   processor: 'disable/disable',
   extends: [
     'eslint:recommended',
-    'plugin:functional/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
-  plugins: ['@typescript-eslint', 'functional', 'disable'],
+  plugins: ['@typescript-eslint', 'disable'],
   overrides: [
     {
       files: ['**/*.test.*', '**/*.tsx'],
-      settings: {
-        'disable/plugins': ['functional'],
-      },
     },
   ],
   rules: {
@@ -30,14 +26,7 @@ module.exports = {
       },
     ],
     'explicit-module-boundary-types': 'off',
-    'functional/functional-parameters': 'off',
-    'functional/no-mixed-type': 'off',
-    'functional/no-conditional-statement': [
-      'error',
-      {
-        allowReturningBranches: true,
-      },
-    ],
+
     'prettier/prettier': ['error', prettier],
   },
   ignorePatterns: ['**/build', '**/dist', '**/node_modules'],

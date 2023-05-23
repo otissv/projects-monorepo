@@ -1,4 +1,3 @@
-/* eslint-disable functional/no-expression-statement */
 import React from 'react'
 import { pipe } from 'c-ufunc/libs/pipe'
 
@@ -82,7 +81,6 @@ export function useSubscribe<State>(
     dispatch,
   ]
 
-  // eslint-disable-next-line functional/no-return-void
   type Dispatch<State> = (...actions: readonly EventAction<State>[]) => void
 
   return {
